@@ -1,0 +1,5 @@
+Resumen técnico de la Rippa R06:
+* Motor: Kubota Z482 (Diésel), 2 cilindros, refrigerado por agua, 11.2 HP.
+* Peso operativo: 747 kg.
+* Pala (Balde estándar): 30 cm de ancho con capacidad de 0.014 m³.
+* Fuerza de excavación: 9.2 kN (fuerza de rotura del balde).

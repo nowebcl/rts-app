@@ -1,0 +1,7 @@
+* Motor: Diésel Yoop 11.7 HP Euro V 1 cilíndro enfriado por aire.
+
+Variante: Kubota Z482 (2 cilindros, 11 HP / Euro V Enfriado por agua).
+* Peso operativo: 1,000 kg.
+* Excavación: Profundidad máxima de 1.8 metros / Cucharón de 0.015 m³.
+* Chasis extensible: Ancho ajustable hidráulicamente de 912 mm a 1,212 mm (igual a la R10).
+* Sistema hidráulico: Bomba de engranajes con mandos de pilotaje laterales (joysticks).

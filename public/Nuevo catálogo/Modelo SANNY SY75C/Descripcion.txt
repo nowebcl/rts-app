@@ -1,0 +1,14 @@
+Especificaciones técnicas (motor Isuzu)
+
+Peso operativo: 7.280 kg.
+Motor: Isuzu 4LE2, diésel de 4 cilindros.
+Potencia: 43 kW (57,7 HP) a 2.100 rpm.
+Cilindrada: 2,179 litros.
+Profundidad máxima de excavación: aprox. 3.840 mm.
+Capacidad del balde: 0,28 m³.
+Fuerza de excavación del balde: hasta 53 kN, según versión.
+Fuerza de excavación del brazo: 35 kN.
+Alcance máximo de excavación: 6.505 mm.
+Altura máxima de excavación: aprox. 7.390 mm.
+Altura máxima de descarga: aprox. 5.490 mm.
+Ancho de transporte: aprox. 2.220 mm.

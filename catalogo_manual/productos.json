@@ -1,0 +1,299 @@
+[
+  {
+    "id": 1,
+    "nombre": "Tractor John Deere 45 HP 4x4 2022 Cero Hrs.",
+    "precio": "18.900.000 CLP",
+    "descripcion": "En venta Tractor John Deere 45 HP 4x4 Nuevo Cero Horas. Valor + IVA garantizado.",
+    "fotos": [
+      "01_Tractor_John_Deere_45HP_foto1.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Mini Tractor John Deere 2022 Cero Hrs.",
+    "precio": "16.900.000 CLP",
+    "descripcion": "Mini tractor John Deere Motor Yanmar 36 HP 4x4 Nuevo Cero Horas Garantia 1 año. Precio + IVA conversable.",
+    "fotos": [
+      "02_Mini_Tractor_John_Deere_36HP_foto1.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Motores Japoneses Diesel 3 Cilíndros Yanmar, Kubota, Iseki",
+    "precio": "Desde 790.000 CLP",
+    "descripcion": "En venta Motores Japoneses Diesel 3 cilíndros Yanmar Kubota , Iseki desde 9 HP hasta 30 HP todos operativos y garantizados. Precios desde .000 9HP 1 cilíndro Kubota con radiador incluído. Motor 3 cilíndros 14 HP desde .000 Yanmar y Kubota.",
+    "fotos": [
+      "03_Motores_Japoneses_Diesel_foto1.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Camión Mercedes 508D para 3500kg",
+    "precio": "7.900.000 CLP",
+    "descripcion": "En venta camión Mercedes Aleman 508D clásico, restaurado con 112.000 kms. Originales. Figura como año 1992, pero es año 1980 aprox. 100% operativo, funciona impecable. Papeles al día, transferencia inmediata. Precio conversable. Recibo vehículo en parte de pago.",
+    "fotos": [
+      "04_Camion_Mercedes_508D_foto1.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Mini excavadoras Chinas Nuevas de 1 y 1.6 toneladas Llegan Fines de Octubre primeras Unidades",
+    "precio": "11.900.000 CLP",
+    "descripcion": "Por llegar fines de Octubre mini excavadoras Nuevas, Cero Hrs. Con cabina y garra incluída. Motores diesel Koop y Laidong Euro 5. Garantía 6 meses motor y bomba. Disponible implementos y repuestos. Precios Conversables según precio Dollar.",
+    "fotos": [
+      "05_Mini_excavadora_Hightop_1ton_foto1.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "Mini Excavadora Nissan Hanix 2.7 Toneladas",
+    "precio": "15.400.000 CLP",
+    "descripcion": "En venta Mini excavadora Japonesa Nissan Hanix 2.7 toneladas año 2003 4000 hrs de trabajo, mandos Joystick, motor diesel 4 cilíndros. Operativa 100% buen estado. Valor conversable se encuentra en Puerto Montt. Recibo vehículo en parte de pago.",
+    "fotos": [
+      "06_Mini_Excavadora_Nissan_Hanix_H27_foto1.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "nombre": "Rotovator 170 Cms. Mitsubishi",
+    "precio": "1.600.000 CLP",
+    "descripcion": "En venta Rotovator Japonés Mitsubishi de 170 cms. De ancho operativo 100% detalles mínimos estéticos que no impiden su funcionamiento. Precio Conversable.",
+    "fotos": [
+      "07_Rotovator_170cm_Mitsubishi_foto1.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "nombre": "Mini tractor Yanmar FX265 26 HP 4x4",
+    "precio": "Consultar precio / Por llegar",
+    "descripcion": "Por llegar a Puerto Montt en pocos días. Mini tractor Yanmar FX265 26 HP 4x4.",
+    "fotos": [
+      "08_Mini_tractor_Yanmar_FX265_foto1.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "nombre": "Mini tractor Iseki 15 HP 4x4 con rotovator",
+    "precio": "Consultar precio",
+    "descripcion": "Mini tractor japonés Iseki 15 HP 4x4 con rotovator incluido. Se encuentra disponible en Puerto Montt.",
+    "fotos": [
+      "09_Mini_tractor_Iseki_15HP_foto1.jpg"
+    ]
+  },
+  {
+    "id": 10,
+    "nombre": "Mini excavadora Mitsubishi 2.2 toneladas Operativa 100%",
+    "precio": "Consultar precio",
+    "descripcion": "Mini excavadora Japonesa Mitsubishi ME20 2.2 toneladas. Operativa 100%. Se encuentra en Puerto Montt. Garantía motor y bomba 3 meses u opción a recambio.",
+    "fotos": [
+      "10_Mini_excavadora_Mitsubishi_ME20_foto1.jpg"
+    ]
+  },
+  {
+    "id": 11,
+    "nombre": "Mini excavadora Yanmar 3.5 Toneladas Operativa 100%",
+    "precio": "Consultar precio",
+    "descripcion": "Excavadora Japonesa Yanmar YB351 3.5 Toneladas. Operativa 100%. Se encuentra en Puerto Montt. Garantizada 3 meses motor y bomba u opción a recambio.",
+    "fotos": [
+      "11_Excavadora_Yanmar_YB351_35ton_foto1.jpg"
+    ]
+  },
+  {
+    "id": 12,
+    "nombre": "Mini tractor Iseki SIAL 15 15 HP 4x4 con rotovator",
+    "precio": "Consultar precio",
+    "descripcion": "Mini tractor japonés Iseki SIAL 15, 15 HP 4x4 con rotovator incluido. Excelente estado operativo.",
+    "fotos": [
+      "12_Mini_tractor_Iseki_SIAL15_foto1.jpg"
+    ]
+  },
+  {
+    "id": 13,
+    "nombre": "Mini tractor Yanmar 17 HP 4x4 con rotovator",
+    "precio": "Consultar precio",
+    "descripcion": "Mini tractor japonés Yanmar YM1702D 17 HP 4x4 con rotovator incluido. Excelente estado mecánico.",
+    "fotos": [
+      "13_Mini_tractor_Yanmar_YM1702D_foto1.jpg"
+    ]
+  },
+  {
+    "id": 14,
+    "nombre": "Mini excavadora Kubota 2.7 toneladas Orugas Metálicas",
+    "precio": "Consultar precio",
+    "descripcion": "Mini excavadora japonesa Kubota KH-024 de 2.7 toneladas con cabina cerrada, orugas metálicas y hoja dozer. 100% operativa.",
+    "fotos": [
+      "14_Mini_excavadora_Kubota_KH024_foto1.jpg"
+    ]
+  },
+  {
+    "id": 15,
+    "nombre": "Mini tractor Yanmar F-7 17 HP 4x4",
+    "precio": "Consultar precio",
+    "descripcion": "Mini tractor japonés Yanmar serie Forte F-7 17 HP 4x4. Excelente estado, luces operativas y tracción 4x4.",
+    "fotos": [
+      "15_Mini_tractor_Yanmar_F7_17HP_foto1.jpg"
+    ]
+  },
+  {
+    "id": 16,
+    "nombre": "Mini tractor Kubota Bulltra 14 HP 4x4",
+    "precio": "Consultar precio",
+    "descripcion": "Mini tractor japonés Kubota serie Bulltra ZB1-14 de 14 HP 4x4 con rotovator incluido. Excelente estado y tracción 4x4.",
+    "fotos": [
+      "16_Mini_tractor_Kubota_Bulltra_ZB1_14_foto1.jpg"
+    ]
+  },
+  {
+    "id": 17,
+    "nombre": "Mini excavadora Kubota 2.2 ton. Año 2007 Disponible",
+    "precio": "Consultar precio",
+    "descripcion": "Mini excavadora japonesa Kubota U-20 de 2.2 toneladas año 2007 con techo/canopy, orugas de goma y hoja dozer. Disponible para entrega inmediata.",
+    "fotos": [
+      "17_Mini_excavadora_Kubota_U20_foto1.jpg"
+    ]
+  },
+  {
+    "id": 18,
+    "nombre": "Mini excavadora Sany 6 toneladas 2021",
+    "precio": "Consultar precio",
+    "descripcion": "Excavadora SANY SY60C Pro de 6 toneladas año 2021. Cabina cerrada, orugas de acero con protección, hoja topadora frontal y balde. Impecable estado operativo.",
+    "fotos": [
+      "18_Mini_excavadora_Sany_SY60C_Pro_foto1.jpg"
+    ]
+  },
+  {
+    "id": 19,
+    "nombre": "Desmalezadora Autopropulsada Diesel y Bencinera",
+    "precio": "Consultar precio",
+    "descripcion": "Desmalezadora autopropulsada para terreno agreste, maleza alta y praderas. Disponible en versiones con motor diésel y bencinera. Alta eficiencia de corte.",
+    "fotos": [
+      "19_Desmalezadora_Diesel_Bencinera_foto1.png"
+    ]
+  },
+  {
+    "id": 20,
+    "nombre": "Excavadora Sany SY75C Pro (Vendida)",
+    "precio": "Vendida",
+    "descripcion": "Excavadora SANY SY75C Pro de 7.5 toneladas con garra hidráulica (pulgar), cabina cerrada de alta visibilidad, hoja topadora y orugas de acero. Unidad vendida.",
+    "fotos": [
+      "20_Excavadora_Sany_SY75C_Pro_Vendida_foto1.jpg"
+    ],
+    "vendida": true
+  },
+  {
+    "id": 21,
+    "nombre": "Robot picador, desmalezador R/C, Barredora (Vendido)",
+    "precio": "Vendido",
+    "descripcion": "Robot desmalezador y picador a radiocontrol (R/C) con hoja barredora delantera. Ideal para terrenos difíciles, laderas y desbroce seguro a distancia. Unidad vendida.",
+    "fotos": [
+      "21_Robot_desmalezador_RC_Vendido_foto1.jpg"
+    ],
+    "vendida": true
+  },
+  {
+    "id": 22,
+    "nombre": "Excavadora Caterpillar 307D Japonesa (Vendida)",
+    "precio": "Vendida",
+    "descripcion": "Excavadora japonesa Caterpillar 307D de 7 toneladas con cabina cerrada, garra hidráulica (pulgar), orugas de acero y hoja dozer. Unidad vendida.",
+    "fotos": [
+      "22_Excavadora_Caterpillar_307D_Vendida_foto1.jpg"
+    ],
+    "vendida": true
+  },
+  {
+    "id": 23,
+    "nombre": "Excavadora Hitachi Zaxis 70 7 Toneladas (Vendida)",
+    "precio": "36.900.000 CLP (Vendida)",
+    "descripcion": "Excavadora japonesa Hitachi Zaxis 70 de 7 toneladas con cabina cerrada, garra hidráulica (pulgar), orugas de acero. Unidad vendida.",
+    "fotos": [
+      "23_Excavadora_Hitachi_Zaxis_70_Vendida_foto1.jpg"
+    ],
+    "vendida": true
+  },
+  {
+    "id": 24,
+    "nombre": "Excavadora Doosan DX55-9C 5.5 Toneladas (Vendida)",
+    "precio": "19.700.000 CLP (Vendida)",
+    "descripcion": "Excavadora Doosan DX55-9C de 5.5 toneladas con cabina cerrada panorámica, orugas de acero y balde reforzado. Unidad vendida.",
+    "fotos": [
+      "24_Excavadora_Doosan_DX55_9C_Vendida_foto1.jpg"
+    ],
+    "vendida": true
+  },
+  {
+    "id": 25,
+    "nombre": "Excavadora Sany SY75C Pro en Despacho (Vendida)",
+    "precio": "37.900.000 CLP (Vendida)",
+    "descripcion": "Excavadora SANY SY75C Pro de 7.5 toneladas con garra hidráulica (pulgar), orugas de acero y cabina panorámica. Unidad vendida y despachada.",
+    "fotos": [
+      "25_Excavadora_Sany_SY75C_Camion_Vendida_foto1.jpg"
+    ],
+    "vendida": true
+  },
+  {
+    "id": 26,
+    "nombre": "Mini excavadora Hightop HT15 1.5 Ton. Motor Briggs & Stratton (Vendida)",
+    "precio": "Vendida",
+    "descripcion": "Mini excavadora Hightop HT15 de 1.5 toneladas con motor Briggs & Stratton a gasolina. Equipada con techo/canopy, garra mecánica (pulgar), hoja dozer frontal y orugas de goma. Unidad vendida.",
+    "fotos": [
+      "26_Mini_excavadora_Hightop_HT15_Vendida_foto1.jpg"
+    ],
+    "vendida": true
+  },
+  {
+    "id": 27,
+    "nombre": "Mini excavadora Hightop HT15 1.5 Toneladas Mandos Joystick 2025",
+    "precio": "Consultar precio",
+    "descripcion": "Nueva Cero Horas año 2025. Garantía 6 meses. Disponible con motor B&S gasolina o Koop diésel. Incluye cabina cerrada, mandos Joystick, radiador de aceite hidráulico y dedo pulgar.",
+    "fotos": [
+      "27_Mini_excavadora_Hightop_HT15_Cabina_2025_foto1.jpg"
+    ]
+  },
+  {
+    "id": 28,
+    "nombre": "Mini excavadora Hightop HT10 1 Tonelada con Cabina",
+    "precio": "Consultar precio",
+    "descripcion": "Nueva Cero Horas. Garantía 6 meses. Disponible con motor Briggs & Stratton a bencina. Incluye cabina cerrada panorámica, dedo pulgar (garra), radiador de aceite hidráulico y hoja dozer frontal.",
+    "fotos": [
+      "28_Mini_excavadora_Hightop_HT10_Cabina_foto1.jpg"
+    ]
+  },
+  {
+    "id": 29,
+    "nombre": "Mini excavadoras Rippa 1 Tonelada Nuevas (R319)",
+    "precio": "Consultar precio",
+    "descripcion": "Disponible Mini excavadoras nuevas marca Rippa 1 tonelada.\n• Motor 1 cilindro Bencina 13 HP americano y Koop 12 HP Diesel.\n• Radiador de aceite hidráulico (permite trabajo continuo).\n• Swing Boom (movimiento lateral del brazo en 180 grados).\n• Motores de traslación escondidos protegidos.\n• Orugas expandibles para mayor estabilidad.\n• Mandos Joystick tipo piloto.\n• Dedo pulgar hidráulico con tercera función.\n• Garantía 6 meses en motor y bomba.\n• Opciones con cabina cerrada y canopy.\n• Respaldo, repuestos e implementos disponibles. Entrega e inducción dentro de la región.",
+    "fotos": [
+      "29_Mini_excavadoras_Rippa_R319_foto1.jpg"
+    ]
+  },
+  {
+    "id": 30,
+    "nombre": "Excavadora Sany SY35U 3.5 Toneladas 2021 (Vendida)",
+    "precio": "27.900.000 CLP (Vendida)",
+    "descripcion": "Excavadora SANY SY35U de 3.5 toneladas año 2021. Cabina cerrada de alta visibilidad, garra hidráulica (pulgar), hoja dozer frontal y orugas de acero reforzadas. Unidad vendida.",
+    "fotos": [
+      "30_Excavadora_Sany_SY35U_Vendida_foto1.jpg"
+    ],
+    "vendida": true
+  },
+  {
+    "id": 31,
+    "nombre": "Mini excavadora Rippa R15 ECO 1.5 Toneladas 2026 (Nueva)",
+    "precio": "Consultar precio / Entrega Inmediata",
+    "descripcion": "Mini excavadora nueva disponible entrega inmediata en Llanquihue.\nMarca Rippa último modelo R15 ECO año 2026 de 1.5 toneladas, máxima configuración.\n• Cabina Certificada\n• Mandos Joystick\n• Tercera y Cuarta Función\n• Motor de traslación escondido\n• Radiador aceite hidráulico (permite trabajo continuo)\n• Orugas expandibles hidráulicas\n• Movimiento Lateral Brazo (swing boom)\n• Motor diesel 3 Cil. Kubota 15 HP\n• Garantía 6 meses motor y bomba\n• Regalo: Dedo pulgar, acople rápido hidráulico y balde 20 cm.\n• Entrega gratis en la región y envío a todo Chile.",
+    "fotos": [
+      "31_Mini_excavadora_Rippa_R15_ECO_2026_foto1.jpg",
+      "31_Mini_excavadora_Rippa_R15_ECO_2026_foto2.jpg"
+    ]
+  },
+  {
+    "id": 32,
+    "nombre": "Rippa R15 ECO Motor Kubota Full Configuración",
+    "precio": "Consultar precio",
+    "descripcion": "Mini excavadora Rippa R15 ECO 1.5 toneladas con motor Kubota japonés. Cabina cerrada certificada con focos de trabajo LED, mandos joystick, dedo pulgar hidráulico y acople rápido.",
+    "fotos": [
+      "32_Mini_excavadora_Rippa_R15_Full_foto1.jpg"
+    ]
+  }
+]

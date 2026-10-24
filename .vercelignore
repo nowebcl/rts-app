@@ -1,0 +1,26 @@
+# Exclude development dependencies and caches
+node_modules
+wa_browser_profile
+__pycache__
+*.py
+*.pyc
+*.bat
+
+# Exclude temporary root files only (leading slash binds to root)
+/*.png
+/*.jpg
+/*.jpeg
+/*.html
+!/index.html
+temp_catalog_page.html
+
+# Design and raw folders
+Dc
+test_processed
+catalogo_manual
+BANNER MOVIL
+BANNERS
+
+# Ensure all public assets are included
+!public/**
+!public/**/*

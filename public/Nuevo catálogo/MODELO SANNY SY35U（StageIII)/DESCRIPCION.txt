@@ -1,0 +1,10 @@
+Peso operativo: 3.680–3.855 kg, según versión.
+Motor: diésel Yanmar 3TNV88F, 3 cilindros.
+Potencia: hasta 18,2 kW (24,4 HP), según versión.
+Profundidad máxima de excavación: 3.105 mm.
+Capacidad del balde: 0,12 m³.
+Fuerza de excavación del balde: 30,4 kN.
+Ancho de transporte: 1.720 mm.
+Altura máxima de descarga: 3.460 mm.
+Sistema hidráulico: bomba de pistones axiales de caudal variable.
+Diseño: giro de cola cero (Zero Tail Swing).

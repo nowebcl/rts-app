@@ -1,0 +1,6 @@
+* Motor: Diésel Kubota D722 (3 cilindros, 13.7 HP / Euro V).
+* Peso operativo: 1,500 kg.
+* Excavación: Profundidad máxima de 1.8 metros / Cucharón de 0.02 m³.
+* Chasis extensible: Ancho ajustable hidráulicamente de 890 mm a 1,200 mm.
+* Sistema hidráulico: Triple bomba en serie (21.6 L/min) con joysticks de control piloto laterales.
+* Funciones clave: Giro de pluma (Boom Swing), doble velocidad de marcha y diseño de giro de cola mínimo.
