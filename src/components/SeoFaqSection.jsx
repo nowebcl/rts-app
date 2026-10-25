@@ -5,10 +5,10 @@ import {
   MapPin, 
   ShieldCheck, 
   Truck, 
-  Wrench, 
   CheckCircle2, 
   HelpCircle,
-  ArrowRight
+  ArrowRight,
+  Compass
 } from 'lucide-react';
 import { companyData } from '../data/excavators';
 
@@ -17,47 +17,59 @@ export default function SeoFaqSection() {
 
   const pillars = [
     {
+      title: "Mini excavadoras en Región de Los Lagos",
+      badge: "Cobertura Regional",
+      icon: Compass,
+      desc: "Atención comercial prioritaria en Puerto Montt, Llanquihue, Puerto Varas, Osorno, Frutillar y Chiloé con pruebas en terreno y entrega directa en parcela."
+    },
+    {
       title: "Mini excavadoras en Chile",
-      badge: "Cobertura Nacional",
+      badge: "Todo Chile",
       icon: Truck,
-      desc: "Despachamos mini excavadoras compactas de 0.8 a 7.5 toneladas a todo Chile: Santiago, Concepción, Temuco, Puerto Montt, Chiloé y de Arica a Punta Arenas, con inducción técnica y entrega garantizada."
+      desc: "Despachamos mini excavadoras compactas de 0.8 a 7.5 toneladas con camión rampa asegurado a Santiago, Concepción, Temuco y de Arica a Punta Arenas."
     },
     {
-      title: "Mini excavadoras SANNY",
-      badge: "Línea de Alta Gama",
-      icon: ShieldCheck,
-      desc: "Disponemos de modelos oficiales de mini excavadoras SANNY como la SANY SY35U, SY60C y SY75C, equipadas con motores diésel de alta eficiencia, cabina ergonómica y sistemas hidráulicos de precisión."
-    },
-    {
-      title: "Dónde comprar mini excavadoras",
-      badge: "Compra Segura y Confiable",
-      icon: CheckCircle2,
-      desc: "En RST Importaciones compras directo con stock físico real, factura y documentación lista para faena, garantía oficial de 1 año o 1.000 hrs y respaldo técnico postventa permanente."
+      title: "Mini excavadoras en Llanquihue",
+      badge: "Bodega y Exhibición",
+      icon: MapPin,
+      desc: "Patio de maquinaria y bodega física en Parcela 11, Ruta V-500 en Llanquihue, facilitando revisión de equipos y entrega inmediata."
     },
     {
       title: "Mini excavadoras en Puerto Montt",
-      badge: "Base Región de Los Lagos",
+      badge: "Base Zona Sur",
       icon: MapPin,
-      desc: "Nuestra base operativa central está en Llanquihue y Puerto Montt (Ruta V-500), brindando atención personalizada, pruebas de equipos en terreno y asistencia técnica inmediata en la zona sur."
+      desc: "Servicio técnico express, venta y suministro de repuestos e implementos para faenas agrícolas, forestales y de construcción en Puerto Montt y alrededores."
+    },
+    {
+      title: "Mini excavadoras SANNY",
+      badge: "Alta Gama",
+      icon: ShieldCheck,
+      desc: "Modelos oficiales de mini excavadoras SANNY: SANY SY35U (3.86 Ton), SY60C (6 Ton) y SY75C (7.28 Ton) con motores diésel de alta eficiencia y cabina full."
+    },
+    {
+      title: "Dónde comprar mini excavadoras",
+      badge: "Compra Segura",
+      icon: CheckCircle2,
+      desc: "En RST Importaciones compras directo con stock físico real, factura inmediata, inducción de manejo en terreno y garantía de 1 año o 1.000 horas."
     }
   ];
 
   const faqs = [
     {
-      q: "¿Dónde comprar mini excavadoras en Chile con garantía y entrega inmediata?",
-      a: "Puedes comprar mini excavadoras nuevas y semi nuevas en RST Importaciones. Contamos con stock disponible para entrega inmediata, despacho seguro en camión rampa a cualquier punto de Chile, inducción de manejo en la entrega y garantía de 1 año o 1.000 horas de operación."
+      q: "¿Dónde comprar mini excavadoras en Región de Los Lagos y todo Chile?",
+      a: "Puedes comprar mini excavadoras nuevas y semi nuevas en RST Importaciones. Contamos con base física en Llanquihue y Puerto Montt para la Región de Los Lagos, además de despacho asegurado en camión rampa con inducción en terreno a cualquier comuna de Chile."
     },
     {
-      q: "¿Qué modelos de mini excavadoras SANNY están disponibles?",
-      a: "Ofrecemos la línea de mini excavadoras SANNY que incluye la SANY SY35U (3.86 Ton, giro de cola cero y motor Yanmar), SANY SY60C (6 Ton con cabina climatizada) y SANY SY75C (7.28 Ton para alta exigencia), ideales para construcción, parcelaciones, zanjeo y faenas agrícolas."
+      q: "¿Tienen venta y entrega de mini excavadoras en Llanquihue y Puerto Montt?",
+      a: "Sí, nuestra bodega y patio de pruebas se ubica en Parcela 11, Ruta V-500 en Llanquihue. Puedes agendar una visita técnica para probar los equipos en vivo o solicitar despacho directo a tu parcela u obra en Llanquihue, Puerto Montt, Puerto Varas, Osorno o Chiloé."
     },
     {
-      q: "¿Cómo comprar mini excavadoras en Puerto Montt y la Región de Los Lagos?",
-      a: "RST Importaciones cuenta con exhibición y bodega física en Llanquihue y Puerto Montt (Parcela 11, Ruta V-500). Puedes agendar una visita técnica para ver y probar los equipos en vivo, o solicitar entrega a domicilio en toda la Región de Los Lagos, Osorno, Valdivia y Chiloé."
+      q: "¿Qué modelos de mini excavadoras SANNY tienen disponibles?",
+      a: "Disponemos de la línea de mini excavadoras SANNY que incluye la SANY SY35U (3.86 Ton, giro de cola cero y motor Yanmar), SANY SY60C (6 Ton con cabina climatizada) y SANY SY75C (7.28 Ton para alta exigencia), ideales para zanjeo, parcelaciones y construcción pesada."
     },
     {
-      q: "¿Con qué motores vienen equipadas las mini excavadoras?",
-      a: "Trabajamos con motores diésel originales de renombre mundial como Kubota (Z482, D722, D902, V1505, V2607), Yanmar (3TNV70, 3TNV88) e Isuzu (4JG1), asegurando mínimo consumo de combustible, repuestos estándar universales y alta durabilidad en faenas exigentes."
+      q: "¿Qué garantía y servicio postventa ofrecen en Región de Los Lagos y Chile?",
+      a: "Todos nuestros equipos nuevos cuentan con garantía de 1 año o 1.000 horas de operación, con stock permanente de repuestos originales, filtros y servicio técnico directo en terreno."
     }
   ];
 
@@ -65,7 +77,7 @@ export default function SeoFaqSection() {
     <section className="py-20 bg-slate-50 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Encabezado Principal */}
+        {/* Encabezado Principal con Región de Los Lagos y Todo Chile */}
         <div className="text-left space-y-3 mb-12">
           <div className="antek-dashes">
             <span></span>
@@ -74,18 +86,18 @@ export default function SeoFaqSection() {
           </div>
           <div className="text-xs font-heading font-extrabold uppercase text-[#FE8003] tracking-widest flex items-center gap-2">
             <HelpCircle className="w-4 h-4" />
-            <span>Guía de Compra · Posicionamiento y Respaldo Oficial</span>
+            <span>Guía de Compra · Región de Los Lagos y Todo Chile</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-heading font-black uppercase text-[#222222] tracking-wide leading-tight">
-            ¿Dónde Comprar Mini Excavadoras en Chile y Puerto Montt?
+            Mini Excavadoras en Región de Los Lagos y Todo Chile
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 max-w-3xl leading-relaxed">
-            RST Importaciones es tu aliado estratégico en maquinaria compacta: venta de <strong>mini excavadoras en Chile</strong>, modelos <strong>SANNY</strong> y <strong>RIPPA</strong>, servicio técnico certificado y entrega directa en <strong>Puerto Montt</strong> y todo el territorio nacional.
+            RST Importaciones: venta de <strong>mini excavadoras en Región de Los Lagos</strong> (Llanquihue, Puerto Montt, Osorno, Chiloé) y despacho a <strong>todo Chile</strong>. Modelos oficiales <strong>SANNY</strong> y <strong>RIPPA</strong> con entrega inmediata y garantía.
           </p>
         </div>
 
-        {/* Grid de 4 Pilares SEO */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {/* Grid de Pilares SEO */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
           {pillars.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
@@ -110,7 +122,7 @@ export default function SeoFaqSection() {
                   </p>
                 </div>
                 <div className="pt-4 mt-4 border-t border-slate-100 flex items-center text-[11px] font-heading font-bold text-[#FE8003] uppercase">
-                  <span>Ver disponibilidad</span>
+                  <span>Consultar disponibilidad</span>
                   <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
                 </div>
               </div>
@@ -125,7 +137,7 @@ export default function SeoFaqSection() {
               Preguntas Frecuentes sobre Venta de Mini Excavadoras
             </h3>
             <p className="text-xs sm:text-sm text-slate-500 mt-1">
-              Respuestas claras para tomar la mejor decisión de inversión en maquinaria pesada y compacta.
+              Atención directa en Llanquihue, Puerto Montt, Región de Los Lagos y despacho a todo Chile.
             </p>
           </div>
 
@@ -160,22 +172,22 @@ export default function SeoFaqSection() {
             })}
           </div>
 
-          {/* CTA Footer dentro del FAQ */}
+          {/* CTA Footer */}
           <div className="mt-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <div className="text-xs text-slate-600">
-              ¿Tienes una consulta específica sobre modelos SANNY, RIPPA o implementos?
+              ¿Quieres visitar nuestra bodega en Llanquihue o coordinar entrega en tu región?
             </div>
             <div className="flex gap-3">
               <Link to="/catalogo" className="btn-antek btn-antek-dark text-xs py-2 px-4">
                 <span>Explorar Catálogo</span>
               </Link>
               <a 
-                href={`https://wa.me/${companyData.whatsappNumber}?text=Hola%20RST,%20quiero%20cotizar%20una%20mini%20excavadora%20en%20Chile.`}
+                href={`https://wa.me/${companyData.whatsappNumber}?text=Hola%20RST,%20quiero%20cotizar%20una%20mini%20excavadora%20en%20Región%20de%20Los%20Lagos.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-antek btn-antek-primary text-xs py-2 px-4"
               >
-                <span>Cotizar Inmediato</span>
+                <span>Cotizar por WhatsApp</span>
               </a>
             </div>
           </div>
