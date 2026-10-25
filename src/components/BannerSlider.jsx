@@ -7,7 +7,7 @@ export default function BannerSlider() {
       id: 1,
       desktopSrc: '/images/banners/banner-1.png',
       mobileSrc: '/images/banners/mobile/banner-1-mobile.png',
-      alt: 'RST Importación & Servicios - Mini Excavadoras y Maquinaria en Faena'
+      alt: 'RST Importación & Servicios - Venta de Maquinaria Nueva y Semi Nueva en Faena'
     },
     {
       id: 2,

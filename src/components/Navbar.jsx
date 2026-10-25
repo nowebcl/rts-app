@@ -109,11 +109,9 @@ export default function Navbar() {
             </div>
           </form>
 
-          {/* Center Mobile: SIN AUDÍFONOS (espacio limpio solicitado) */}
-
           {/* Right: Menú Hamburguesa + Botón Catálogo Naranja */}
           <div className="h-full flex items-center shrink-0">
-            {/* BOTÓN MENÚ HAMBURGUESA (Fondo blanco, borde izquierdo y 3 líneas) */}
+            {/* BOTÓN MENÚ HAMBURGUESA */}
             <button
               onClick={() => setDrawerOpen(true)}
               className="h-full px-4 sm:px-5 flex items-center justify-center border-l border-[#e5e5e5] hover:bg-slate-50 text-[#222222] transition-colors cursor-pointer"
@@ -128,7 +126,7 @@ export default function Navbar() {
               to="/catalogo"
               className="h-full px-5 sm:px-6 bg-[#FE8003] hover:bg-[#e57302] text-white flex items-center justify-center relative cursor-pointer transition-colors shadow-xs group"
               aria-label="Ir al Catálogo de Equipos"
-              title="Ver Catálogo de Equipos y Maquinarias"
+              title="Ver Catálogo de Venta de Maquinaria Nueva y Semi Nueva"
             >
               <div className="relative flex items-center justify-center">
                 <LayoutGrid className="w-6 h-6 text-white stroke-[2.2] transition-transform duration-200 group-hover:scale-110" />
@@ -138,7 +136,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* 3. SLIDE-OVER DRAWER MENU: Minimalista, limpio, tipografía fina, fondo color del logo (#FE8003) */}
+      {/* 3. SLIDE-OVER DRAWER MENU */}
       {drawerOpen && (
         <div className="fixed inset-0 z-50 overflow-hidden animate-in fade-in duration-200">
           {/* Backdrop */}
@@ -150,7 +148,7 @@ export default function Navbar() {
 
           <div className="fixed inset-y-0 right-0 max-w-full flex pl-6 sm:pl-10">
             <div className="w-[calc(100vw-1.5rem)] sm:w-96 max-w-sm bg-[#FE8003] text-white shadow-2xl flex flex-col justify-between h-full">
-              {/* Drawer Header - Minimalista y limpio */}
+              {/* Drawer Header */}
               <div className="px-6 py-5 border-b border-white/15 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="bg-white p-1 rounded-[4px] shadow-xs flex items-center justify-center shrink-0">
@@ -175,7 +173,7 @@ export default function Navbar() {
                 </button>
               </div>
 
-              {/* Drawer Links - Tipografía fina, espaciado elegante, sin elementos pesados */}
+              {/* Drawer Links */}
               <div className="px-6 py-8 flex-1 overflow-y-auto space-y-6">
                 <div className="text-[11px] font-light tracking-[0.25em] uppercase text-white/75 px-3">
                   Navegación
@@ -185,8 +183,9 @@ export default function Navbar() {
                   {[
                     { name: 'Inicio', path: '/' },
                     { name: 'Quiénes Somos', path: '/nosotros' },
-                    { name: 'Catálogo de Equipos', path: '/catalogo' },
-                    { name: 'Despachos Exitosos', path: '/entregas-exitosas' },
+                    { name: 'Catálogo de Maquinaria Nueva y Semi Nueva', path: '/catalogo' },
+                    { name: 'Implementos', path: '/implementos' },
+                    { name: 'Entrega a Nuestros Clientes', path: '/entregas-exitosas' },
                     { name: 'Contacto & Casa Matriz', path: '/#contacto' }
                   ].map((item) => (
                     <NavLink
@@ -217,7 +216,7 @@ export default function Navbar() {
                 </nav>
               </div>
 
-              {/* Drawer Footer - Minimalista, limpio con contacto directo */}
+              {/* Drawer Footer */}
               <div className="p-6 border-t border-white/15 bg-black/5 space-y-4">
                 <a
                   href={`https://wa.me/${companyData.whatsappNumber}?text=Hola%20RST,%20quiero%20cotizar%20una%20mini%20excavadora.`}

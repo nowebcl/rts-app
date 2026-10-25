@@ -92,7 +92,7 @@ export default function QuoteModal({ isOpen, onClose, defaultModelId = null }) {
               <img 
                 src={selectedMachine?.image} 
                 alt={selectedMachine?.name} 
-                className="w-14 h-14 object-cover rounded-[2px] shrink-0" 
+                className="w-14 h-14 object-contain object-center bg-white rounded-[2px] shrink-0 p-1 border border-slate-200" 
               />
               <div>
                 <span className="text-[10px] font-heading font-bold text-[#FE8003] uppercase">Equipo a Cotizar</span>

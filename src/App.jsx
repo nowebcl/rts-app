@@ -11,7 +11,7 @@ import HomePage from './pages/HomePage';
 import CatalogPage from './pages/CatalogPage';
 import DeliveriesPage from './pages/DeliveriesPage';
 import ProductDetailPage from './pages/ProductDetailPage';
-import AttachmentsPage from './pages/AttachmentsPage';
+import ImplementosPage from './pages/ImplementosPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import AdminLoginPage from './pages/AdminLoginPage';
@@ -56,7 +56,9 @@ function AppLayout() {
           <Route path="/portafolio" element={<DeliveriesPage />} />
           <Route path="/producto/:id" element={<ProductDetailPage />} />
           <Route path="/ficha/:id" element={<ProductDetailPage />} />
-          <Route path="/aditamentos" element={<AttachmentsPage />} />
+          <Route path="/implementos" element={<ImplementosPage />} />
+          <Route path="/aditamentos" element={<ImplementosPage />} />
+          <Route path="/accesorios" element={<ImplementosPage />} />
           <Route path="/nosotros" element={<AboutPage />} />
           <Route path="/contacto" element={<ContactPage />} />
           {/* Rutas de Administración */}

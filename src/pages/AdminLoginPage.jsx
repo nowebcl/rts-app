@@ -43,7 +43,7 @@ export default function AdminLoginPage() {
               Panel de Administración
             </h1>
             <p className="text-xs text-slate-400 mt-0.5">
-              Gestión de Catálogo y Maquinarias RST
+              Gestión de Catálogo · Venta de Maquinaria Nueva y Semi Nueva RST
             </p>
           </div>
         </div>

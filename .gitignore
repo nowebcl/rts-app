@@ -42,3 +42,8 @@ __pycache__/
 # Raw design working folders
 Dc/
 test_processed/
+
+# Backups
+.backup*/
+*.backup
+*.bak

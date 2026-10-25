@@ -12,7 +12,9 @@ import {
   MessageCircle,
   ArrowRight,
   Headphones,
-  Check
+  Check,
+  Target,
+  Eye
 } from 'lucide-react';
 import { InstagramIcon, FacebookIcon } from '../components/SocialIcons';
 import { companyData } from '../data/excavators';
@@ -60,81 +62,163 @@ export default function AboutPage() {
               Líderes en Maquinaria Compacta en Chile
             </span>
             <h2 className="text-3xl sm:text-4xl font-heading font-black uppercase text-[#222222] leading-tight">
-              Especialistas en Mini Excavadoras Nuevas con Entrega Inmediata
+              Especialistas en Venta de Maquinaria Nueva y Semi Nueva con Entrega Inmediata
             </h2>
             <p className="text-sm text-[#555555] leading-relaxed">
-              En <strong>RST Chile</strong> somos la empresa referente en la importación directa, comercialización y servicio postventa de <strong>mini excavadoras compactas RIPPA</strong> y maquinaria de 0.8 a 3.5 toneladas en nuestro país.
+              En <strong>RST Chile</strong> contamos con <strong>9 años de experiencia trabajando en servicios</strong> y <strong>6 años especializados en importaciones</strong> directas de maquinaria, consolidándonos como referentes en soporte técnico, venta de maquinaria nueva y semi nueva, comercialización y postventa de <strong>mini excavadoras compactas RIPPA</strong> y equipos de 0.8 a 7.5 toneladas en nuestro país.
             </p>
             <p className="text-sm text-[#555555] leading-relaxed">
-              Nacimos con el objetivo de brindar a contratistas, agricultores, parceleros y empresas constructoras herramientas de máxima confiabilidad y rendimiento, eliminando intermediarios y entregando respaldo directo de fábrica con repuestos originales y soporte técnico garantizado.
+              Tenemos una <strong>alianza directa con fábrica RIPPA</strong>, lo que nos permite eliminar intermediarios y garantizar a contratistas, agricultores, parceleros y empresas constructoras herramientas de máxima confiabilidad y rendimiento, con repuestos originales de fábrica y respaldo técnico garantizado.
             </p>
 
-            <div className="grid grid-cols-2 gap-4 pt-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
               <div className="bg-white p-4 border border-[#e5e5e5] rounded-[2px] shadow-2xs">
-                <span className="text-3xl font-heading font-black text-[#FE8003]">100%</span>
-                <span className="text-xs font-heading font-bold uppercase text-[#222222] block mt-1">Especialización</span>
-                <span className="text-[11px] text-[#777777]">Expertos en maquinaria compacta</span>
+                <span className="text-3xl font-heading font-black text-[#FE8003]">9 Años</span>
+                <span className="text-xs font-heading font-bold uppercase text-[#222222] block mt-1">En Servicios</span>
+                <span className="text-[11px] text-[#777777] block">Soporte técnico y postventa</span>
               </div>
               <div className="bg-white p-4 border border-[#e5e5e5] rounded-[2px] shadow-2xs">
-                <span className="text-3xl font-heading font-black text-[#FE8003]">1.000 hrs</span>
-                <span className="text-xs font-heading font-bold uppercase text-[#222222] block mt-1">Garantía Escrita</span>
-                <span className="text-[11px] text-[#777777]">12 meses de cobertura oficial</span>
+                <span className="text-3xl font-heading font-black text-[#FE8003]">6 Años</span>
+                <span className="text-xs font-heading font-bold uppercase text-[#222222] block mt-1">En Importaciones</span>
+                <span className="text-[11px] text-[#777777] block">Importación directa de maquinaria</span>
+              </div>
+              <div className="bg-white p-4 border border-[#e5e5e5] rounded-[2px] shadow-2xs col-span-2 sm:col-span-1">
+                <span className="text-2xl sm:text-3xl font-heading font-black text-[#FE8003]">Alianza</span>
+                <span className="text-xs font-heading font-bold uppercase text-[#222222] block mt-1">Fábrica RIPPA</span>
+                <span className="text-[11px] text-[#777777] block">Respaldo directo de origen</span>
               </div>
             </div>
           </div>
 
           <div className="lg:col-span-6">
-            <div className="border-4 border-[#1f1f1f] shadow-2xl relative overflow-hidden">
+            <div className="border-4 border-[#1f1f1f] shadow-2xl relative overflow-hidden group">
               <img
-                src="/images/excavators/workshop.jpg"
-                alt="Taller Central y Bodega RST Chile"
-                className="w-full h-[450px] object-cover"
+                src="/FOTOS EN FABRICA/WhatsApp Image 2026-10-24 at 12.07.39.webp"
+                alt="Alianza Directa de Fábrica RIPPA con RST Chile"
+                className="w-full h-[450px] object-cover object-center"
               />
-              <div className="absolute bottom-4 left-4 right-4 bg-[#111111]/90 text-white p-4 text-xs backdrop-blur-xs">
-                <span className="font-heading font-bold uppercase block text-[#FE8003]">Casa Matriz & Taller de Servicio</span>
-                <span className="text-[#cccccc]">{companyData.address}</span>
+              <div className="absolute bottom-4 left-4 right-4 bg-[#111111]/90 text-white p-4 text-xs backdrop-blur-xs border-l-4 border-[#FE8003]">
+                <span className="font-heading font-bold uppercase block text-[#FE8003] text-sm">Alianza Directa con Fábrica RIPPA</span>
+                <span className="text-[#cccccc]">Importación directa sin intermediarios · 6 años importando · 9 años en servicios</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* 2. Sección Alianza Oficial RIPPA */}
-        <div className="bg-white border border-[#e5e5e5] p-8 sm:p-12 shadow-sm rounded-[2px]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center text-left">
-            <div className="lg:col-span-6 relative">
-              <div className="border-4 border-[#1f1f1f] shadow-xl overflow-hidden relative">
+        {/* 2. Sección Quiénes Somos: Misión y Visión Extendida */}
+        <div className="bg-white border border-[#e5e5e5] p-6 sm:p-10 lg:p-12 shadow-sm rounded-[2px]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch text-left">
+            {/* Columna Izquierda: Imagen Alianza Directa RIPPA */}
+            <div className="lg:col-span-5 relative flex flex-col">
+              <div className="border-4 border-[#1f1f1f] shadow-xl overflow-hidden relative h-full min-h-[380px] sm:min-h-[460px] lg:min-h-full">
                 <img
                   src="/images/rippa-alianza.jpg"
-                  alt="Alianza Oficial RST y RIPPA"
-                  className="w-full h-[380px] sm:h-[420px] object-cover object-top"
+                  alt="Alianza Oficial RST y RIPPA en Chile"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-[#FE8003] text-white py-3 px-5 shadow-lg hidden sm:block text-left">
+              <div className="absolute -bottom-4 -right-4 bg-[#FE8003] text-white py-3 px-5 shadow-lg hidden sm:block text-left z-10">
                 <div className="font-heading font-black text-sm uppercase">DISTRIBUIDOR PRINCIPAL</div>
                 <div className="text-[11px] text-white/90">Oficial RIPPA en Chile</div>
               </div>
             </div>
 
-            <div className="lg:col-span-6 space-y-4">
-              <div className="antek-dashes">
-                <span></span>
-                <span></span>
-                <span></span>
+            {/* Columna Derecha: Misión y Visión Extendidas */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="space-y-2">
+                <div className="antek-dashes">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <span className="text-xs font-heading font-extrabold uppercase text-[#FE8003] tracking-widest">
+                  Propósito Corporativo & Dirección Estratégica
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black uppercase text-[#222222] leading-tight">
+                  Nuestra Misión y Visión
+                  <span className="block text-xl sm:text-2xl text-[#FE8003] mt-1 font-extrabold">
+                    Líderes y Pioneros en Maquinaria Compacta en Chile
+                  </span>
+                </h2>
+                <p className="text-sm text-[#555555] leading-relaxed pt-1">
+                  En <strong>RST Chile</strong> entendemos las exigencias reales del trabajo en faena, campo y construcción. Respaldados por nuestra alianza directa con fábrica RIPPA, guiamos nuestro crecimiento bajo un compromiso inquebrantable con la productividad, el respaldo técnico y la cercanía con cada cliente.
+                </p>
               </div>
-              <span className="text-xs font-heading font-extrabold uppercase text-[#FE8003] tracking-widest">
-                Respaldo Internacional
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-heading font-black uppercase text-[#222222] leading-tight">
-                Alianza Estratégica Directa de Fábrica con RIPPA
-              </h3>
-              <p className="text-sm text-[#555555] leading-relaxed">
-                Nuestra representación oficial con <strong>RIPPA</strong> nos permite acceder directamente a las últimas líneas de producción, estándares de control de calidad bajo normas ISO y repuestos genuinos de fábrica sin sobrecostos de terceros.
-              </p>
-              <p className="text-sm text-[#555555] leading-relaxed">
-                Cada equipo que ingresa a nuestro país pasa por una exhaustiva revisión mecánica y prueba de presión hidráulica en nuestro taller antes de ser despachado a faena, garantizando una máquina 100% operativa y lista para producir.
-              </p>
 
-              <div className="pt-2">
+              {/* Misión Extendida */}
+              <div className="bg-[#f8f9fa] border-l-4 border-[#FE8003] p-5 sm:p-6 rounded-[2px] shadow-2xs space-y-3 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-[2px] bg-[#FE8003] text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <Target className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-black text-base uppercase text-[#222222] tracking-wide">
+                      Misión RST Chile
+                    </h3>
+                    <span className="text-[11px] font-heading font-bold uppercase text-[#FE8003] tracking-wider block">
+                      Propósito Operativo y Rendimiento en Terreno
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-sm text-[#444444] leading-relaxed">
+                  Importamos y comercializamos maquinaria nueva y semi nueva compacta, confiable, eficiente y con tecnología de vanguardia a precios altamente competitivos, eliminando intermediarios para reducir el esfuerzo físico y elevar al máximo la productividad en los sectores agrícola, forestal, de la construcción e industrial.
+                </p>
+
+                <div className="pt-2 border-t border-[#e5e5e5] space-y-2.5">
+                  <div className="flex items-start gap-2.5 text-xs text-[#555555] leading-relaxed">
+                    <CheckCircle2 className="w-4 h-4 text-[#FE8003] shrink-0 mt-0.5" />
+                    <span><strong>Acceso Directo y Sin Intermediarios:</strong> Alianza estratégica de fábrica con RIPPA que asegura equipos con control de calidad bajo normas ISO y repuestos genuinos sin sobrecostos.</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 text-xs text-[#555555] leading-relaxed">
+                    <CheckCircle2 className="w-4 h-4 text-[#FE8003] shrink-0 mt-0.5" />
+                    <span><strong>Continuidad Operacional Garantizada:</strong> Servicio técnico especializado, rigurosas pruebas de presión hidráulica en taller antes del despacho y stock permanente de repuestos e insumos.</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 text-xs text-[#555555] leading-relaxed">
+                    <CheckCircle2 className="w-4 h-4 text-[#FE8003] shrink-0 mt-0.5" />
+                    <span><strong>Humanización del Trabajo Pesado:</strong> Mecanización inteligente que transforma labores manuales extenuantes en faenas rápidas, seguras y altamente rentables para operarios y familias.</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Visión Extendida */}
+              <div className="bg-[#f8f9fa] border-l-4 border-[#222222] p-5 sm:p-6 rounded-[2px] shadow-2xs space-y-3 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-[2px] bg-[#222222] text-[#FE8003] flex items-center justify-center shrink-0 shadow-xs">
+                    <Eye className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-black text-base uppercase text-[#222222] tracking-wide">
+                      Nuestra Visión de Futuro
+                    </h3>
+                    <span className="text-[11px] font-heading font-bold uppercase text-[#777777] tracking-wider block">
+                      Liderazgo, Innovación y Proyección Global
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-sm text-[#444444] leading-relaxed">
+                  Buscar, importar y acercar tecnología e innovación de calidad mundial, para resolver necesidades reales y mejorar sostenidamente la eficiencia en los distintos sectores productivos de la región, nuestro país y el mundo.
+                </p>
+
+                <div className="pt-2 border-t border-[#e5e5e5] space-y-2.5">
+                  <div className="flex items-start gap-2.5 text-xs text-[#555555] leading-relaxed">
+                    <CheckCircle2 className="w-4 h-4 text-[#222222] shrink-0 mt-0.5" />
+                    <span><strong>Referente y Líder Nacional:</strong> Ser la empresa más confiable y elegida en Chile en el segmento de mini excavadoras y maquinaria compacta, con cobertura técnica de norte a sur.</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 text-xs text-[#555555] leading-relaxed">
+                    <CheckCircle2 className="w-4 h-4 text-[#222222] shrink-0 mt-0.5" />
+                    <span><strong>Innovación Constante en Terreno:</strong> Rastrear permanentemente los avances de la ingeniería internacional para traer a Chile implementos y configuraciones de vanguardia.</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 text-xs text-[#555555] leading-relaxed">
+                    <CheckCircle2 className="w-4 h-4 text-[#222222] shrink-0 mt-0.5" />
+                    <span><strong>Socio Estratégico para el Desarrollo:</strong> Acompañar a contratistas, parceleros y productores como un aliado indispensable para el crecimiento rentable de sus proyectos.</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Botones de acción */}
+              <div className="pt-2 flex flex-wrap items-center gap-4">
                 <Link
                   to="/catalogo"
                   className="btn-antek btn-antek-dark inline-flex items-center gap-3 text-xs"
@@ -142,6 +226,15 @@ export default function AboutPage() {
                   <span>Explorar Modelos RIPPA</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
+                <a
+                  href={`https://wa.me/${companyData.whatsappNumber}?text=Hola%20RST,%20solicito%20asesoría%20sobre%20mini%20excavadoras%20y%20respaldo%20técnico.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-antek btn-antek-primary inline-flex items-center gap-3 text-xs"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>Cotizar por WhatsApp</span>
+                </a>
               </div>
             </div>
           </div>

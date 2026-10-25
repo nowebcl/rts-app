@@ -17,7 +17,7 @@ export default function HomeClientsSection() {
                 <span></span>
               </div>
               <div className="text-xs font-heading font-extrabold uppercase text-[#FE8003] tracking-widest">
-                Entregas en Terreno
+                Entrega a nuestros clientes
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-heading font-black uppercase text-[#222222] leading-[1.1] tracking-tight">
                 CLIENTES QUE CONFIARON EN NOSOTROS
@@ -25,8 +25,21 @@ export default function HomeClientsSection() {
             </div>
 
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              Cientos de clientes en todo Chile —desde agricultores y contratistas hasta familias que inician su proyecto de parcelación— han confiado en <strong>RST Maquinarias</strong>. Entregamos cada equipo directamente en la puerta de su predio en camión rampa, con prueba operativa en terreno, inducción técnica completa y garantía oficial.
+              Cientos de clientes en todo Chile —desde agricultores y contratistas hasta familias que inician su proyecto de parcelación— han confiado en <strong>RST Maquinarias</strong>. Entregamos cada equipo directamente en la puerta de su predio, con prueba operativa en terreno, inducción técnica completa y garantía oficial.
             </p>
+
+            {/* Bloque Imagen 2: Especialistas en Mini Excavadoras Nuevas con Entrega Inmediata */}
+            <div className="p-4 bg-slate-50 border-l-4 border-[#FE8003] rounded-[2px] space-y-2">
+              <h3 className="font-heading font-black text-sm uppercase text-[#222222] tracking-wide">
+                Especialistas en Venta de Maquinaria Nueva y Semi Nueva con Entrega Inmediata
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                En <strong>RST Chile</strong> somos la empresa referente en la importación directa, venta de maquinaria nueva y semi nueva, comercialización y servicio postventa de <strong>mini excavadoras compactas RIPPA</strong> y maquinaria de 0.8 a 7.5 toneladas en nuestro país.
+              </p>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Nacimos con el objetivo de brindar a contratistas, agricultores, parceleros y empresas constructoras herramientas de máxima confiabilidad y rendimiento, eliminando intermediarios y entregando respaldo directo de fábrica con repuestos originales y soporte técnico garantizado.
+              </p>
+            </div>
 
             {/* Puntos destacados limpios sin iconos artificiales */}
             <ul className="space-y-3 pt-1">
@@ -57,7 +70,7 @@ export default function HomeClientsSection() {
                 to="/entregas-exitosas"
                 className="btn-antek btn-antek-primary shadow-lg shadow-orange-500/20 group inline-flex items-center justify-center gap-3 text-xs sm:text-sm font-heading font-black uppercase tracking-wider"
               >
-                <span>VER ENTREGAS EXITOSAS</span>
+                <span>VER ENTREGAS A NUESTROS CLIENTES</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform stroke-[2.5]" />
               </Link>
             </div>

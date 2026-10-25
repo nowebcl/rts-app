@@ -106,10 +106,10 @@ export default function MinimalCatalogSection() {
         {/* 1. Encabezado Minimalista y Limpio */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <h2 className="text-3xl sm:text-4xl font-heading font-black uppercase text-slate-900 tracking-tight">
-            Nuestros Equipos y Maquinarias
+            Venta de Maquinaria Nueva y Semi Nueva
           </h2>
           <p className="text-sm sm:text-base text-slate-600">
-            Mini excavadoras, tractores agrícolas, camiones e implementos importados directamente desde Japón y fábricas oficiales. Despacho a todo Chile.
+            Venta de maquinaria nueva y semi nueva: mini excavadoras, tractores agrícolas, camiones e implementos importados directamente desde Japón y fábricas oficiales. Despacho a todo Chile.
           </p>
         </div>
 

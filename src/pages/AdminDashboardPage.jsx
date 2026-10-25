@@ -303,7 +303,7 @@ export default function AdminDashboardPage() {
             <div className="text-3xl font-heading font-black text-emerald-400 mt-2">
               {totalAvailable}
             </div>
-            <p className="text-[11px] text-slate-400 mt-1">Listas para venta y cotización</p>
+            <p className="text-[11px] text-slate-400 mt-1">Venta de maquinaria nueva y semi nueva</p>
           </div>
 
           <div className="bg-slate-800/80 border border-slate-700 rounded-xl p-5">
@@ -406,11 +406,11 @@ export default function AdminDashboardPage() {
                     {/* Foto y Nombre */}
                     <td className="py-3 px-4">
                       <div className="flex items-center gap-3">
-                        <div className="relative w-12 h-10 rounded overflow-hidden bg-slate-950 shrink-0 border border-slate-700">
+                        <div className="relative w-12 h-10 rounded overflow-hidden bg-white shrink-0 border border-slate-700 flex items-center justify-center p-0.5">
                           <img
                             src={p.image}
                             alt={p.name}
-                            className={`w-full h-full object-cover ${p.isSold ? 'grayscale' : ''}`}
+                            className={`w-full h-full object-contain object-center ${p.isSold ? 'grayscale' : ''}`}
                           />
                           {p.isSold && (
                             <span className="absolute inset-0 bg-red-600/80 text-[8px] font-black text-white flex items-center justify-center">
@@ -623,7 +623,7 @@ export default function AdminDashboardPage() {
                         <img
                           src={imagePreview || formData.image}
                           alt="Previsualización"
-                          className="w-16 h-16 object-cover rounded-lg border border-slate-700 shrink-0"
+                          className="w-16 h-16 object-contain object-center bg-white rounded-lg border border-slate-700 shrink-0 p-1"
                           onError={(e) => {
                             e.target.onerror = null;
                             e.target.src = '/brand/logo_main.png';

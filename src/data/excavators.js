@@ -12,10 +12,8 @@ export const excavators = [
     pricePromo: "Consultar valor",
     inStock: true,
     leadTime: "Entrega Inmediata",
-    image: "/catalogo/rippa-r06/foto-1.webp",
+    image: "/catalogo/rippa-r06/foto-3.webp",
     gallery: [
-      "/catalogo/rippa-r06/foto-1.webp",
-      "/catalogo/rippa-r06/foto-2.webp",
       "/catalogo/rippa-r06/foto-3.webp"
     ],
     pdfUrl: "/catalogo/rippa-r06/ficha-rippa-r06.pdf",
@@ -47,10 +45,7 @@ export const excavators = [
     leadTime: "Entrega Inmediata",
     image: "/catalogo/rippa-r10-eco/foto-1.webp",
     gallery: [
-      "/catalogo/rippa-r10-eco/foto-1.webp",
-      "/catalogo/rippa-r10-eco/foto-2.webp",
-      "/catalogo/rippa-r10-eco/foto-3.webp",
-      "/catalogo/rippa-r10-eco/foto-4.webp"
+      "/catalogo/rippa-r10-eco/foto-1.webp"
     ],
     pdfUrl: "/catalogo/rippa-r10-eco/ficha-rippa-r10-eco.pdf",
     cabinType: "Canopy Desmontable ROPS",
@@ -80,10 +75,7 @@ export const excavators = [
     leadTime: "Entrega Inmediata",
     image: "/catalogo/rippa-r15/foto-1.webp",
     gallery: [
-      "/catalogo/rippa-r15/foto-1.webp",
-      "/catalogo/rippa-r15/foto-2.webp",
-      "/catalogo/rippa-r15/foto-3.webp",
-      "/catalogo/rippa-r15/foto-4.webp"
+      "/catalogo/rippa-r15/foto-1.webp"
     ],
     pdfUrl: "/catalogo/rippa-r15/ficha-rippa-r15.pdf",
     cabinType: "Canopy Reforzado con Mandos Joystick",
@@ -96,6 +88,68 @@ export const excavators = [
     performance: {
       maxDiggingDepthMm: 1800,
       bucketCapacityM3: "0.02 m³"
+    }
+  },
+  {
+    id: "rippa-r18",
+    name: "MODELO Rippa R18",
+    slug: "rippa-r18",
+    tagline: "Kubota D902 3 cil. 16 HP, excavación 2.420 mm, chasis extensible 990-1.300 mm",
+    badge: "1.8 Ton · Kubota D902",
+    tonnageCategory: "compact",
+    weightKg: 1850,
+    weightTon: "1.8 Ton",
+    priceRef: "Consultar valor",
+    pricePromo: "Consultar valor",
+    inStock: true,
+    leadTime: "Entrega Inmediata",
+    image: "/catalogo/rippa-r18/foto-1.webp",
+    gallery: [
+      "/catalogo/rippa-r18/foto-1.webp"
+    ],
+    pdfUrl: "/catalogo/rippa-r18/ficha-rippa-r18.pdf",
+    cabinType: "Canopy / Estructura ROPS con Mandos Joystick",
+    engine: {
+      brand: "Kubota",
+      model: "D902 Diésel",
+      type: "3 cilindros refrigerado por agua",
+      powerHp: "16 HP (11.8 kW)"
+    },
+    performance: {
+      maxDiggingDepthMm: 2420,
+      bucketCapacityM3: "0.045 m³",
+      bucketForceKn: "12.8 kN"
+    }
+  },
+  {
+    id: "rippa-r22-pro",
+    name: "MODELO RIPPA R22 PRO",
+    slug: "rippa-r22-pro",
+    tagline: "Kubota D1105 3 cil. 22.9 HP, excavación 2.293 mm, orugas regulables 1.300-1.500 mm",
+    badge: "2.5 Ton · Kubota D1105",
+    tonnageCategory: "medium",
+    weightKg: 2539,
+    weightTon: "2.5 Ton",
+    priceRef: "Consultar valor",
+    pricePromo: "Consultar valor",
+    inStock: true,
+    leadTime: "Entrega Inmediata",
+    image: "/catalogo/rippa-r22-pro/foto-1.webp",
+    gallery: [
+      "/catalogo/rippa-r22-pro/foto-1.webp"
+    ],
+    pdfUrl: "/catalogo/rippa-r22-pro/ficha-rippa-r22-pro.pdf",
+    cabinType: "Canopy / Estructura ROPS con Mandos Joystick",
+    engine: {
+      brand: "Kubota",
+      model: "D1105 Diésel",
+      type: "3 cilindros refrigerado por agua",
+      powerHp: "22.9 HP (17.1 kW)"
+    },
+    performance: {
+      maxDiggingDepthMm: 2293,
+      bucketCapacityM3: "0.054 m³",
+      bucketForceKn: "18.4 kN"
     }
   },
   {
@@ -113,13 +167,7 @@ export const excavators = [
     leadTime: "Entrega Inmediata",
     image: "/catalogo/sanny-sy35u/foto-1.webp",
     gallery: [
-      "/catalogo/sanny-sy35u/foto-1.webp",
-      "/catalogo/sanny-sy35u/foto-2.webp",
-      "/catalogo/sanny-sy35u/foto-3.webp",
-      "/catalogo/sanny-sy35u/foto-4.webp",
-      "/catalogo/sanny-sy35u/foto-5.webp",
-      "/catalogo/sanny-sy35u/foto-6.webp",
-      "/catalogo/sanny-sy35u/foto-7.webp"
+      "/catalogo/sanny-sy35u/foto-1.webp"
     ],
     pdfUrl: "/catalogo/sanny-sy35u/ficha-sanny-sy35u.pdf",
     cabinType: "Cabina Cerrada Climatizada / Canopy",
@@ -150,8 +198,7 @@ export const excavators = [
     leadTime: "Entrega Inmediata",
     image: "/catalogo/sanny-sy60c/foto-1.webp",
     gallery: [
-      "/catalogo/sanny-sy60c/foto-1.webp",
-      "/catalogo/sanny-sy60c/foto-2.webp"
+      "/catalogo/sanny-sy60c/foto-1.webp"
     ],
     pdfUrl: "/catalogo/sanny-sy60c/ficha-sanny-sy60c.pdf",
     cabinType: "Cabina Cerrada con Aire Acondicionado y Calefacción",
@@ -182,11 +229,7 @@ export const excavators = [
     leadTime: "Entrega Inmediata",
     image: "/catalogo/sanny-sy75c/foto-1.webp",
     gallery: [
-      "/catalogo/sanny-sy75c/foto-1.webp",
-      "/catalogo/sanny-sy75c/foto-2.webp",
-      "/catalogo/sanny-sy75c/foto-3.webp",
-      "/catalogo/sanny-sy75c/foto-4.webp",
-      "/catalogo/sanny-sy75c/foto-5.webp"
+      "/catalogo/sanny-sy75c/foto-1.webp"
     ],
     pdfUrl: "/catalogo/sanny-sy75c/ficha-sanny-sy75c.pdf",
     cabinType: "Cabina Presurizada Climatizada de Alta Visibilidad",
@@ -281,7 +324,7 @@ export const attachmentList = [
 export const companyData = {
   brandName: "RST Mini Excavadoras",
   legalName: "RST Maquinaria SpA",
-  tagline: "Especialistas en Mini Excavadoras Compactas de Alto Rendimiento",
+  tagline: "Venta de Maquinaria Nueva y Semi Nueva · Mini Excavadoras de Alto Rendimiento",
   location: "Llanquihue, Región de Los Lagos, Chile",
   address: "Parcela 11, Ruta V-500, Llanquihue, Región de Los Lagos",
   phoneDisplay: "+56 9 8516 8608",

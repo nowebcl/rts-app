@@ -1,0 +1,18 @@
+RIPPA R18 – Especificaciones técnicas
+
+Peso operativo: 1.818–1.933 kg
+
+Motor: Kubota D902, diésel, 3 cilindros, refrigerado por agua
+Potencia máxima: 11,8 kW / 16 HP
+
+Profundidad máxima de excavación: 2.420 mm
+
+Altura máxima de excavación: 3.396 mm
+Altura máxima de descarga: 2.182 mm
+Fuerza máxima de excavación: 12,8 kN
+Capacidad del balde: 0,045 m³
+Ancho de transporte: 989 mm
+Ancho de orugas regulable: aprox. 990–1.300 mm
+Velocidad de traslación: 1,5 / 2,8 km/h
+
+Sistema hidráulico: bomba de pistones de caudal variable

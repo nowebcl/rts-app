@@ -1,4 +1,4 @@
-// Catálogo Oficial de Maquinarias Reales RST (6 Modelos Oficiales)
+// Catálogo Oficial de Maquinarias Reales RST (7 Modelos Oficiales)
 export const products = [
   {
     "id": "rippa-r06",
@@ -18,10 +18,8 @@ export const products = [
       "Certificación Euro 5, EPA, CE"
     ],
     "pdfUrl": "/catalogo/rippa-r06/ficha-rippa-r06.pdf",
-    "image": "/catalogo/rippa-r06/foto-1.webp",
+    "image": "/catalogo/rippa-r06/foto-3.webp",
     "gallery": [
-      "/catalogo/rippa-r06/foto-1.webp",
-      "/catalogo/rippa-r06/foto-2.webp",
       "/catalogo/rippa-r06/foto-3.webp"
     ],
     "location": "Entrega con inducción en terreno a todo Chile",
@@ -47,10 +45,7 @@ export const products = [
     "pdfUrl": "/catalogo/rippa-r10-eco/ficha-rippa-r10-eco.pdf",
     "image": "/catalogo/rippa-r10-eco/foto-1.webp",
     "gallery": [
-      "/catalogo/rippa-r10-eco/foto-1.webp",
-      "/catalogo/rippa-r10-eco/foto-2.webp",
-      "/catalogo/rippa-r10-eco/foto-3.webp",
-      "/catalogo/rippa-r10-eco/foto-4.webp"
+      "/catalogo/rippa-r10-eco/foto-1.webp"
     ],
     "location": "Entrega con inducción en terreno a todo Chile",
     "warranty": "1 año de garantía componentes esenciales (Motor y Bomba)"
@@ -75,17 +70,39 @@ export const products = [
     "pdfUrl": "/catalogo/rippa-r15/ficha-rippa-r15.pdf",
     "image": "/catalogo/rippa-r15/foto-1.webp",
     "gallery": [
-      "/catalogo/rippa-r15/foto-1.webp",
-      "/catalogo/rippa-r15/foto-2.webp",
-      "/catalogo/rippa-r15/foto-3.webp",
-      "/catalogo/rippa-r15/foto-4.webp"
+      "/catalogo/rippa-r15/foto-1.webp"
+    ],
+    "location": "Entrega con inducción en terreno a todo Chile",
+    "warranty": "1 año de garantía componentes esenciales (Motor y Bomba)"
+  },
+  {
+    "id": "rippa-r18",
+    "numberId": 4,
+    "name": "MODELO Rippa R18",
+    "slug": "rippa-r18",
+    "category": "excavadoras",
+    "categoryName": "Mini Excavadoras RIPPA",
+    "brand": "RIPPA",
+    "tonnage": "1.8 Ton",
+    "price": "Consultar valor",
+    "isSold": false,
+    "description": "* Motor: Kubota D902, diésel, 3 cilindros, refrigerado por agua (11,8 kW / 16 HP).\n* Peso operativo: 1.818–1.933 kg (1.8 Ton).\n* Excavación: Profundidad máxima de 2.420 mm / Balde de 0,045 m³.\n* Altura de excavación: Máxima 3.396 mm / Altura de descarga: 2.182 mm.\n* Fuerza máxima de excavación: 12,8 kN.\n* Chasis extensible: Ancho de orugas regulable aprox. 990–1.300 mm (Ancho transporte: 989 mm).\n* Velocidad de traslación: 1,5 / 2,8 km/h (Doble velocidad).\n* Sistema hidráulico: Bomba de pistones de caudal variable.",
+    "commonBenefits": [
+      "De regalo acople rápido, dedo pulgar hidráulico, kit primera mantención gratis",
+      "1 año de garantía componentes esenciales",
+      "Certificación Euro 5, EPA, CE"
+    ],
+    "pdfUrl": "/catalogo/rippa-r18/ficha-rippa-r18.pdf",
+    "image": "/catalogo/rippa-r18/foto-1.webp",
+    "gallery": [
+      "/catalogo/rippa-r18/foto-1.webp"
     ],
     "location": "Entrega con inducción en terreno a todo Chile",
     "warranty": "1 año de garantía componentes esenciales (Motor y Bomba)"
   },
   {
     "id": "sanny-sy35u",
-    "numberId": 4,
+    "numberId": 5,
     "name": "MODELO SANNY SY35U（StageIII)",
     "slug": "sanny-sy35u",
     "category": "excavadoras",
@@ -103,20 +120,14 @@ export const products = [
     "pdfUrl": "/catalogo/sanny-sy35u/ficha-sanny-sy35u.pdf",
     "image": "/catalogo/sanny-sy35u/foto-1.webp",
     "gallery": [
-      "/catalogo/sanny-sy35u/foto-1.webp",
-      "/catalogo/sanny-sy35u/foto-2.webp",
-      "/catalogo/sanny-sy35u/foto-3.webp",
-      "/catalogo/sanny-sy35u/foto-4.webp",
-      "/catalogo/sanny-sy35u/foto-5.webp",
-      "/catalogo/sanny-sy35u/foto-6.webp",
-      "/catalogo/sanny-sy35u/foto-7.webp"
+      "/catalogo/sanny-sy35u/foto-1.webp"
     ],
     "location": "Entrega con inducción en terreno a todo Chile",
     "warranty": "1 año de garantía componentes esenciales (Motor y Bomba)"
   },
   {
     "id": "sanny-sy60c",
-    "numberId": 5,
+    "numberId": 6,
     "name": "MODELO SANNY SY60C(Tier4 F & Stage Ⅴ)",
     "slug": "sanny-sy60c",
     "category": "excavadoras",
@@ -134,15 +145,14 @@ export const products = [
     "pdfUrl": "/catalogo/sanny-sy60c/ficha-sanny-sy60c.pdf",
     "image": "/catalogo/sanny-sy60c/foto-1.webp",
     "gallery": [
-      "/catalogo/sanny-sy60c/foto-1.webp",
-      "/catalogo/sanny-sy60c/foto-2.webp"
+      "/catalogo/sanny-sy60c/foto-1.webp"
     ],
     "location": "Entrega con inducción en terreno a todo Chile",
     "warranty": "1 año de garantía componentes esenciales (Motor y Bomba)"
   },
   {
     "id": "sanny-sy75c",
-    "numberId": 6,
+    "numberId": 7,
     "name": "Modelo SANNY SY75C",
     "slug": "sanny-sy75c",
     "category": "excavadoras",
@@ -160,11 +170,32 @@ export const products = [
     "pdfUrl": "/catalogo/sanny-sy75c/ficha-sanny-sy75c.pdf",
     "image": "/catalogo/sanny-sy75c/foto-1.webp",
     "gallery": [
-      "/catalogo/sanny-sy75c/foto-1.webp",
-      "/catalogo/sanny-sy75c/foto-2.webp",
-      "/catalogo/sanny-sy75c/foto-3.webp",
-      "/catalogo/sanny-sy75c/foto-4.webp",
-      "/catalogo/sanny-sy75c/foto-5.webp"
+      "/catalogo/sanny-sy75c/foto-1.webp"
+    ],
+    "location": "Entrega con inducción en terreno a todo Chile",
+    "warranty": "1 año de garantía componentes esenciales (Motor y Bomba)"
+  },
+  {
+    "id": "rippa-r22-pro",
+    "numberId": 8,
+    "name": "MODELO RIPPA R22 PRO",
+    "slug": "rippa-r22-pro",
+    "category": "excavadoras",
+    "categoryName": "Mini Excavadoras RIPPA",
+    "brand": "RIPPA",
+    "tonnage": "2.5 Ton",
+    "price": "Consultar valor",
+    "isSold": false,
+    "description": "* Motor: Kubota D1105, diésel, 3 cilindros, refrigerado por agua (17,1 kW / 22,9 HP).\n* Peso operativo: 2.539 kg (2.5 Ton).\n* Profundidad máxima de excavación: 2.293 mm.\n* Altura máxima de excavación: 3.761 mm.\n* Altura máxima de descarga: 2.496 mm.\n* Radio máximo de excavación: 4.255 mm.\n* Fuerza máxima de excavación: 18,4 kN.\n* Capacidad del balde: 0,054 m³.\n* Ancho de transporte: 1.300 mm.\n* Ancho de orugas regulable: 1.300–1.500 mm.\n* Velocidad de traslación: 1,5 / 2,8 km/h.\n* Sistema hidráulico: Bomba de pistones de caudal variable.\n* Giro de pluma: 125° de ángulo total (Boom Swing).",
+    "commonBenefits": [
+      "De regalo acople rápido, dedo pulgar hidráulico, kit primera mantención gratis",
+      "1 año de garantía componentes esenciales",
+      "Certificación Euro 5, EPA, CE"
+    ],
+    "pdfUrl": "/catalogo/rippa-r22-pro/ficha-rippa-r22-pro.pdf",
+    "image": "/catalogo/rippa-r22-pro/foto-1.webp",
+    "gallery": [
+      "/catalogo/rippa-r22-pro/foto-1.webp"
     ],
     "location": "Entrega con inducción en terreno a todo Chile",
     "warranty": "1 año de garantía componentes esenciales (Motor y Bomba)"

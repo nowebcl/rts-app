@@ -136,10 +136,10 @@ export default function HomeCatalogLoop() {
               Catálogo Oficial · Entrega Inmediata
             </div>
             <h2 className="text-3xl sm:text-4xl font-heading font-black uppercase text-slate-900 leading-tight">
-              Modelos Oficiales RST
+              Modelos Oficiales RST · Venta Nueva y Semi Nueva
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Catálogo oficial de mini excavadoras y excavadoras disponibles para faena inmediata con inducción y entrega directa en camión rampa en todo Chile.
+              Catálogo oficial de venta de maquinaria nueva y semi nueva: mini excavadoras y excavadoras disponibles para faena inmediata con inducción y entrega directa en camión rampa en todo Chile.
             </p>
           </div>
 
@@ -228,7 +228,7 @@ export default function HomeCatalogLoop() {
           </div>
 
           <p className="text-xs sm:text-sm text-slate-500 max-w-lg mx-auto">
-            Explora nuestras <strong>maquinarias y equipos</strong> con filtrador por categoría, motor y especificaciones técnicas completas con paginación.
+            Explora nuestras <strong>maquinarias y equipos nuevos y semi nuevos</strong> con filtrador por categoría, motor y especificaciones técnicas completas con paginación.
           </p>
         </div>
 

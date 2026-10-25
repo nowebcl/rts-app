@@ -91,7 +91,7 @@ export default function CompareDrawer() {
                     <img 
                       src={m.image} 
                       alt={m.name} 
-                      className="w-full h-20 object-cover rounded-[2px] mb-2"
+                      className="w-full h-20 object-contain object-center bg-white rounded-[2px] mb-2 p-1"
                     />
                     <div className="font-heading font-bold text-[#222222] text-sm uppercase">{m.name}</div>
                     <div className="text-[#FE8003] font-mono font-bold mt-1">{m.weightTon}</div>

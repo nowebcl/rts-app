@@ -10,12 +10,12 @@ export default function HeroSlider() {
   const slides = [
     {
       id: 1,
-      image: "/images/hero-slide-1.webp",
-      fallbackImage: "/images/hero-slide-1.jpg",
-      subtitle: "Equipos nuevos y garantizados con despacho inmediato a todo Chile",
+      image: "/HERO/2be40f0b-8ca1-4b89-bef7-47991620f738.jpg",
+      fallbackImage: "/HERO/2be40f0b-8ca1-4b89-bef7-47991620f738.jpg",
+      subtitle: "Venta de maquinaria nueva y semi nueva con despacho inmediato y garantía a todo Chile",
       titleLine1: "Catálogo Completo",
       titleLine2: "de Mini Excavadoras",
-      badgeText: "Flota Nueva en Stock",
+      badgeText: "Venta Nueva y Semi Nueva",
       cta1Text: "Ver Catálogo Completo",
       cta1Link: "/catalogo",
       cta2Text: "Cotizar por WhatsApp",
@@ -25,7 +25,7 @@ export default function HeroSlider() {
       id: 2,
       image: "/images/hero-slide-2.webp",
       fallbackImage: "/images/hero-slide-2.jpg",
-      subtitle: "Maquinarias operando con éxito en parcelaciones, obras y predios",
+      subtitle: "Maquinarias nuevas y semi nuevas operando con éxito en parcelaciones, obras y predios",
       titleLine1: "Cientos de Clientes",
       titleLine2: "Felices en Todo Chile",
       badgeText: "Respaldo y Confianza",
@@ -40,12 +40,11 @@ export default function HeroSlider() {
       fallbackImage: "/images/hero-slide-3.jpg",
       subtitle: "Faenas especializadas en terreno, mantenciones y repuestos originales",
       titleLine1: "Servicios con Mini Excavadoras",
-      titleLine2: "y Servicio Técnico",
       badgeText: "Soporte Oficial",
       cta1Text: "Consultar Servicios",
       cta1Link: "/contacto",
-      cta2Text: "Servicio Técnico WhatsApp",
-      cta2Link: `https://wa.me/${companyData.whatsappNumber}?text=Hola%20RST,%20necesito%20consultar%20por%20servicios%20en%20terreno%20o%20servicio%20técnico.`
+      cta2Text: "Consultar por WhatsApp",
+      cta2Link: `https://wa.me/${companyData.whatsappNumber}?text=Hola%20RST,%20necesito%20consultar%20por%20servicios%20en%20terreno.`
     }
   ];
 
@@ -105,10 +104,12 @@ export default function HeroSlider() {
             >
               {/* Background Image: High Contrast & Brightness */}
               <picture className="absolute inset-0 w-full h-full overflow-hidden">
-                <source srcSet={s.image} type="image/webp" />
+                {s.image?.endsWith('.webp') && (
+                  <source srcSet={s.image} type="image/webp" />
+                )}
                 <img
                   src={s.fallbackImage || s.image}
-                  alt={`${s.titleLine1} ${s.titleLine2}`}
+                  alt={`${s.titleLine1} ${s.titleLine2 || ''}`.trim()}
                   className={`w-full h-full object-cover object-center contrast-[1.08] saturate-[1.08] brightness-[1.05] ${kenBurnsClass}`}
                   loading={index === 0 ? "eager" : "lazy"}
                   fetchPriority={index === 0 ? "high" : "low"}
@@ -183,9 +184,11 @@ export default function HeroSlider() {
             {/* 4. Título Principal Compacto (Máximo 2 a 3 líneas) */}
             <h1 className="hero-slider-title text-3xl sm:text-4xl md:text-5xl lg:text-[52px] xl:text-[58px] font-black text-white tracking-tight leading-[1.08] text-left normal-case [text-shadow:_0_2px_14px_rgba(0,0,0,0.85),_0_4px_28px_rgba(0,0,0,0.75)]">
               <span className="block text-left">{slide.titleLine1}</span>
-              <span className="block text-left mt-1 sm:mt-1.5 text-white">
-                {slide.titleLine2}
-              </span>
+              {slide.titleLine2 && (
+                <span className="block text-left mt-1 sm:mt-1.5 text-white">
+                  {slide.titleLine2}
+                </span>
+              )}
               {slide.titleLine3 && (
                 <span className="block text-left mt-1 sm:mt-1.5 text-white">
                   {slide.titleLine3}

@@ -132,15 +132,15 @@ export default function ProductDetailPage() {
           <div className="lg:col-span-7 p-6 sm:p-8 bg-slate-900/5 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-200">
             <div>
               {/* Contenedor de la Imagen Activa */}
-              <div className="relative aspect-4/3 w-full rounded-xl overflow-hidden bg-white border border-slate-200 shadow-inner">
-                <picture>
+              <div className="relative aspect-4/3 w-full rounded-xl overflow-hidden bg-white border border-slate-200 shadow-inner flex items-center justify-center p-4 sm:p-6">
+                <picture className="w-full h-full flex items-center justify-center">
                   {activeImage.endsWith('.webp') && (
                     <source srcSet={activeImage} type="image/webp" />
                   )}
                   <img
                     src={activeImage}
                     alt={product.name}
-                    className={`w-full h-full object-cover transition-all duration-300 ${
+                    className={`w-full h-full object-contain object-center transition-all duration-300 ${
                       isSold ? 'grayscale contrast-90 brightness-75' : ''
                     }`}
                   />
@@ -170,13 +170,13 @@ export default function ProductDetailPage() {
                     <button
                       key={idx}
                       onClick={() => setActiveImageIndex(idx)}
-                      className={`relative w-20 h-16 rounded-lg overflow-hidden border-2 shrink-0 transition-all cursor-pointer ${
+                      className={`relative w-20 h-16 rounded-lg overflow-hidden border-2 shrink-0 transition-all cursor-pointer bg-white p-1 flex items-center justify-center ${
                         activeImageIndex === idx
                           ? 'border-[#FE8003] scale-105 shadow-md'
                           : 'border-slate-200 opacity-70 hover:opacity-100'
                       }`}
                     >
-                      <img src={imgUrl} alt={`Foto ${idx + 1}`} className="w-full h-full object-cover" />
+                      <img src={imgUrl} alt={`Foto ${idx + 1}`} className="w-full h-full object-contain object-center" />
                     </button>
                   ))}
                 </div>

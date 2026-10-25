@@ -4,7 +4,10 @@ import {
   ArrowRight, 
   MessageCircle, 
   Phone,
-  Search
+  Search,
+  Target,
+  Eye,
+  Wrench
 } from 'lucide-react';
 import { companyData } from '../data/excavators';
 import QuoteModal from '../components/QuoteModal';
@@ -116,7 +119,72 @@ export default function HomePage() {
       {/* 4. Banner Slider Automático RST */}
       <BannerSlider />
 
-      {/* 5. ANTEK: section-about (Quiénes Somos & Distribuidor Oficial RIPPA en Chile) */}
+      {/* 5. LLAMADA A LA ACCIÓN: Implementos (Fondo acorde al diseño del sitio) */}
+      <section className="py-16 sm:py-20 bg-slate-50 border-y border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+            <div className="space-y-2 text-left">
+              <div className="antek-dashes">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div className="text-xs font-heading font-extrabold uppercase text-[#FE8003] tracking-widest flex items-center gap-1.5">
+                <Wrench className="w-3.5 h-3.5" />
+                <span>Accesorios para Mini Excavadoras</span>
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-heading font-black uppercase text-[#222222] tracking-wide">
+                IMPLEMENTOS
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
+                Catálogo de accesorios e implementos disponibles para tu mini excavadora con entrega directa.
+              </p>
+            </div>
+
+            <Link
+              to="/implementos"
+              className="btn-antek btn-antek-primary shrink-0 self-start lg:self-auto"
+            >
+              <span>Ver Catálogo de Implementos</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* Grid de implementos reales con fondo blanco acorde al estilo de la página */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            {[
+              { num: '01', name: 'Pinza para Madera', img: '/ACCESORIOS/01_pinza_madera.png' },
+              { num: '04', name: 'Martillo Rompedor', img: '/ACCESORIOS/04_martillo_rompedor.png' },
+              { num: '05', name: 'Barrena Perforadora', img: '/ACCESORIOS/05_barrena_perforadora.png' },
+              { num: '06', name: 'Cucharón Basculante', img: '/ACCESORIOS/06_cucharon_basculante.png' }
+            ].map((item) => (
+              <Link
+                key={item.num}
+                to="/implementos"
+                className="bg-white border border-slate-200 hover:border-[#FE8003] rounded-[2px] overflow-hidden group transition-all duration-300 block text-left shadow-xs hover:shadow-md"
+              >
+                <div className="aspect-4/3 bg-slate-100 overflow-hidden relative">
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-2 left-2 bg-[#181818]/90 text-white px-2 py-0.5 text-[10px] font-heading font-black rounded-[2px] border-l-2 border-[#FE8003]">
+                    #{item.num}
+                  </div>
+                </div>
+                <div className="p-3.5">
+                  <h4 className="font-heading font-bold uppercase text-[#222222] text-xs sm:text-sm group-hover:text-[#FE8003] transition-colors truncate">
+                    {item.name}
+                  </h4>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. ANTEK: section-about (Quiénes Somos & Distribuidor Oficial RIPPA en Chile) */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -144,7 +212,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right: Text content - Quiénes Somos */}
+            {/* Right: Text content - Quiénes Somos: Misión y Visión */}
             <div className="lg:col-span-6 space-y-6 text-left">
               <div className="space-y-2">
                 <div className="antek-dashes">
@@ -156,58 +224,42 @@ export default function HomePage() {
                   Distribuidores Principales de RIPPA · RST Chile
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-heading font-black uppercase text-[#222222] leading-tight">
-                  Quiénes Somos: Distribuidor Oficial RIPPA en Chile
+                  Quiénes Somos: Misión y Visión
                 </h2>
               </div>
 
-              <p className="text-sm text-[#555555] leading-relaxed">
-                En <strong>RST Chile</strong> somos representantes y distribuidores oficiales directos de <strong>maquinaria compacta RIPPA</strong>. Nos dedicamos a entregar a contratistas, agricultores y particulares de todo el país equipos de alto rendimiento con respaldo directo de fábrica, garantía oficial y el soporte técnico más confiable del mercado:
-              </p>
+              {/* Misión y Visión Cards */}
+              <div className="space-y-4 pt-1">
+                {/* Misión RST */}
+                <div className="bg-[#f8f9fa] border-l-4 border-[#FE8003] p-5 rounded-[2px] shadow-2xs hover:shadow-md transition-shadow">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-8 rounded-[2px] bg-[#FE8003] text-white flex items-center justify-center shrink-0">
+                      <Target className="w-4 h-4" />
+                    </div>
+                    <h3 className="font-heading font-black text-base uppercase text-[#222222] tracking-wide">
+                      Misión RST
+                    </h3>
+                  </div>
+                  <p className="text-sm text-[#555555] leading-relaxed">
+                    Importamos y comercializamos maquinaria compacta confiable y eficiente, con tecnología de vanguardia a precios competitivos, para reducir el esfuerzo físico y aumentar la productividad en los sectores agrícola, de la construcción e industrial.
+                  </p>
+                </div>
 
-              {/* Antek about-list */}
-              <ul className="space-y-4 pt-2">
-                <li className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-[2px] bg-[#FE8003]/10 text-[#FE8003] flex items-center justify-center shrink-0 font-bold">
-                    ✓
+                {/* Nuestra Visión */}
+                <div className="bg-[#f8f9fa] border-l-4 border-[#222222] p-5 rounded-[2px] shadow-2xs hover:shadow-md transition-shadow">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-8 rounded-[2px] bg-[#222222] text-[#FE8003] flex items-center justify-center shrink-0">
+                      <Eye className="w-4 h-4" />
+                    </div>
+                    <h3 className="font-heading font-black text-base uppercase text-[#222222] tracking-wide">
+                      Nuestra Visión
+                    </h3>
                   </div>
-                  <div>
-                    <strong className="font-heading font-bold text-sm uppercase text-[#222222] block">
-                      Alianza Directa y Respaldo Oficial de Fábrica
-                    </strong>
-                    <span className="text-xs text-[#666666]">
-                      Importación y distribución oficial directa con RIPPA, asegurando equipos originales con certificación internacional y garantía de fábrica.
-                    </span>
-                  </div>
-                </li>
-
-                <li className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-[2px] bg-[#FE8003]/10 text-[#FE8003] flex items-center justify-center shrink-0 font-bold">
-                    ✓
-                  </div>
-                  <div>
-                    <strong className="font-heading font-bold text-sm uppercase text-[#222222] block">
-                      Servicio Técnico Especializado y Repuestos Genuinos
-                    </strong>
-                    <span className="text-xs text-[#666666]">
-                      Bodega permanente con filtros, bombas, orugas y pasadores de recambio inmediato para asegurar la continuidad de tus faenas.
-                    </span>
-                  </div>
-                </li>
-
-                <li className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-[2px] bg-[#FE8003]/10 text-[#FE8003] flex items-center justify-center shrink-0 font-bold">
-                    ✓
-                  </div>
-                  <div>
-                    <strong className="font-heading font-bold text-sm uppercase text-[#222222] block">
-                      Cobertura y Despachos a Todo Chile
-                    </strong>
-                    <span className="text-xs text-[#666666]">
-                      Entregas en cualquier región del país, con inducción técnica operativa y máquinas probadas 100% listas para trabajar.
-                    </span>
-                  </div>
-                </li>
-              </ul>
+                  <p className="text-sm text-[#555555] leading-relaxed">
+                    Buscar, importar y acercar tecnología e innovación de calidad, para resolver necesidades reales y mejorar la eficiencia en los distintos sectores productivos de la región, nuestro país y el mundo.
+                  </p>
+                </div>
+              </div>
 
               <div className="pt-4">
                 <Link
@@ -224,10 +276,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. CLIENTES QUE CONFIARON EN NOSOTROS (Reemplaza Cómo Adquirir) */}
+      {/* 7. CLIENTES QUE CONFIARON EN NOSOTROS */}
       <HomeClientsSection />
 
-      {/* 7. ANTEK: section-cta (Industrial Callout Banner) */}
+      {/* 8. ANTEK: section-cta (Industrial Callout Banner) */}
       <section className="bg-[#1a1a1a] text-white py-14 border-y border-[#333333]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
@@ -266,7 +318,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. UBICACIÓN & CONTACTO (Antes del Footer) */}
+      {/* 9. UBICACIÓN & CONTACTO */}
       <LocationContactSection />
 
       {/* Quote Modal */}

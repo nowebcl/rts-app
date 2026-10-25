@@ -1,0 +1,19 @@
+Especificaciones técnicas
+
+Peso operativo: 2.539 kg
+
+Motor: Kubota D1105, diésel, 3 cilindros, refrigerado por agua
+Potencia máxima: 17,1 kW / 22,9 HP
+
+Profundidad máxima de excavación: 2.293 mm
+Altura máxima de excavación: 3.761 mm
+Altura máxima de descarga: 2.496 mm
+Radio máximo de excavación: 4.255 mm
+
+Fuerza máxima de excavación: 18,4 kN
+Capacidad del balde: 0,054 m³
+Ancho de transporte: 1.300 mm
+Ancho de orugas regulable: 1.300–1.500 mm
+Velocidad de traslación: 1,5 / 2,8 km/h
+Sistema hidráulico: bomba de pistones de caudal variable
+Giro de pluma: 125° de ángulo total.

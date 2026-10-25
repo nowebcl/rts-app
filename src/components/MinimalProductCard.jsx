@@ -31,15 +31,15 @@ export default function MinimalProductCard({ product }) {
       }`}
     >
       {/* 1. Contenedor de Imagen con Filtro y Lienzo Cruzado de VENDIDA */}
-      <div className="relative aspect-4/3 w-full overflow-hidden bg-white shrink-0">
-        <picture>
+      <div className="relative aspect-4/3 w-full overflow-hidden bg-white shrink-0 flex items-center justify-center p-3 sm:p-4">
+        <picture className="w-full h-full flex items-center justify-center">
           {product.image && product.image.endsWith('.webp') && (
             <source srcSet={product.image} type="image/webp" />
           )}
           <img
             src={product.image}
             alt={product.name}
-            className={`w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 ${
+            className={`w-full h-full object-contain object-center transition-transform duration-500 ease-out group-hover:scale-105 ${
               isSold ? 'grayscale contrast-90 brightness-75' : ''
             }`}
             loading="lazy"

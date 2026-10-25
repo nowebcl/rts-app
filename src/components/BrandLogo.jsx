@@ -16,7 +16,7 @@ export default function BrandLogo({
         {!imageError ? (
           <img 
             src="/brand/rst_logo_official.png" 
-            alt="RST Maquinarias - Mini Excavadoras Chile" 
+            alt="RST Maquinarias - Venta de Maquinaria Nueva y Semi Nueva" 
             className={`${className} w-auto object-contain rounded-[3px] transition-transform duration-300 group-hover:scale-105`}
             onError={() => setImageError(true)}
           />

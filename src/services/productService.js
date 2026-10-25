@@ -1,7 +1,7 @@
 import defaultProducts from '../data/products';
 
 export const PB_BASE_URL = 'https://bd.rstimportaciones.cl';
-const STORAGE_KEY = 'rst_catalog_products_v3';
+const STORAGE_KEY = 'rst_catalog_products_v7';
 const AUTH_KEY = 'rst_admin_authenticated';
 const PB_TOKEN_KEY = 'rst_pb_super_token';
 
@@ -22,13 +22,18 @@ class ProductService {
       // Limpiar versiones antiguas del catálogo dummy anterior
       localStorage.removeItem('rst_catalog_products');
       localStorage.removeItem('rst_catalog_products_v2');
+      localStorage.removeItem('rst_catalog_products_v3');
+      localStorage.removeItem('rst_catalog_products_v4');
+      localStorage.removeItem('rst_catalog_products_v5');
+      localStorage.removeItem('rst_catalog_products_v6');
+      localStorage.removeItem('rst_catalog_products_v6');
 
       const stored = localStorage.getItem(STORAGE_KEY);
       if (!stored) {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultProducts));
       } else {
         const parsed = JSON.parse(stored);
-        // Si no tiene los 6 modelos oficiales, refrescar
+        // Si no tiene los 7 modelos oficiales, refrescar
         if (!Array.isArray(parsed) || parsed.length !== defaultProducts.length) {
           localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultProducts));
         }
@@ -84,7 +89,7 @@ class ProductService {
             const fileList = Array.isArray(r.imagenes) ? r.imagenes : (r.imagenes ? [r.imagenes] : []);
             const gallery = fileList.length > 0
               ? fileList.map(f => `${PB_BASE_URL}/api/files/productos/${r.id}/${f}`)
-              : (defaultItem.gallery || [`/catalogo/${r.slug || 'rippa-r06'}/foto-1.webp`]);
+              : (defaultItem.gallery || [`/catalogo/${r.slug || 'rippa-r06'}/foto-3.webp`]);
 
             return {
               id: defaultItem.id || r.slug || r.id,
@@ -110,6 +115,13 @@ class ProductService {
               image: gallery[0] || defaultItem.image || '',
               gallery: gallery
             };
+          });
+
+          // Asegurar que si hay productos locales no presentes en PocketBase, se agreguen
+          defaultProducts.forEach(def => {
+            if (!mapped.some(m => m.slug === def.slug || m.id === def.id)) {
+              mapped.push(def);
+            }
           });
 
           // Actualizar caché local

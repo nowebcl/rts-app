@@ -79,7 +79,7 @@ export default function DeliveriesPage() {
               <span>Inicio</span>
             </Link>
             <span>/</span>
-            <span className="text-slate-800 font-bold">Entregas en Terreno</span>
+            <span className="text-slate-800 font-bold">Entrega a nuestros clientes</span>
           </nav>
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pt-2">
@@ -90,14 +90,29 @@ export default function DeliveriesPage() {
                 <span></span>
               </div>
               <div className="text-xs font-heading font-extrabold uppercase text-[#FE8003] tracking-widest">
-                Entregas en Terreno
+                Entrega a nuestros clientes
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black uppercase text-slate-900 tracking-tight">
-                Despachos en Terreno
+                Entrega a nuestros clientes
               </h1>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Fotografías reales de maquinarias entregadas directamente en predios, parcelaciones y faenas en todo Chile. Despacho en camión rampa con inducción en terreno.
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                Fotografías reales de maquinarias entregadas directamente en predios, parcelaciones y faenas en todo Chile con inducción en terreno.
               </p>
+
+              {/* Bloque Imagen 2: Especialistas en Mini Excavadoras Nuevas con Entrega Inmediata */}
+              <div className="pt-4 mt-2 border-t border-slate-200/90 space-y-3">
+                <h2 className="text-xl sm:text-2xl font-heading font-black uppercase text-slate-900 tracking-tight leading-snug">
+                  Especialistas en Venta de Maquinaria Nueva y Semi Nueva con Entrega Inmediata
+                </h2>
+                <div className="space-y-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <p>
+                    En <strong className="text-slate-900 font-bold">RST Chile</strong> somos la empresa referente en la importación directa, venta de maquinaria nueva y semi nueva, comercialización y servicio postventa de <strong className="text-slate-900 font-bold">mini excavadoras compactas RIPPA</strong> y maquinaria de 0.8 a 7.5 toneladas en nuestro país.
+                  </p>
+                  <p>
+                    Nacimos con el objetivo de brindar a contratistas, agricultores, parceleros y empresas constructoras herramientas de máxima confiabilidad y rendimiento, eliminando intermediarios y entregando respaldo directo de fábrica con repuestos originales y soporte técnico garantizado.
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Indicador de interacción */}
@@ -234,7 +249,7 @@ export default function DeliveriesPage() {
                 ¿Quieres recibir tu mini excavadora en tu propio predio?
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Despachamos directo a tu terreno con camión rampa en cualquier punto de Chile. Puesta en marcha, inducción operativa y entrega con toda la documentación oficial.
+                Despachamos directo a tu terreno en cualquier punto de Chile. Puesta en marcha, inducción operativa y entrega con toda la documentación oficial.
               </p>
             </div>
 

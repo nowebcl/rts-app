@@ -1,31 +1,32 @@
 import React from 'react';
-import { attachmentList } from '../data/excavators';
-import { Wrench, CheckCircle, ArrowRight, MessageCircle } from 'lucide-react';
+import { implementosList } from '../data/implementos';
+import { ArrowRight, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { companyData } from '../data/excavators';
 
 export default function AttachmentsGrid({ limit = 6, showHeader = true }) {
-  const items = limit ? attachmentList.slice(0, limit) : attachmentList;
+  const items = limit ? implementosList.slice(0, limit) : implementosList;
 
   return (
     <div className="space-y-8">
       {showHeader && (
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
-            <span className="text-orange-600 font-extrabold uppercase text-xs tracking-widest">
-              Línea de Implementos & Aditamentos
+            <span className="text-[#FE8003] font-heading font-extrabold uppercase text-xs tracking-widest">
+              Línea de Accesorios
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-              Maximiza la Versatilidad de tu Mini Excavadora
+            <h2 className="text-2xl sm:text-3xl font-heading font-black text-[#222222] uppercase tracking-wide mt-1">
+              Implementos para Mini Excavadoras
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 mt-1">
-              Equipamiento auxiliar con compatibilidad garantizada para toda nuestra flota.
+            <p className="text-xs sm:text-sm text-[#666666] mt-1">
+              Accesorios disponibles para entrega y cotización directa.
             </p>
           </div>
           <Link
-            to="/aditamentos"
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-600 hover:text-orange-700 shrink-0"
+            to="/implementos"
+            className="inline-flex items-center gap-1.5 text-xs font-heading font-bold text-[#FE8003] hover:text-[#e57302] uppercase tracking-wider shrink-0"
           >
-            <span>Ver Catálogo de Aditamentos</span>
+            <span>Ver Catálogo de Implementos</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -35,55 +36,36 @@ export default function AttachmentsGrid({ limit = 6, showHeader = true }) {
         {items.map((item) => (
           <div
             key={item.id}
-            className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
+            className="bg-white rounded-[2px] border border-[#e5e5e5] overflow-hidden shadow-xs hover:shadow-lg hover:border-[#FE8003] transition-all duration-300 flex flex-col justify-between group"
           >
             <div>
-              <div className="h-44 bg-slate-100 overflow-hidden relative">
+              <div className="aspect-4/3 bg-[#f5f5f5] overflow-hidden relative flex items-center justify-center">
                 <img
                   src={item.image}
-                  alt={item.name}
+                  alt={item.alt}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <span className="absolute top-3 left-3 bg-slate-900/90 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded backdrop-blur-sm">
-                  {item.category}
+                <span className="absolute top-3 left-3 bg-[#1f1f1f] text-white text-[10px] font-heading font-bold uppercase tracking-wider px-2 py-0.5 rounded-[2px] border-l-2 border-[#FE8003]">
+                  #{item.number}
                 </span>
               </div>
 
               <div className="p-5">
-                <h3 className="font-bold text-slate-900 text-base group-hover:text-orange-600 transition-colors">
+                <h3 className="font-heading font-extrabold text-[#222222] text-base group-hover:text-[#FE8003] transition-colors leading-snug">
                   {item.name}
                 </h3>
-                <p className="text-xs text-slate-500 mt-1 line-clamp-2">
-                  {item.description}
-                </p>
-
-                <div className="mt-4 pt-3 border-t border-slate-100 space-y-1.5 text-xs">
-                  <div className="flex justify-between">
-                    <span className="text-slate-400">Compatibilidad:</span>
-                    <span className="font-semibold text-slate-800">{item.compatibleModels}</span>
-                  </div>
-                  {item.flowRequired && (
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">Caudal Requerido:</span>
-                      <span className="font-mono text-slate-800 font-bold">{item.flowRequired}</span>
-                    </div>
-                  )}
-                  {item.workingPressure && (
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">Presión de Trabajo:</span>
-                      <span className="font-mono text-slate-800">{item.workingPressure}</span>
-                    </div>
-                  )}
-                </div>
               </div>
             </div>
 
             <div className="p-4 pt-0">
               <a
-                href={`https://wa.me/56978924512?text=Hola%20RST,%20quiero%20cotizar%20el%20implemento:%20${item.name}`}
+                href={`https://wa.me/${companyData.whatsappNumber}?text=${encodeURIComponent(
+                  `Hola RST, quiero cotizar el implemento: ${item.name}`
+                )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-orange-600 hover:text-white text-slate-800 font-bold text-xs flex items-center justify-center gap-1.5 transition-colors"
+                className="w-full py-2.5 rounded-[2px] bg-[#f3f4f6] hover:bg-[#FE8003] text-[#222222] hover:text-white font-heading font-bold uppercase text-xs flex items-center justify-center gap-1.5 transition-colors"
               >
                 <MessageCircle className="w-3.5 h-3.5" />
                 <span>Cotizar este Implemento</span>

@@ -143,6 +143,8 @@ export default function CatalogPage() {
           if (p.id === 'rippa-r06' || p.slug === 'rippa-r06') tonNum = 0.75;
           else if (p.id === 'rippa-r10-eco' || p.slug === 'rippa-r10-eco') tonNum = 1.0;
           else if (p.id === 'rippa-r15' || p.slug === 'rippa-r15') tonNum = 1.5;
+          else if (p.id === 'rippa-r18' || p.slug === 'rippa-r18') tonNum = 1.8;
+          else if (p.id === 'rippa-r22-pro' || p.slug === 'rippa-r22-pro') tonNum = 2.5;
           else if (p.id === 'sanny-sy35u' || p.slug === 'sanny-sy35u') tonNum = 3.8;
           else if (p.id === 'sanny-sy60c' || p.slug === 'sanny-sy60c') tonNum = 6.0;
           else if (p.id === 'sanny-sy75c' || p.slug === 'sanny-sy75c') tonNum = 7.3;
@@ -154,11 +156,11 @@ export default function CatalogPage() {
         }
         if (selectedTonnage === 'compact') {
           if (tonNum !== null) return tonNum >= 1.0 && tonNum <= 2.0;
-          return p.id === 'rippa-r10-eco' || p.id === 'rippa-r15' || p.slug === 'rippa-r10-eco' || p.slug === 'rippa-r15';
+          return p.id === 'rippa-r10-eco' || p.id === 'rippa-r15' || p.id === 'rippa-r18' || p.slug === 'rippa-r10-eco' || p.slug === 'rippa-r15' || p.slug === 'rippa-r18';
         }
         if (selectedTonnage === 'medium') {
           if (tonNum !== null) return tonNum > 2.0 && tonNum < 5.0;
-          return p.id === 'sanny-sy35u' || p.slug === 'sanny-sy35u';
+          return p.id === 'sanny-sy35u' || p.slug === 'sanny-sy35u' || p.id === 'rippa-r22-pro' || p.slug === 'rippa-r22-pro';
         }
         if (selectedTonnage === 'heavy') {
           if (tonNum !== null) return tonNum >= 5.0;
@@ -311,7 +313,7 @@ export default function CatalogPage() {
               <span>Inicio</span>
             </Link>
             <span>/</span>
-            <span className="text-slate-800 font-bold">Catálogo de Maquinarias</span>
+            <span className="text-slate-800 font-bold">Catálogo de Maquinarias Nuevas y Semi Nuevas</span>
           </nav>
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -322,10 +324,10 @@ export default function CatalogPage() {
                 <span></span>
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black uppercase text-slate-900 tracking-tight">
-                Catálogo Completo de Maquinarias
+                Venta de Maquinaria Nueva y Semi Nueva
               </h1>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Mini excavadoras japonesas, tractores agrícolas, implementos y camiones disponibles para entrega inmediata. Fichas técnicas, asesoría y despacho a todo Chile.
+                Venta de maquinaria nueva y semi nueva: mini excavadoras, excavadoras de alto rendimiento, implementos y camiones disponibles para entrega inmediata. Fichas técnicas oficiales, asesoría y despacho a todo Chile.
               </p>
             </div>
 
@@ -402,16 +404,13 @@ export default function CatalogPage() {
                   { id: 'all', label: 'Todos los Equipos', count: categoryCounts.all },
                   { id: 'rippa', label: 'Línea RIPPA', count: categoryCounts.rippa },
                   { id: 'sany', label: 'Línea SANY', count: categoryCounts.sany },
-                  { id: 'vendidas', label: 'Entregadas', count: categoryCounts.vendidas },
                 ].map(cat => (
                   <button
                     key={cat.id}
                     onClick={() => handleCategoryChange(cat.id)}
                     className={`shrink-0 px-4 py-2 rounded-full text-xs font-heading font-bold uppercase tracking-wider transition-all cursor-pointer ${
                       selectedCategory === cat.id
-                        ? cat.id === 'vendidas'
-                          ? 'bg-red-600 text-white shadow-sm ring-2 ring-red-200'
-                          : 'bg-slate-900 text-white shadow-sm ring-2 ring-slate-300'
+                        ? 'bg-slate-900 text-white shadow-sm ring-2 ring-slate-300'
                         : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border border-transparent'
                     }`}
                   >
@@ -700,6 +699,29 @@ export default function CatalogPage() {
               </div>
             </div>
           )}
+
+          {/* Banner Implementos CTA */}
+          <div className="bg-white border border-slate-200 rounded-[2px] p-6 sm:p-8 text-[#222222] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
+            <div className="space-y-1 text-center md:text-left">
+              <span className="text-[11px] font-heading font-extrabold uppercase tracking-widest text-[#FE8003] block">
+                Accesorios para Mini Excavadoras
+              </span>
+              <h3 className="font-heading font-black text-xl sm:text-2xl uppercase text-[#222222]">
+                ¿Buscas Implementos para tu Mini Excavadora?
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 max-w-xl">
+                Revisa nuestra galería de implementos y accesorios disponibles para cotización y entrega.
+              </p>
+            </div>
+
+            <Link
+              to="/implementos"
+              className="btn-antek btn-antek-primary text-xs py-3.5 px-6 shrink-0"
+            >
+              <span>Ver Catálogo de Implementos</span>
+              <ChevronRight className="w-4 h-4" />
+            </Link>
+          </div>
 
           {/* 5. Banner de Contacto y Asesoría Técnica al pie del catálogo */}
           <div className="bg-[#1e1e1e] rounded-xl p-6 sm:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6">

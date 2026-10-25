@@ -17,6 +17,8 @@ const FEATURED_REAL_MODELS = [
   { id: 'rippa-r06', name: 'Rippa R06 Kubota', spec: '0.75 Ton' },
   { id: 'rippa-r10-eco', name: 'Rippa R10 Eco', spec: '1.0 Ton' },
   { id: 'rippa-r15', name: 'Rippa R15 Boom Swing', spec: '1.5 Ton' },
+  { id: 'rippa-r18', name: 'Rippa R18 Kubota', spec: '1.8 Ton' },
+  { id: 'rippa-r22-pro', name: 'Rippa R22 Pro Kubota', spec: '2.5 Ton' },
   { id: 'sanny-sy35u', name: 'SANY SY35U Yanmar Japón', spec: '3.8 Ton' },
   { id: 'sanny-sy60c', name: 'SANY SY60C Climatizada', spec: '6.0 Ton' },
   { id: 'sanny-sy75c', name: 'SANY SY75C Isuzu Japón', spec: '7.3 Ton' }
@@ -27,6 +29,8 @@ const formatModelDisplayName = (prod) => {
   if (id === 'rippa-r06') return 'Rippa R06 Kubota';
   if (id === 'rippa-r10-eco') return 'Rippa R10 Eco';
   if (id === 'rippa-r15') return 'Rippa R15 Boom Swing';
+  if (id === 'rippa-r18') return 'Rippa R18 Kubota';
+  if (id === 'rippa-r22-pro') return 'Rippa R22 Pro Kubota';
   if (id === 'sanny-sy35u') return 'SANY SY35U Yanmar Japón';
   if (id === 'sanny-sy60c') return 'SANY SY60C Climatizada';
   if (id === 'sanny-sy75c') return 'SANY SY75C Isuzu Japón';
@@ -52,6 +56,8 @@ const formatModelSpec = (prod) => {
   if (id === 'rippa-r06') return '0.75 Ton';
   if (id === 'rippa-r10-eco') return '1.0 Ton';
   if (id === 'rippa-r15') return '1.5 Ton';
+  if (id === 'rippa-r18') return '1.8 Ton';
+  if (id === 'rippa-r22-pro') return '2.5 Ton';
   if (id === 'sanny-sy35u') return '3.8 Ton';
   if (id === 'sanny-sy60c') return '6.0 Ton';
   if (id === 'sanny-sy75c') return '7.3 Ton';
@@ -68,7 +74,7 @@ export default function Footer() {
       try {
         const list = await productService.getAll();
         if (list && list.length > 0) {
-          const mapped = list.slice(0, 6).map(prod => ({
+          const mapped = list.slice(0, 8).map(prod => ({
             id: prod.slug || prod.id,
             name: formatModelDisplayName(prod),
             spec: formatModelSpec(prod)
@@ -86,6 +92,7 @@ export default function Footer() {
     window.addEventListener('rst_catalog_updated', loadRealData);
     return () => window.removeEventListener('rst_catalog_updated', loadRealData);
   }, []);
+
   return (
     <footer className="bg-[#181818] text-[#999999] border-t-4 border-[#FE8003]">
       {/* ANTEK: page-footer-top */}
@@ -141,7 +148,7 @@ export default function Footer() {
                 Sobre RST Chile
               </h4>
               <p className="text-xs text-[#888888] leading-relaxed">
-                Empresa especializada exclusivamente en la importación directa, venta y postventa de <strong>mini excavadoras compactas</strong> de alta eficiencia de 0.8 a 3.5 toneladas con entrega inmediata y repuestos garantizados.
+                Empresa especializada exclusivamente en la importación directa, venta de maquinaria nueva y semi nueva, y postventa de <strong>mini excavadoras compactas</strong> de alta eficiencia de 0.8 a 7.5 toneladas con entrega inmediata y repuestos garantizados.
               </p>
 
               {/* Social icons list */}
@@ -210,6 +217,22 @@ export default function Footer() {
                     className="hover:text-[#FE8003] transition-colors flex items-center gap-1.5"
                   >
                     <span className="text-[#FE8003]">›</span> Catálogo de Equipos
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/implementos" 
+                    className="hover:text-[#FE8003] transition-colors flex items-center gap-1.5"
+                  >
+                    <span className="text-[#FE8003]">›</span> Implementos
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/entregas-exitosas" 
+                    className="hover:text-[#FE8003] transition-colors flex items-center gap-1.5"
+                  >
+                    <span className="text-[#FE8003]">›</span> Entrega a Clientes
                   </Link>
                 </li>
                 <li>
