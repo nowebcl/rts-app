@@ -3,13 +3,13 @@ import defaultProducts from '../data/products';
 export const PB_BASE_URL = 'https://bd.rstimportaciones.cl';
 const STORAGE_KEY = 'rst_catalog_products_v7';
 const AUTH_KEY = 'rst_admin_authenticated';
-const PB_TOKEN_KEY = 'rst_pb_super_token';
+const PB_TOKEN_KEY = 'rst_pb_session_token';
 
-// Credenciales oficiales requeridas
-export const ADMIN_CREDENTIALS = {
-  username: 'RST4',
-  password: 'Rst#2026!Pass'
-};
+// Helper de sanitización estricta para evitar inyecciones en URLs o queries
+function sanitizeId(val) {
+  if (typeof val !== 'string') return '';
+  return val.replace(/[^a-zA-Z0-9_-]/g, '').slice(0, 50);
+}
 
 class ProductService {
   constructor() {
@@ -26,14 +26,12 @@ class ProductService {
       localStorage.removeItem('rst_catalog_products_v4');
       localStorage.removeItem('rst_catalog_products_v5');
       localStorage.removeItem('rst_catalog_products_v6');
-      localStorage.removeItem('rst_catalog_products_v6');
 
       const stored = localStorage.getItem(STORAGE_KEY);
       if (!stored) {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultProducts));
       } else {
         const parsed = JSON.parse(stored);
-        // Si no tiene los 7 modelos oficiales, refrescar
         if (!Array.isArray(parsed) || parsed.length !== defaultProducts.length) {
           localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultProducts));
         }
@@ -44,30 +42,11 @@ class ProductService {
   }
 
   /**
-   * Obtener token de superusuario de PocketBase si es necesario
+   * Obtener token de sesión activo (almacenado solo durante el login válido)
    */
-  async getSuperuserToken() {
+  getSuperuserToken() {
     if (typeof window === 'undefined') return null;
-    const cached = localStorage.getItem(PB_TOKEN_KEY);
-    if (cached) return cached;
-
-    try {
-      const resp = await fetch(`${PB_BASE_URL}/api/collections/_superusers/auth-with-password`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ identity: 'admin@rst.cl', password: 'Rst#2026!Pass' })
-      });
-      if (resp.ok) {
-        const data = await resp.json();
-        if (data.token) {
-          localStorage.setItem(PB_TOKEN_KEY, data.token);
-          return data.token;
-        }
-      }
-    } catch (e) {
-      console.warn('No se pudo autenticar en PocketBase directamente:', e);
-    }
-    return null;
+    return sessionStorage.getItem(PB_TOKEN_KEY) || localStorage.getItem(PB_TOKEN_KEY);
   }
 
   /**
@@ -88,7 +67,7 @@ class ProductService {
             const defaultItem = defaultProducts.find(d => d.slug === r.slug || d.name === r.name || d.id === r.slug) || {};
             const fileList = Array.isArray(r.imagenes) ? r.imagenes : (r.imagenes ? [r.imagenes] : []);
             const gallery = fileList.length > 0
-              ? fileList.map(f => `${PB_BASE_URL}/api/files/productos/${r.id}/${f}`)
+              ? fileList.map(f => `${PB_BASE_URL}/api/files/productos/${r.id}/${encodeURIComponent(f)}`)
               : (defaultItem.gallery || [`/catalogo/${r.slug || 'rippa-r06'}/foto-3.webp`]);
 
             return {
@@ -154,33 +133,35 @@ class ProductService {
   }
 
   /**
-   * Obtener un producto por ID o Slug
+   * Obtener un producto por ID o Slug sanitizado
    */
   async getById(idOrSlug) {
+    const cleanId = String(idOrSlug || '').trim();
     const list = await this.getAll();
-    return list.find(p => p.id === idOrSlug || p.slug === idOrSlug || String(p.numberId) === idOrSlug) || null;
+    return list.find(p => p.id === cleanId || p.slug === cleanId || String(p.numberId) === cleanId) || null;
   }
 
   /**
    * Guardar o crear producto (PocketBase + LocalStorage)
    */
   async save(productData, webpFile = null) {
-    const token = await this.getSuperuserToken();
+    const token = this.getSuperuserToken();
 
-    // 1. Si tenemos token, guardar en PocketBase
+    // 1. Si tenemos token autenticado, guardar en PocketBase
     if (token) {
       try {
         const formData = new FormData();
-        formData.append('name', productData.name);
-        formData.append('category', productData.category);
-        formData.append('categoryName', productData.categoryName);
-        formData.append('price', productData.price || 'Consultar valor');
+        formData.append('name', String(productData.name || '').slice(0, 150));
+        formData.append('category', String(productData.category || 'excavadoras').slice(0, 50));
+        formData.append('categoryName', String(productData.categoryName || 'Mini Excavadoras').slice(0, 50));
+        formData.append('price', String(productData.price || 'Consultar valor').slice(0, 50));
         formData.append('isSold', String(Boolean(productData.isSold)));
-        formData.append('description', productData.description || 'Consultar más información');
-        formData.append('location', productData.location || 'Entrega con inducción en terreno a todo Chile');
-        formData.append('warranty', productData.warranty || '1 año de garantía componentes esenciales');
+        formData.append('description', String(productData.description || 'Consultar más información').slice(0, 2000));
+        formData.append('location', String(productData.location || 'Entrega con inducción en terreno a todo Chile').slice(0, 150));
+        formData.append('warranty', String(productData.warranty || '1 año de garantía componentes esenciales').slice(0, 150));
+        
         if (productData.pdfUrl) {
-          formData.append('pdfUrl', productData.pdfUrl);
+          formData.append('pdfUrl', String(productData.pdfUrl).slice(0, 300));
         }
 
         if (webpFile) {
@@ -188,13 +169,13 @@ class ProductService {
         }
 
         if (productData.numberId) {
-          formData.append('numberId', String(productData.numberId));
+          formData.append('numberId', String(parseInt(productData.numberId, 10) || Date.now()));
         } else {
           formData.append('numberId', String(Date.now()));
         }
 
         if (productData.slug) {
-          formData.append('slug', productData.slug);
+          formData.append('slug', sanitizeId(productData.slug));
         } else {
           const generatedSlug = (productData.name || 'maquina')
             .toLowerCase()
@@ -203,9 +184,11 @@ class ProductService {
           formData.append('slug', `${generatedSlug}-${Date.now().toString().slice(-4)}`);
         }
 
-        const isUpdate = Boolean(productData.recordId || (productData.id && productData.id.length === 15));
+        const rawRecordId = productData.recordId || (productData.id && productData.id.length === 15 ? productData.id : null);
+        const safeRecordId = rawRecordId ? sanitizeId(rawRecordId) : null;
+        const isUpdate = Boolean(safeRecordId);
         const url = isUpdate 
-          ? `${PB_BASE_URL}/api/collections/productos/records/${productData.recordId || productData.id}`
+          ? `${PB_BASE_URL}/api/collections/productos/records/${safeRecordId}`
           : `${PB_BASE_URL}/api/collections/productos/records`;
 
         const res = await fetch(url, {
@@ -224,7 +207,7 @@ class ProductService {
       }
     }
 
-    // Fallback: guardar en localStorage si PB no responde
+    // Fallback: guardar en localStorage si PB no responde o modo offline
     const list = await this.getAll();
     const index = list.findIndex(p => p.id === productData.id);
 
@@ -252,17 +235,19 @@ class ProductService {
    * Cambiar estado a Vendida / Disponible
    */
   async toggleSold(id) {
+    const safeId = sanitizeId(id);
     const list = await this.getAll();
-    const product = list.find(p => p.id === id);
+    const product = list.find(p => p.id === safeId || p.id === id);
     if (!product) return false;
 
     const nextSold = !product.isSold;
     const nextPrice = nextSold ? 'VENDIDA' : (product.price === 'VENDIDA' ? 'Consultar valor' : product.price);
 
-    const token = await this.getSuperuserToken();
+    const token = this.getSuperuserToken();
     if (token && product.recordId) {
+      const safeRecordId = sanitizeId(product.recordId);
       try {
-        await fetch(`${PB_BASE_URL}/api/collections/productos/records/${product.recordId}`, {
+        await fetch(`${PB_BASE_URL}/api/collections/productos/records/${safeRecordId}`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
@@ -277,7 +262,7 @@ class ProductService {
 
     // Actualizar local
     const updated = list.map(p => {
-      if (p.id === id) {
+      if (p.id === id || p.id === safeId) {
         return { ...p, isSold: nextSold, price: nextPrice };
       }
       return p;
@@ -289,16 +274,18 @@ class ProductService {
   }
 
   /**
-   * Eliminar producto
+   * Eliminar producto de forma segura
    */
   async delete(id) {
+    const safeId = sanitizeId(id);
     const list = await this.getAll();
-    const product = list.find(p => p.id === id);
+    const product = list.find(p => p.id === safeId || p.id === id);
 
-    const token = await this.getSuperuserToken();
+    const token = this.getSuperuserToken();
     if (token && product && product.recordId) {
+      const safeRecordId = sanitizeId(product.recordId);
       try {
-        await fetch(`${PB_BASE_URL}/api/collections/productos/records/${product.recordId}`, {
+        await fetch(`${PB_BASE_URL}/api/collections/productos/records/${safeRecordId}`, {
           method: 'DELETE',
           headers: { 'Authorization': `Bearer ${token}` }
         });
@@ -307,14 +294,14 @@ class ProductService {
       }
     }
 
-    const filtered = list.filter(p => p.id !== id);
+    const filtered = list.filter(p => p.id !== id && p.id !== safeId);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(filtered));
     window.dispatchEvent(new Event('rst_catalog_updated'));
     return true;
   }
 
   /**
-   * Restablecer al catálogo base de los 6 modelos oficiales
+   * Restablecer al catálogo base oficial
    */
   async resetToDefaults() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultProducts));
@@ -322,26 +309,52 @@ class ProductService {
     return defaultProducts;
   }
 
-  // Auth Helpers
+  // Auth Helpers seguros (cero credenciales almacenadas en código plano)
   isAuthenticated() {
     if (typeof window === 'undefined') return false;
-    return localStorage.getItem(AUTH_KEY) === 'true';
+    return sessionStorage.getItem(AUTH_KEY) === 'true' || localStorage.getItem(AUTH_KEY) === 'true';
   }
 
+  /**
+   * Autenticación contra PocketBase enviando credenciales ingresadas por el usuario
+   */
   async login(username, password) {
-    if (username.trim() === ADMIN_CREDENTIALS.username && password.trim() === ADMIN_CREDENTIALS.password) {
-      localStorage.setItem(AUTH_KEY, 'true');
-      try {
-        await this.getSuperuserToken();
-      } catch (e) {
-        console.warn('Superuser prefetch failed:', e);
+    if (!username || !password) return false;
+
+    const trimmedUser = username.trim();
+    const trimmedPass = password.trim();
+
+    // Mapear alias RST4 a la cuenta de superusuario en PocketBase si el usuario ingresa su alias
+    const identity = (trimmedUser.toUpperCase() === 'RST4') ? 'admin@rst.cl' : trimmedUser;
+
+    try {
+      const resp = await fetch(`${PB_BASE_URL}/api/collections/_superusers/auth-with-password`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ identity, password: trimmedPass })
+      });
+
+      if (resp.ok) {
+        const data = await resp.json();
+        if (data && data.token) {
+          sessionStorage.setItem(AUTH_KEY, 'true');
+          sessionStorage.setItem(PB_TOKEN_KEY, data.token);
+          // Opcionalmente mantener en localStorage para persistencia de sesión si se desea
+          localStorage.setItem(AUTH_KEY, 'true');
+          localStorage.setItem(PB_TOKEN_KEY, data.token);
+          return true;
+        }
       }
-      return true;
+    } catch (e) {
+      console.error('Error durante la autenticación segura:', e);
     }
     return false;
   }
 
   logout() {
+    if (typeof window === 'undefined') return;
+    sessionStorage.removeItem(AUTH_KEY);
+    sessionStorage.removeItem(PB_TOKEN_KEY);
     localStorage.removeItem(AUTH_KEY);
     localStorage.removeItem(PB_TOKEN_KEY);
   }

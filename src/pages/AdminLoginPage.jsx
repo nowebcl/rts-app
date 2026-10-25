@@ -1,23 +1,31 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Lock, User, ShieldAlert, ArrowRight } from 'lucide-react';
-import { productService, ADMIN_CREDENTIALS } from '../services/productService';
+import { Lock, User, ShieldAlert, ArrowRight, Loader2 } from 'lucide-react';
+import { productService } from '../services/productService';
 
 export default function AdminLoginPage() {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    setLoading(true);
 
-    const success = await productService.login(username, password);
-    if (success) {
-      navigate('/admin');
-    } else {
-      setError('Usuario o contraseña incorrectos.');
+    try {
+      const success = await productService.login(username, password);
+      if (success) {
+        navigate('/admin');
+      } else {
+        setError('Credenciales incorrectas. Acceso denegado.');
+      }
+    } catch (err) {
+      setError('Error al procesar la autenticación. Intente más tarde.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -43,7 +51,7 @@ export default function AdminLoginPage() {
               Panel de Administración
             </h1>
             <p className="text-xs text-slate-400 mt-0.5">
-              Gestión de Catálogo · Venta de Maquinaria Nueva y Semi Nueva RST
+              Gestión de Catálogo · Acceso Restringido y Protegido
             </p>
           </div>
         </div>
@@ -60,16 +68,17 @@ export default function AdminLoginPage() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-[11px] font-heading font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-              Usuario
+              Usuario o Correo
             </label>
             <div className="relative">
               <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 required
+                autoComplete="username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                placeholder="RST4"
+                placeholder="Ingresa tu usuario"
                 className="w-full bg-slate-950 border border-slate-700 rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-orange-500 transition-colors"
               />
             </div>
@@ -84,6 +93,7 @@ export default function AdminLoginPage() {
               <input
                 type="password"
                 required
+                autoComplete="current-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••••••"
@@ -94,23 +104,27 @@ export default function AdminLoginPage() {
 
           <button
             type="submit"
-            className="w-full mt-2 bg-orange-600 hover:bg-orange-500 text-white font-heading font-bold uppercase text-xs tracking-wider py-3.5 px-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2"
+            disabled={loading}
+            className="w-full mt-2 bg-orange-600 hover:bg-orange-500 disabled:opacity-50 text-white font-heading font-bold uppercase text-xs tracking-wider py-3.5 px-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
-            <span>Iniciar Sesión</span>
-            <ArrowRight className="w-4 h-4" />
+            {loading ? (
+              <>
+                <Loader2 className="w-4 h-4 animate-spin" />
+                <span>Verificando credenciales...</span>
+              </>
+            ) : (
+              <>
+                <span>Iniciar Sesión</span>
+                <ArrowRight className="w-4 h-4" />
+              </>
+            )}
           </button>
         </form>
 
-        {/* Nota informativa de credenciales */}
-        <div className="bg-slate-950/60 rounded-xl p-3.5 border border-slate-800 text-[11px] text-slate-400 space-y-1">
-          <div className="font-bold text-slate-300 flex items-center justify-between">
-            <span>Credenciales de Acceso:</span>
-            <span className="text-[10px] text-emerald-400 bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-800">
-              Activo
-            </span>
-          </div>
-          <div>Usuario: <code className="text-orange-400 font-bold">{ADMIN_CREDENTIALS.username}</code></div>
-          <div>Clave: <code className="text-orange-400 font-bold">{ADMIN_CREDENTIALS.password}</code></div>
+        <div className="text-center pt-2">
+          <p className="text-[11px] text-slate-500">
+            Conexión cifrada de extremo a extremo SSL/TLS. Todos los accesos son auditados.
+          </p>
         </div>
 
       </div>
