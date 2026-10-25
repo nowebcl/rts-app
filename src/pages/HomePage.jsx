@@ -16,6 +16,7 @@ import HomeCatalogLoop from '../components/HomeCatalogLoop';
 import LocationContactSection from '../components/LocationContactSection';
 import BannerSlider from '../components/BannerSlider';
 import HomeClientsSection from '../components/HomeClientsSection';
+import SeoFaqSection from '../components/SeoFaqSection';
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -317,6 +318,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* 8.5 SEO FAQ Y GUIA DE COMPRA */}
+      <SeoFaqSection />
 
       {/* 9. UBICACIÓN & CONTACTO */}
       <LocationContactSection />
