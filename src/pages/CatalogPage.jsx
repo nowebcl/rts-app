@@ -455,7 +455,7 @@ export default function CatalogPage() {
                   onChange={(e) => handleTonnageChange(e.target.value)}
                   className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 font-bold text-slate-800 focus:outline-none focus:border-[#FE8003] cursor-pointer"
                 >
-                  <option value="all">Todas las capacidades (0.75T - 7.3T)</option>
+                  <option value="all">Todas las capacidades (desde 0.6 ton hasta 8 ton)</option>
                   <option value="micro">Ultra Compactas (&lt; 1.0 Ton)</option>
                   <option value="compact">Compactas (1.0 Ton - 1.8 Ton)</option>
                   <option value="medium">Medianas con Cabina (3.5 Ton - 4.0 Ton)</option>

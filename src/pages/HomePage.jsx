@@ -63,7 +63,7 @@ export default function HomePage() {
                 onChange={(e) => setFindCategory(e.target.value)}
                 className="w-full bg-[#f8f8f8] border border-[#dddddd] p-3 text-xs font-bold text-[#222222] focus:outline-none focus:border-[#FE8003] cursor-pointer"
               >
-                <option value="">Todas las capacidades (0.75T - 7.3T)</option>
+                <option value="">Todas las capacidades (desde 0.6 ton hasta 8 ton)</option>
                 <option value="micro">Ultra Compactas (&lt; 1.0 Ton)</option>
                 <option value="compact">Compactas (1.0 Ton - 1.8 Ton)</option>
                 <option value="medium">Medianas con Cabina (3.5 Ton - 4.0 Ton)</option>
