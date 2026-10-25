@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Lock, User, ShieldAlert, ArrowRight, Loader2 } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
+import { Lock, User, ShieldAlert, ArrowRight, Loader2, ArrowLeft } from 'lucide-react';
 import { productService } from '../services/productService';
 
 export default function AdminLoginPage() {
@@ -20,7 +20,7 @@ export default function AdminLoginPage() {
       if (success) {
         navigate('/admin');
       } else {
-        setError('Credenciales incorrectas. Acceso denegado.');
+        setError('Credenciales incorrectas. Verifique usuario y contraseña.');
       }
     } catch (err) {
       setError('Error al procesar la autenticación. Intente más tarde.');
@@ -30,16 +30,28 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-slate-900 flex items-center justify-center p-4 sm:p-6 selection:bg-orange-500 selection:text-white">
-      <div className="w-full max-w-md bg-slate-800 border border-slate-700 rounded-2xl shadow-2xl p-8 space-y-6">
+    <div className="min-h-screen w-full bg-slate-100 flex flex-col items-center justify-center p-4 sm:p-6 selection:bg-orange-500 selection:text-white">
+      
+      {/* Botón Volver al Sitio */}
+      <div className="w-full max-w-md mb-4 text-left">
+        <Link 
+          to="/" 
+          className="inline-flex items-center gap-2 text-xs font-heading font-bold uppercase tracking-wider text-slate-500 hover:text-slate-900 transition-colors"
+        >
+          <ArrowLeft className="w-3.5 h-3.5" />
+          <span>Volver al Catálogo Público</span>
+        </Link>
+      </div>
+
+      <div className="w-full max-w-md bg-white border border-slate-200 rounded-2xl shadow-xl p-8 sm:p-10 space-y-6">
 
         {/* Logo Oficial de RST */}
         <div className="text-center space-y-3">
-          <div className="inline-block p-3 bg-slate-950/80 rounded-2xl border border-slate-700 shadow-inner">
+          <div className="inline-block p-3 bg-slate-50 rounded-2xl border border-slate-100 shadow-xs">
             <img
               src="/brand/rst_logo_official.png"
               alt="Logo RST Importaciones"
-              className="h-16 w-auto mx-auto object-contain"
+              className="h-14 w-auto mx-auto object-contain"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = '/brand/logo_main.png';
@@ -47,27 +59,27 @@ export default function AdminLoginPage() {
             />
           </div>
           <div>
-            <h1 className="text-xl font-heading font-black text-white uppercase tracking-wider">
+            <h1 className="text-xl font-heading font-black text-slate-900 uppercase tracking-wider">
               Panel de Administración
             </h1>
-            <p className="text-xs text-slate-400 mt-0.5">
-              Gestión de Catálogo · Acceso Restringido y Protegido
+            <p className="text-xs text-slate-500 mt-0.5">
+              Gestión de Maquinaria · Acceso Restringido
             </p>
           </div>
         </div>
 
         {/* Mensaje de Error */}
         {error && (
-          <div className="bg-red-500/10 border border-red-500/30 text-red-400 text-xs rounded-lg p-3 flex items-center gap-2">
-            <ShieldAlert className="w-4 h-4 shrink-0" />
+          <div className="bg-red-50 border border-red-200 text-red-600 text-xs rounded-xl p-3.5 flex items-center gap-2.5">
+            <ShieldAlert className="w-4 h-4 shrink-0 text-red-500" />
             <span>{error}</span>
           </div>
         )}
 
         {/* Formulario de Login */}
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4 text-left">
           <div>
-            <label className="block text-[11px] font-heading font-bold uppercase tracking-wider text-slate-300 mb-1.5">
+            <label className="block text-[11px] font-heading font-bold uppercase tracking-wider text-slate-700 mb-1.5">
               Usuario o Correo
             </label>
             <div className="relative">
@@ -79,13 +91,13 @@ export default function AdminLoginPage() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="Ingresa tu usuario"
-                className="w-full bg-slate-950 border border-slate-700 rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-orange-500 transition-colors"
+                className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#FE8003] focus:ring-2 focus:ring-orange-100 transition-all"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-[11px] font-heading font-bold uppercase tracking-wider text-slate-300 mb-1.5">
+            <label className="block text-[11px] font-heading font-bold uppercase tracking-wider text-slate-700 mb-1.5">
               Contraseña
             </label>
             <div className="relative">
@@ -97,7 +109,7 @@ export default function AdminLoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••••••"
-                className="w-full bg-slate-950 border border-slate-700 rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-orange-500 transition-colors"
+                className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#FE8003] focus:ring-2 focus:ring-orange-100 transition-all"
               />
             </div>
           </div>
@@ -105,7 +117,7 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full mt-2 bg-orange-600 hover:bg-orange-500 disabled:opacity-50 text-white font-heading font-bold uppercase text-xs tracking-wider py-3.5 px-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full mt-2 bg-[#FE8003] hover:bg-orange-600 disabled:opacity-50 text-white font-heading font-bold uppercase text-xs tracking-wider py-3.5 px-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
             {loading ? (
               <>
@@ -121,9 +133,9 @@ export default function AdminLoginPage() {
           </button>
         </form>
 
-        <div className="text-center pt-2">
-          <p className="text-[11px] text-slate-500">
-            Conexión cifrada de extremo a extremo SSL/TLS. Todos los accesos son auditados.
+        <div className="text-center pt-2 border-t border-slate-100">
+          <p className="text-[11px] text-slate-400">
+            Conexión protegida SSL/TLS. Noweb Labs Software.
           </p>
         </div>
 

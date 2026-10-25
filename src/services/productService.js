@@ -19,7 +19,6 @@ class ProductService {
   init() {
     if (typeof window === 'undefined') return;
     try {
-      // Limpiar versiones antiguas del catálogo dummy anterior
       localStorage.removeItem('rst_catalog_products');
       localStorage.removeItem('rst_catalog_products_v2');
       localStorage.removeItem('rst_catalog_products_v3');
@@ -42,7 +41,7 @@ class ProductService {
   }
 
   /**
-   * Obtener token de sesión activo (almacenado solo durante el login válido)
+   * Obtener token de sesión activo
    */
   getSuperuserToken() {
     if (typeof window === 'undefined') return null;
@@ -51,11 +50,10 @@ class ProductService {
 
   /**
    * Obtener todos los productos oficiales
-   * (con respaldo automático en cache local si la red falla)
+   * (con sincronización PocketBase y respaldo local)
    */
   async getAll() {
     try {
-      // 1. Intentar leer desde PocketBase (Regla pública de lectura)
       const res = await fetch(`${PB_BASE_URL}/api/collections/productos/records?perPage=100&sort=numberId`, {
         cache: 'no-store'
       });
@@ -66,9 +64,16 @@ class ProductService {
           const mapped = json.items.map(r => {
             const defaultItem = defaultProducts.find(d => d.slug === r.slug || d.name === r.name || d.id === r.slug) || {};
             const fileList = Array.isArray(r.imagenes) ? r.imagenes : (r.imagenes ? [r.imagenes] : []);
+            
             const gallery = fileList.length > 0
               ? fileList.map(f => `${PB_BASE_URL}/api/files/productos/${r.id}/${encodeURIComponent(f)}`)
               : (defaultItem.gallery || [`/catalogo/${r.slug || 'rippa-r06'}/foto-3.webp`]);
+
+            // Manejo de PDF: si tiene archivo cargado en PB o URL
+            let resolvedPdfUrl = r.pdfUrl || defaultItem.pdfUrl || '';
+            if (r.pdfFile) {
+              resolvedPdfUrl = `${PB_BASE_URL}/api/files/productos/${r.id}/${encodeURIComponent(r.pdfFile)}`;
+            }
 
             return {
               id: defaultItem.id || r.slug || r.id,
@@ -88,11 +93,13 @@ class ProductService {
                 "1 año de garantía componentes esenciales",
                 "Certificación Euro 5, EPA, CE"
               ],
-              pdfUrl: r.pdfUrl || defaultItem.pdfUrl || '',
+              pdfUrl: resolvedPdfUrl,
+              pdfFileName: r.pdfFile || '',
               location: r.location || defaultItem.location || 'Entrega con inducción en terreno a todo Chile',
               warranty: r.warranty || defaultItem.warranty || '1 año de garantía componentes esenciales (Motor y Bomba)',
               image: gallery[0] || defaultItem.image || '',
-              gallery: gallery
+              gallery: gallery,
+              rawFiles: fileList
             };
           });
 
@@ -103,7 +110,6 @@ class ProductService {
             }
           });
 
-          // Actualizar caché local
           if (typeof window !== 'undefined') {
             localStorage.setItem(STORAGE_KEY, JSON.stringify(mapped));
           }
@@ -111,84 +117,94 @@ class ProductService {
         }
       }
     } catch (e) {
-      console.warn('Aviso: Usando catálogo local debido a:', e.message);
+      console.warn('Aviso: Conectando con catálogo local:', e.message);
     }
 
-    // 2. Fallback a catálogo oficial por defecto
+    // Fallback a localStorage o defaults
     if (typeof window !== 'undefined') {
       try {
         const data = localStorage.getItem(STORAGE_KEY);
         if (data) {
           const parsed = JSON.parse(data);
-          if (Array.isArray(parsed) && parsed.length === defaultProducts.length) {
+          if (Array.isArray(parsed) && parsed.length >= defaultProducts.length) {
             return parsed;
           }
         }
-        return defaultProducts;
       } catch (e) {
-        return defaultProducts;
+        // ignore
       }
     }
     return defaultProducts;
   }
 
   /**
-   * Obtener un producto por ID o Slug sanitizado
+   * Obtener producto por ID o Slug
    */
   async getById(idOrSlug) {
     const cleanId = String(idOrSlug || '').trim();
     const list = await this.getAll();
-    return list.find(p => p.id === cleanId || p.slug === cleanId || String(p.numberId) === cleanId) || null;
+    return list.find(p => p.id === cleanId || p.slug === cleanId || p.recordId === cleanId) || null;
   }
 
   /**
-   * Guardar o crear producto (PocketBase + LocalStorage)
+   * Guardar o editar ficha de producto (Soporta múltiples imágenes WebP y archivo PDF)
    */
-  async save(productData, webpFile = null) {
+  async save(productData, newImageFiles = [], newPdfFile = null) {
     const token = this.getSuperuserToken();
+    let remoteSaved = false;
+    let remoteError = null;
 
-    // 1. Si tenemos token autenticado, guardar en PocketBase
+    // 1. Intentar guardar en PocketBase si tenemos sesión
     if (token) {
       try {
         const formData = new FormData();
-        formData.append('name', String(productData.name || '').slice(0, 150));
+        formData.append('name', String(productData.name || '').trim().slice(0, 150));
         formData.append('category', String(productData.category || 'excavadoras').slice(0, 50));
         formData.append('categoryName', String(productData.categoryName || 'Mini Excavadoras').slice(0, 50));
         formData.append('price', String(productData.price || 'Consultar valor').slice(0, 50));
         formData.append('isSold', String(Boolean(productData.isSold)));
-        formData.append('description', String(productData.description || 'Consultar más información').slice(0, 2000));
+        formData.append('description', String(productData.description || '').slice(0, 4000));
         formData.append('location', String(productData.location || 'Entrega con inducción en terreno a todo Chile').slice(0, 150));
         formData.append('warranty', String(productData.warranty || '1 año de garantía componentes esenciales').slice(0, 150));
-        
-        if (productData.pdfUrl) {
-          formData.append('pdfUrl', String(productData.pdfUrl).slice(0, 300));
+
+        if (productData.pdfUrl && typeof productData.pdfUrl === 'string') {
+          formData.append('pdfUrl', productData.pdfUrl.slice(0, 300));
         }
 
-        if (webpFile) {
-          formData.append('imagenes', webpFile, webpFile.name);
+        // Subir archivo PDF técnico si se proporcionó
+        if (newPdfFile instanceof File) {
+          formData.append('pdfFile', newPdfFile, newPdfFile.name);
+        }
+
+        // Subir múltiples imágenes WebP
+        if (Array.isArray(newImageFiles) && newImageFiles.length > 0) {
+          newImageFiles.forEach((file) => {
+            if (file instanceof File) {
+              formData.append('imagenes', file, file.name);
+            }
+          });
         }
 
         if (productData.numberId) {
           formData.append('numberId', String(parseInt(productData.numberId, 10) || Date.now()));
-        } else {
-          formData.append('numberId', String(Date.now()));
         }
 
-        if (productData.slug) {
-          formData.append('slug', sanitizeId(productData.slug));
-        } else {
-          const generatedSlug = (productData.name || 'maquina')
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, '-')
-            .replace(/(^-|-$)/g, '');
-          formData.append('slug', `${generatedSlug}-${Date.now().toString().slice(-4)}`);
+        const slugValue = sanitizeId(productData.slug || productData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'));
+        formData.append('slug', slugValue);
+
+        // Identificar si existe el registro en PocketBase por recordId, slug o id
+        let targetRecordId = (productData.recordId && productData.recordId.length === 15) ? productData.recordId : null;
+        if (!targetRecordId) {
+          const currentList = await this.getAll();
+          const match = currentList.find(p => p.id === productData.id || p.slug === slugValue || p.name === productData.name);
+          if (match && match.recordId && match.recordId.length === 15) {
+            targetRecordId = match.recordId;
+          }
         }
 
-        const rawRecordId = productData.recordId || (productData.id && productData.id.length === 15 ? productData.id : null);
-        const safeRecordId = rawRecordId ? sanitizeId(rawRecordId) : null;
-        const isUpdate = Boolean(safeRecordId);
-        const url = isUpdate 
-          ? `${PB_BASE_URL}/api/collections/productos/records/${safeRecordId}`
+        const isUpdate = Boolean(targetRecordId);
+        const url = isUpdate
+          ? `${PB_BASE_URL}/api/collections/productos/records/${targetRecordId}`
           : `${PB_BASE_URL}/api/collections/productos/records`;
 
         const res = await fetch(url, {
@@ -198,28 +214,36 @@ class ProductService {
         });
 
         if (res.ok) {
-          const saved = await res.json();
-          window.dispatchEvent(new Event('rst_catalog_updated'));
-          return saved;
+          remoteSaved = true;
+        } else {
+          const errDetail = await res.text();
+          remoteError = `Error HTTP ${res.status}: ${errDetail}`;
+          console.warn('PocketBase save error:', remoteError);
         }
-      } catch (e) {
-        console.error('Error al guardar en PocketBase:', e);
+      } catch (err) {
+        remoteError = err.message || 'Error de conexión con la base de datos';
+        console.error('Error al guardar en PocketBase:', err);
       }
     }
 
-    // Fallback: guardar en localStorage si PB no responde o modo offline
+    // 2. Garantizar que siempre se guarde localmente (Doble resiliencia)
     const list = await this.getAll();
-    const index = list.findIndex(p => p.id === productData.id);
+    const index = list.findIndex(p => p.id === productData.id || p.slug === productData.slug);
 
     let updatedList;
     if (index >= 0) {
       updatedList = [...list];
-      updatedList[index] = { ...updatedList[index], ...productData };
+      updatedList[index] = { 
+        ...updatedList[index], 
+        ...productData,
+        // Conservar o actualizar galería local
+        gallery: productData.gallery || updatedList[index].gallery
+      };
     } else {
-      const newId = `rst-${Date.now().toString().slice(-4)}`;
+      const newId = productData.id || `rst-${Date.now().toString().slice(-4)}`;
       const newProduct = {
         ...productData,
-        id: productData.id || newId,
+        id: newId,
         numberId: list.length + 1,
         slug: productData.slug || `${productData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${list.length + 1}`
       };
@@ -228,7 +252,15 @@ class ProductService {
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedList));
     window.dispatchEvent(new Event('rst_catalog_updated'));
-    return productData;
+
+    return {
+      success: true,
+      remoteSaved,
+      remoteError,
+      message: remoteSaved 
+        ? '¡Ficha guardada exitosamente en la base de datos oficial!' 
+        : (remoteError ? `Guardado localmente. (Aviso de BD: ${remoteError})` : 'Guardado exitosamente.')
+    };
   }
 
   /**
@@ -244,10 +276,11 @@ class ProductService {
     const nextPrice = nextSold ? 'VENDIDA' : (product.price === 'VENDIDA' ? 'Consultar valor' : product.price);
 
     const token = this.getSuperuserToken();
-    if (token && product.recordId) {
-      const safeRecordId = sanitizeId(product.recordId);
+    let targetRecordId = (product.recordId && product.recordId.length === 15) ? product.recordId : null;
+    
+    if (token && targetRecordId) {
       try {
-        await fetch(`${PB_BASE_URL}/api/collections/productos/records/${safeRecordId}`, {
+        await fetch(`${PB_BASE_URL}/api/collections/productos/records/${targetRecordId}`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
@@ -260,7 +293,6 @@ class ProductService {
       }
     }
 
-    // Actualizar local
     const updated = list.map(p => {
       if (p.id === id || p.id === safeId) {
         return { ...p, isSold: nextSold, price: nextPrice };
@@ -274,7 +306,7 @@ class ProductService {
   }
 
   /**
-   * Eliminar producto de forma segura
+   * Eliminar producto
    */
   async delete(id) {
     const safeId = sanitizeId(id);
@@ -283,9 +315,8 @@ class ProductService {
 
     const token = this.getSuperuserToken();
     if (token && product && product.recordId) {
-      const safeRecordId = sanitizeId(product.recordId);
       try {
-        await fetch(`${PB_BASE_URL}/api/collections/productos/records/${safeRecordId}`, {
+        await fetch(`${PB_BASE_URL}/api/collections/productos/records/${product.recordId}`, {
           method: 'DELETE',
           headers: { 'Authorization': `Bearer ${token}` }
         });
@@ -309,22 +340,17 @@ class ProductService {
     return defaultProducts;
   }
 
-  // Auth Helpers seguros (cero credenciales almacenadas en código plano)
+  // Auth Helpers seguros
   isAuthenticated() {
     if (typeof window === 'undefined') return false;
     return sessionStorage.getItem(AUTH_KEY) === 'true' || localStorage.getItem(AUTH_KEY) === 'true';
   }
 
-  /**
-   * Autenticación contra PocketBase enviando credenciales ingresadas por el usuario
-   */
   async login(username, password) {
     if (!username || !password) return false;
 
     const trimmedUser = username.trim();
     const trimmedPass = password.trim();
-
-    // Mapear alias RST4 a la cuenta de superusuario en PocketBase si el usuario ingresa su alias
     const identity = (trimmedUser.toUpperCase() === 'RST4') ? 'admin@rst.cl' : trimmedUser;
 
     try {
@@ -339,14 +365,13 @@ class ProductService {
         if (data && data.token) {
           sessionStorage.setItem(AUTH_KEY, 'true');
           sessionStorage.setItem(PB_TOKEN_KEY, data.token);
-          // Opcionalmente mantener en localStorage para persistencia de sesión si se desea
           localStorage.setItem(AUTH_KEY, 'true');
           localStorage.setItem(PB_TOKEN_KEY, data.token);
           return true;
         }
       }
     } catch (e) {
-      console.error('Error durante la autenticación segura:', e);
+      console.error('Error durante la autenticación:', e);
     }
     return false;
   }

@@ -43,9 +43,7 @@ function AppLayout() {
   const isAdminRoute = location.pathname.startsWith('/admin');
 
   return (
-    <div className={`min-h-screen w-full max-w-full overflow-x-hidden flex flex-col font-sans antialiased selection:bg-orange-500 selection:text-white ${
-      isAdminRoute ? 'bg-slate-900 text-slate-100' : 'bg-slate-50 text-slate-900'
-    }`}>
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden flex flex-col font-sans antialiased bg-slate-50 text-slate-900 selection:bg-orange-500 selection:text-white">
       {!isAdminRoute && <Navbar />}
       <main className="flex-1 w-full max-w-full overflow-x-hidden">
         <Routes>
@@ -61,9 +59,13 @@ function AppLayout() {
           <Route path="/accesorios" element={<ImplementosPage />} />
           <Route path="/nosotros" element={<AboutPage />} />
           <Route path="/contacto" element={<ContactPage />} />
-          {/* Rutas de Administración */}
+          
+          {/* Rutas de Administración con Fondo Blanco Minimalista */}
           <Route path="/admin" element={<AdminDashboardPage />} />
+          <Route path="/admin/editar/:id" element={<AdminDashboardPage />} />
+          <Route path="/admin/nuevo" element={<AdminDashboardPage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
+          
           {/* Fallback to Home */}
           <Route path="*" element={<HomePage />} />
         </Routes>
