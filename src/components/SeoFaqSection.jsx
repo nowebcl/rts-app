@@ -56,8 +56,8 @@ export default function SeoFaqSection() {
 
   const faqs = [
     {
-      q: "¿Dónde comprar mini excavadoras en Región de Los Lagos y todo Chile?",
-      a: "Puedes comprar mini excavadoras nuevas y semi nuevas en RST Importaciones. Contamos con base física en Llanquihue y Puerto Montt para la Región de Los Lagos, además de despacho asegurado en camión rampa con inducción en terreno a cualquier comuna de Chile."
+      q: "¿Dónde comprar mini excavadoras en Región de Los Lagos, en la Patagonia y todo Chile?",
+      a: "Puedes comprar mini excavadoras nuevas y semi nuevas en RST Importaciones. Contamos con base física en Llanquihue y Puerto Montt para la Región de Los Lagos y la Patagonia, además de despacho asegurado en camión rampa con inducción en terreno a cualquier comuna de Chile."
     },
     {
       q: "¿Tienen venta y entrega de mini excavadoras en Llanquihue y Puerto Montt?",
@@ -81,7 +81,7 @@ export default function SeoFaqSection() {
     <section className="py-20 bg-slate-50 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Encabezado Principal con Región de Los Lagos y Todo Chile */}
+        {/* Encabezado Principal con Región de Los Lagos, la Patagonia y Todo Chile */}
         <div className="text-left space-y-3 mb-12">
           <div className="antek-dashes">
             <span></span>
@@ -90,13 +90,13 @@ export default function SeoFaqSection() {
           </div>
           <div className="text-xs font-heading font-extrabold uppercase text-[#FE8003] tracking-widest flex items-center gap-2">
             <HelpCircle className="w-4 h-4" />
-            <span>Guía de Compra · Región de Los Lagos y Todo Chile</span>
+            <span>Guía de Compra · Región de Los Lagos, en la Patagonia y Todo Chile</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-heading font-black uppercase text-[#222222] tracking-wide leading-tight">
-            Mini Excavadoras en Región de Los Lagos y Todo Chile
+            Mini Excavadoras en Región de Los Lagos y en la Patagonia y Todo Chile
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 max-w-3xl leading-relaxed">
-            RST Importaciones: venta de <strong>mini excavadoras en Región de Los Lagos</strong> (Llanquihue, Puerto Montt, Osorno, Chiloé) y despacho a <strong>todo Chile</strong>. Modelos oficiales <strong>SANY</strong> y <strong>RIPPA</strong> con entrega inmediata y garantía.
+            RST Importaciones: venta de <strong>mini excavadoras en Región de Los Lagos y en la Patagonia</strong> (Llanquihue, Puerto Montt, Osorno, Chiloé, Coyhaique, Punta Arenas) y despacho a <strong>todo Chile</strong>. Modelos oficiales <strong>SANY</strong> y <strong>RIPPA</strong> con entrega inmediata y garantía.
           </p>
         </div>
 
