@@ -179,7 +179,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <h3 className="font-heading font-black text-base uppercase text-[#222222] tracking-wide">
-                      Misión RST Chile
+                      Misión RST
                     </h3>
                     <span className="text-[11px] font-heading font-bold uppercase text-[#FE8003] tracking-wider block">
                       Propósito Operativo y Rendimiento en Terreno
@@ -188,7 +188,7 @@ export default function AboutPage() {
                 </div>
 
                 <p className="text-sm text-[#444444] leading-relaxed">
-                  Importamos y comercializamos maquinaria nueva y semi nueva compacta, confiable, eficiente y con tecnología de vanguardia a precios altamente competitivos, eliminando intermediarios para reducir el esfuerzo físico y elevar al máximo la productividad en los sectores agrícola, forestal, de la construcción e industrial.
+                  Importamos y comercializamos maquinaria compacta confiable y eficiente, con tecnología de vanguardia a precios competitivos, para reducir el esfuerzo físico y aumentar la productividad en los sectores agrícola, construcción e Industrial.
                 </p>
               </div>
 
@@ -200,7 +200,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <h3 className="font-heading font-black text-base uppercase text-[#222222] tracking-wide">
-                      Nuestra Visión de Futuro
+                      Nuestra Visión
                     </h3>
                     <span className="text-[11px] font-heading font-bold uppercase text-[#777777] tracking-wider block">
                       Liderazgo, Innovación y Proyección Global
@@ -209,7 +209,7 @@ export default function AboutPage() {
                 </div>
 
                 <p className="text-sm text-[#444444] leading-relaxed">
-                  Buscar, importar y acercar tecnología e innovación de calidad mundial, para resolver necesidades reales y mejorar sostenidamente la eficiencia en los distintos sectores productivos de la región, nuestro país y el mundo.
+                  Buscar, importar y acercar tecnología e innovación de calidad, para resolver necesidades reales y mejorar la eficiencia en los distintos sectores productivos de la región, nuestro país y el mundo.
                 </p>
               </div>
 

@@ -251,7 +251,7 @@ export default function HomePage() {
                     </h3>
                   </div>
                   <p className="text-sm text-[#555555] leading-relaxed">
-                    Importamos y comercializamos maquinaria compacta confiable y eficiente, con tecnología de vanguardia a precios competitivos, para reducir el esfuerzo físico y aumentar la productividad en los sectores agrícola, de la construcción e industrial.
+                    Importamos y comercializamos maquinaria compacta confiable y eficiente, con tecnología de vanguardia a precios competitivos, para reducir el esfuerzo físico y aumentar la productividad en los sectores agrícola, construcción e Industrial.
                   </p>
                 </div>
 
