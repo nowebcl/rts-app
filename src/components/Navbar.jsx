@@ -185,9 +185,9 @@ export default function Navbar() {
                     { name: 'Quiénes Somos', path: '/nosotros' },
                     { name: 'Alianza con RIPPA', path: '/alianza-rippa' },
                     { name: 'Servicios Realizados', path: '/servicios' },
+                    { name: 'Entrega a nuestros clientes', path: '/entregas-exitosas' },
                     { name: 'Catálogo de Maquinaria Nueva y Semi Nueva', path: '/catalogo' },
                     { name: 'Implementos', path: '/implementos' },
-                    { name: 'Entrega a Nuestros Clientes', path: '/entregas-exitosas' },
                     { name: 'Contacto & Casa Matriz', path: '/#contacto' }
                   ].map((item) => (
                     <NavLink

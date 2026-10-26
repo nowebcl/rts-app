@@ -54,6 +54,7 @@ function AppLayout() {
           <Route path="/entregas-exitosas" element={<DeliveriesPage />} />
           <Route path="/entregas" element={<DeliveriesPage />} />
           <Route path="/portafolio" element={<DeliveriesPage />} />
+          <Route path="/clientes" element={<DeliveriesPage />} />
           <Route path="/producto/:id" element={<ProductDetailPage />} />
           <Route path="/ficha/:id" element={<ProductDetailPage />} />
           <Route path="/implementos" element={<ImplementosPage />} />
