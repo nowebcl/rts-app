@@ -45,5 +45,5 @@ test_processed/
 
 # Backups
 .backup*/
-*.backup
+*.backup*
 *.bak

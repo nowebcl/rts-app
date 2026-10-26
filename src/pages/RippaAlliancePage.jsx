@@ -145,29 +145,32 @@ export default function RippaAlliancePage() {
             </div>
           </div>
 
-          {/* Columna Foto Principal: SEGUNDA IMAGEN SUBIDA POR EL USUARIO */}
+          {/* Columna Foto Principal: ALIANZA OFICIAL RST - RIPPA */}
           <div className="lg:col-span-6">
             <div className="border-4 border-[#1f1f1f] shadow-2xl relative overflow-hidden group rounded-[2px] bg-black">
-              <img
-                src="/images/alianza-rippa-fabrica.jpg"
-                alt="Planta de Fabricación RIPPA - Línea de Ensamblaje y Alianza con RST Chile"
-                className="w-full h-[460px] sm:h-[500px] object-cover object-center transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none"></div>
+              <picture>
+                <source srcSet="/images/alianza-rippa-fabrica.webp" type="image/webp" />
+                <img
+                  src="/images/alianza-rippa-fabrica.jpg"
+                  alt="Alianza Estratégica RST Chile con Directivos de Fábrica RIPPA"
+                  className="w-full h-[500px] sm:h-[560px] lg:h-[600px] object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+              </picture>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none"></div>
 
               {/* Badge superior */}
               <div className="absolute top-4 left-4 bg-[#FE8003] text-white text-[11px] font-heading font-black uppercase px-3 py-1.5 shadow-md flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>Mega Planta de Fabricación RIPPA</span>
+                <span>Alianza Oficial Directa con RIPPA</span>
               </div>
 
               {/* Pie de foto descriptivo */}
               <div className="absolute bottom-4 left-4 right-4 bg-[#111111]/90 text-white p-4 text-xs backdrop-blur-xs border-l-4 border-[#FE8003] shadow-lg">
                 <span className="font-heading font-bold uppercase block text-[#FE8003] text-sm tracking-wide">
-                  Línea de Ensamblaje y Producción en Serie RIPPA
+                  Encuentro Oficial y Respaldo de Fábrica
                 </span>
                 <span className="text-[#cccccc] text-[11px] sm:text-xs">
-                  Flota de mini excavadoras compactas listas para embarque internacional directo a Chile. Estándares ISO 9001 y CE europea.
+                  Vínculo comercial y técnico directo de RST Chile con la directiva global de RIPPA Group para distribución oficial en Chile.
                 </span>
               </div>
             </div>

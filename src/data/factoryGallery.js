@@ -12,8 +12,8 @@ export const factoryImages = [
   },
   {
     id: 'fabrica-03',
-    image: encodeURI('/FOTOS EN FABRICA/WhatsApp Image 2026-10-24 at 12.08.032.jpeg'),
-    webp: encodeURI('/FOTOS EN FABRICA/WhatsApp Image 2026-10-24 at 12.08.032.webp')
+    image: encodeURI('/FOTOS EN FABRICA/WhatsApp Image 2026-10-24 at 12.08.04.jpeg'),
+    webp: encodeURI('/FOTOS EN FABRICA/WhatsApp Image 2026-10-24 at 12.08.04.webp')
   },
   {
     id: 'fabrica-04',

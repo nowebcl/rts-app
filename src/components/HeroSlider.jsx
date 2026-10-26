@@ -10,8 +10,8 @@ export default function HeroSlider() {
   const slides = [
     {
       id: 1,
-      image: "/HERO/2be40f0b-8ca1-4b89-bef7-47991620f738.jpg",
-      fallbackImage: "/HERO/2be40f0b-8ca1-4b89-bef7-47991620f738.jpg",
+      image: "/HERO/hero-slide-1.webp",
+      fallbackImage: "/HERO/hero-slide-1.jpg",
       subtitle: "Venta de maquinaria nueva y semi nueva con despacho inmediato y garantía a todo Chile",
       titleLine1: "Catálogo Completo",
       titleLine2: "de Mini Excavadoras",
