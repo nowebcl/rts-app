@@ -12,9 +12,9 @@ export const excavators = [
     pricePromo: "Consultar valor",
     inStock: true,
     leadTime: "Entrega Inmediata",
-    image: "/catalogo/rippa-r06/foto-3.webp",
+    image: "/nuevas imagenes de productos/8f09b593-89b7-4ac8-b85b-e5dfa94f8b52.png",
     gallery: [
-      "/catalogo/rippa-r06/foto-3.webp"
+      "/nuevas imagenes de productos/8f09b593-89b7-4ac8-b85b-e5dfa94f8b52.png"
     ],
     pdfUrl: "/catalogo/rippa-r06/ficha-rippa-r06.pdf",
     cabinType: "Canopy Abierto Reforzado",
@@ -154,7 +154,7 @@ export const excavators = [
   },
   {
     id: "sanny-sy35u",
-    name: "MODELO SANNY SY35U（StageIII)",
+    name: "MODELO SANY SY35U（StageIII)",
     slug: "sanny-sy35u",
     tagline: "Yanmar 3TNV88F 24.4 HP, excavación 3.105 mm y giro de cola cero",
     badge: "3.8 Ton · Yanmar Japonés",
@@ -185,7 +185,7 @@ export const excavators = [
   },
   {
     id: "sanny-sy60c",
-    name: "MODELO SANNY SY60C(Tier4 F & Stage Ⅴ)",
+    name: "MODELO SANY SY60C(Tier4 F & Stage Ⅴ)",
     slug: "sanny-sy60c",
     tagline: "Kubota V2607 48.3 HP 4 cil., excavación 3.830 mm, balde 0.25 m³ y 45 kN",
     badge: "6.0 Ton · Kubota V2607",
@@ -216,7 +216,7 @@ export const excavators = [
   },
   {
     id: "sanny-sy75c",
-    name: "Modelo SANNY SY75C",
+    name: "MODELO SANY SY75C",
     slug: "sanny-sy75c",
     tagline: "Isuzu 4LE2 57.7 HP 4 cil., alcance 6.505 mm, balde 0.28 m³ y 53 kN",
     badge: "7.3 Ton · Isuzu Japón",

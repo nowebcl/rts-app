@@ -51,7 +51,7 @@ export default function MinimalCatalogSection() {
 
   // Filtrado de productos
   const filteredProducts = useMemo(() => {
-    return products.filter(p => {
+    const list = products.filter(p => {
       // Filtro de categoría
       if (selectedCategory === 'vendidas') {
         if (!p.isSold) return false;
@@ -69,6 +69,7 @@ export default function MinimalCatalogSection() {
 
       return true;
     });
+    return [...list].sort((a, b) => (Number(a.numberId) || 0) - (Number(b.numberId) || 0));
   }, [products, selectedCategory, searchQuery]);
 
   // Paginación

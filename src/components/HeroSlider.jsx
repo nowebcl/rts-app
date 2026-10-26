@@ -42,7 +42,7 @@ export default function HeroSlider() {
       titleLine1: "Servicios con Mini Excavadoras",
       badgeText: "Soporte Oficial",
       cta1Text: "Consultar Servicios",
-      cta1Link: "/contacto",
+      cta1Link: "/servicios",
       cta2Text: "Consultar por WhatsApp",
       cta2Link: `https://wa.me/${companyData.whatsappNumber}?text=Hola%20RST,%20necesito%20consultar%20por%20servicios%20en%20terreno.`
     }

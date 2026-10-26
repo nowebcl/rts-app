@@ -26,7 +26,7 @@ export default function SeoFaqSection() {
       title: "Mini excavadoras en Chile",
       badge: "Todo Chile",
       icon: Truck,
-      desc: "Despachamos mini excavadoras compactas de 0.8 a 7.5 toneladas con camión rampa asegurado a Santiago, Concepción, Temuco y de Arica a Punta Arenas."
+      desc: "Despachamos mini excavadoras compactas de 0.6 a 7.5 toneladas con camión rampa asegurado a Santiago, Concepción, Temuco y de Arica a Punta Arenas."
     },
     {
       title: "Mini excavadoras en Llanquihue",
@@ -41,10 +41,10 @@ export default function SeoFaqSection() {
       desc: "Servicio técnico express, venta y suministro de repuestos e implementos para faenas agrícolas, forestales y de construcción en Puerto Montt y alrededores."
     },
     {
-      title: "Mini excavadoras SANNY",
+      title: "Mini excavadoras SANY",
       badge: "Alta Gama",
       icon: ShieldCheck,
-      desc: "Modelos oficiales de mini excavadoras SANNY: SANY SY35U (3.86 Ton), SY60C (6 Ton) y SY75C (7.28 Ton) con motores diésel de alta eficiencia y cabina full."
+      desc: "Modelos oficiales de mini excavadoras SANY: SANY SY35U (3.86 Ton), SY60C (6 Ton) y SY75C (7.28 Ton) con motores diésel de alta eficiencia y cabina full."
     },
     {
       title: "Dónde comprar mini excavadoras",
@@ -64,8 +64,12 @@ export default function SeoFaqSection() {
       a: "Sí, nuestra bodega y patio de pruebas se ubica en Parcela 11, Ruta V-500 en Llanquihue. Puedes agendar una visita técnica para probar los equipos en vivo o solicitar despacho directo a tu parcela u obra en Llanquihue, Puerto Montt, Puerto Varas, Osorno o Chiloé."
     },
     {
-      q: "¿Qué modelos de mini excavadoras SANNY tienen disponibles?",
-      a: "Disponemos de la línea de mini excavadoras SANNY que incluye la SANY SY35U (3.86 Ton, giro de cola cero y motor Yanmar), SANY SY60C (6 Ton con cabina climatizada) y SANY SY75C (7.28 Ton para alta exigencia), ideales para zanjeo, parcelaciones y construcción pesada."
+      q: "¿Qué modelos de mini excavadoras SANY están disponibles?",
+      a: "Ofrecemos la línea de mini excavadoras SANY que incluye la SANY SY35U (3.86 Ton, giro de cola cero y motor Yanmar), SANY SY60C (6 Ton con cabina climatizada) y SANY SY75C (7.28 Ton para alta exigencia), ideales para construcción, parcelaciones, zanjeo y faenas agrícolas."
+    },
+    {
+      q: "¿Se pueden encargar o importar mini excavadoras a pedido por encargo?",
+      a: "Sí, podemos importar por encargo con una reserva del 50%. Incluye asesoría técnica y comercial personalizada durante todo el proceso y prueba en terreno de la máquina a importar antes de la entrega final, todo con el respaldo oficial y garantía de RST."
     },
     {
       q: "¿Qué garantía y servicio postventa ofrecen en Región de Los Lagos y Chile?",
@@ -92,7 +96,7 @@ export default function SeoFaqSection() {
             Mini Excavadoras en Región de Los Lagos y Todo Chile
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 max-w-3xl leading-relaxed">
-            RST Importaciones: venta de <strong>mini excavadoras en Región de Los Lagos</strong> (Llanquihue, Puerto Montt, Osorno, Chiloé) y despacho a <strong>todo Chile</strong>. Modelos oficiales <strong>SANNY</strong> y <strong>RIPPA</strong> con entrega inmediata y garantía.
+            RST Importaciones: venta de <strong>mini excavadoras en Región de Los Lagos</strong> (Llanquihue, Puerto Montt, Osorno, Chiloé) y despacho a <strong>todo Chile</strong>. Modelos oficiales <strong>SANY</strong> y <strong>RIPPA</strong> con entrega inmediata y garantía.
           </p>
         </div>
 
@@ -137,7 +141,7 @@ export default function SeoFaqSection() {
               Preguntas Frecuentes sobre Venta de Mini Excavadoras
             </h3>
             <p className="text-xs sm:text-sm text-slate-500 mt-1">
-              Atención directa en Llanquihue, Puerto Montt, Región de Los Lagos y despacho a todo Chile.
+              Respuestas claras para tomar la mejor decisión de inversión en maquinaria pesada y compacta.
             </p>
           </div>
 

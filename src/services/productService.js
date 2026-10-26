@@ -1,7 +1,7 @@
 import defaultProducts from '../data/products';
 
 export const PB_BASE_URL = 'https://bd.rstimportaciones.cl';
-const STORAGE_KEY = 'rst_catalog_products_v7';
+const STORAGE_KEY = 'rst_catalog_products_v10';
 const AUTH_KEY = 'rst_admin_authenticated';
 const PB_TOKEN_KEY = 'rst_pb_session_token';
 
@@ -9,6 +9,31 @@ const PB_TOKEN_KEY = 'rst_pb_session_token';
 function sanitizeId(val) {
   if (typeof val !== 'string') return '';
   return val.replace(/[^a-zA-Z0-9_-]/g, '').slice(0, 50);
+}
+
+export const CANONICAL_MODEL_ORDER = [
+  'rippa-r06',
+  'rippa-r10-eco',
+  'rippa-r15',
+  'rippa-r18',
+  'rippa-r22-pro',
+  'sanny-sy35u',
+  'sanny-sy60c',
+  'sanny-sy75c'
+];
+
+export function sortProductsCanonical(list) {
+  if (!Array.isArray(list)) return [];
+  return [...list].sort((a, b) => {
+    const slugA = a.slug || a.id;
+    const slugB = b.slug || b.id;
+    const idxA = CANONICAL_MODEL_ORDER.indexOf(slugA);
+    const idxB = CANONICAL_MODEL_ORDER.indexOf(slugB);
+    if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+    if (idxA !== -1) return -1;
+    if (idxB !== -1) return 1;
+    return (Number(a.numberId) || 0) - (Number(b.numberId) || 0);
+  });
 }
 
 class ProductService {
@@ -25,6 +50,9 @@ class ProductService {
       localStorage.removeItem('rst_catalog_products_v4');
       localStorage.removeItem('rst_catalog_products_v5');
       localStorage.removeItem('rst_catalog_products_v6');
+      localStorage.removeItem('rst_catalog_products_v7');
+      localStorage.removeItem('rst_catalog_products_v8');
+      localStorage.removeItem('rst_catalog_products_v9');
 
       const stored = localStorage.getItem(STORAGE_KEY);
       if (!stored) {
@@ -61,13 +89,13 @@ class ProductService {
       if (res.ok) {
         const json = await res.json();
         if (json.items && json.items.length > 0) {
-          const mapped = json.items.map(r => {
+          let mapped = json.items.map(r => {
             const defaultItem = defaultProducts.find(d => d.slug === r.slug || d.name === r.name || d.id === r.slug) || {};
             const fileList = Array.isArray(r.imagenes) ? r.imagenes : (r.imagenes ? [r.imagenes] : []);
             
             const gallery = fileList.length > 0
               ? fileList.map(f => `${PB_BASE_URL}/api/files/productos/${r.id}/${encodeURIComponent(f)}`)
-              : (defaultItem.gallery || [`/catalogo/${r.slug || 'rippa-r06'}/foto-3.webp`]);
+              : (defaultItem.gallery || [`/nuevas imagenes de productos/8f09b593-89b7-4ac8-b85b-e5dfa94f8b52.png`]);
 
             // Manejo de PDF: si tiene archivo cargado en PB o URL
             let resolvedPdfUrl = r.pdfUrl || defaultItem.pdfUrl || '';
@@ -110,6 +138,9 @@ class ProductService {
             }
           });
 
+          // Ordenar formalmente por numberId (Rippa 1..5, Sany 6..8)
+          mapped = sortProductsCanonical(mapped);
+
           if (typeof window !== 'undefined') {
             localStorage.setItem(STORAGE_KEY, JSON.stringify(mapped));
           }
@@ -127,14 +158,14 @@ class ProductService {
         if (data) {
           const parsed = JSON.parse(data);
           if (Array.isArray(parsed) && parsed.length >= defaultProducts.length) {
-            return parsed;
+            return sortProductsCanonical(parsed);
           }
         }
       } catch (e) {
         // ignore
       }
     }
-    return defaultProducts;
+    return sortProductsCanonical(defaultProducts);
   }
 
   /**

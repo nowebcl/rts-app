@@ -208,6 +208,9 @@ export default function CatalogPage() {
       result.sort((a, b) => a.name.localeCompare(b.name));
     } else if (sortBy === 'name_desc') {
       result.sort((a, b) => b.name.localeCompare(a.name));
+    } else {
+      // Orden oficial por defecto: Rippa con Rippa (por capacidad), Sany con Sany
+      result.sort((a, b) => (Number(a.numberId) || 0) - (Number(b.numberId) || 0));
     }
 
     return result;

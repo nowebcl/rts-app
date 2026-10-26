@@ -67,6 +67,11 @@ export default function ProductDetailPage() {
   }
 
   const isSold = product.isSold;
+  const isSany = (product.brand && product.brand.toUpperCase().includes('SANY')) || 
+                 (product.name && product.name.toUpperCase().includes('SANY')) ||
+                 (product.categoryName && product.categoryName.toUpperCase().includes('SANY')) ||
+                 (product.id && String(product.id).toLowerCase().includes('sany')) ||
+                 (product.slug && String(product.slug).toLowerCase().includes('sany'));
   const gallery = product.gallery && product.gallery.length > 0 ? product.gallery : [product.image];
   const activeImage = gallery[activeImageIndex] || product.image;
 
@@ -235,7 +240,8 @@ export default function ProductDetailPage() {
                 </div>
               )}
 
-              {/* BLOQUE OBLIGATORIO: TODAS DEBEN LLEVAR ESTO */}
+              {/* BLOQUE DE REGALÍAS Y BENEFICIOS: EXCLUSIVO RIPPA (BORRADO EN SANY POR SOLICITUD) */}
+              {!isSany && (
               <div className="bg-orange-50/70 border border-orange-200/90 rounded-xl p-4 sm:p-5 space-y-3">
                 <div className="text-xs font-heading font-black uppercase text-[#FE8003] tracking-wider flex items-center gap-2">
                   <Gift className="w-4 h-4 text-[#FE8003]" />
@@ -262,6 +268,8 @@ export default function ProductDetailPage() {
                   </li>
                 </ul>
               </div>
+
+              )}
 
               {/* Descripción Oficial Completa del Archivo de Texto */}
               <div className="space-y-2 pt-2">

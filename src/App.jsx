@@ -13,6 +13,8 @@ import DeliveriesPage from './pages/DeliveriesPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import ImplementosPage from './pages/ImplementosPage';
 import AboutPage from './pages/AboutPage';
+import RippaAlliancePage from './pages/RippaAlliancePage';
+import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
 import AdminLoginPage from './pages/AdminLoginPage';
 import AdminDashboardPage from './pages/AdminDashboardPage';
@@ -58,6 +60,11 @@ function AppLayout() {
           <Route path="/aditamentos" element={<ImplementosPage />} />
           <Route path="/accesorios" element={<ImplementosPage />} />
           <Route path="/nosotros" element={<AboutPage />} />
+          <Route path="/quienes-somos" element={<AboutPage />} />
+          <Route path="/alianza-rippa" element={<RippaAlliancePage />} />
+          <Route path="/alianza-con-rippa" element={<RippaAlliancePage />} />
+          <Route path="/servicios" element={<ServicesPage />} />
+          <Route path="/servicios-realizados" element={<ServicesPage />} />
           <Route path="/contacto" element={<ContactPage />} />
           
           {/* Rutas de Administración con Fondo Blanco Minimalista */}

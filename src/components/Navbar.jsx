@@ -183,6 +183,8 @@ export default function Navbar() {
                   {[
                     { name: 'Inicio', path: '/' },
                     { name: 'Quiénes Somos', path: '/nosotros' },
+                    { name: 'Alianza con RIPPA', path: '/alianza-rippa' },
+                    { name: 'Servicios Realizados', path: '/servicios' },
                     { name: 'Catálogo de Maquinaria Nueva y Semi Nueva', path: '/catalogo' },
                     { name: 'Implementos', path: '/implementos' },
                     { name: 'Entrega a Nuestros Clientes', path: '/entregas-exitosas' },
@@ -231,7 +233,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between text-xs font-light text-white/90 pt-1">
                   <div className="flex items-center gap-2">
                     <Phone className="w-3.5 h-3.5 stroke-[1.5] text-white/80" />
-                    <a href={`tel:${companyData.phoneRaw}`} className="hover:underline">
+                    <a href={`tel:${companyData.phoneRaw}`} className="hover:underline whitespace-nowrap">
                       {companyData.phoneDisplay}
                     </a>
                   </div>

@@ -22,9 +22,9 @@ export default function DeliveriesPage() {
     window.scrollTo(0, 0);
   }, []);
 
-  // Dividir las 33 imágenes en dos líneas alternadas para balancear contenido
-  const rowTop = useMemo(() => deliveries.filter((_, i) => i % 2 === 0), []);     // 17 imágenes
-  const rowBottom = useMemo(() => deliveries.filter((_, i) => i % 2 !== 0), []);  // 16 imágenes
+  // Dividir las imágenes en dos líneas alternadas para balancear contenido
+  const rowTop = useMemo(() => deliveries.filter((_, i) => i % 2 === 0), []);     // Fila superior
+  const rowBottom = useMemo(() => deliveries.filter((_, i) => i % 2 !== 0), []);  // Fila inferior
 
   // Duplicar cada fila para conseguir el bucle infinito continuo sin saltos
   const duplicatedTop = useMemo(() => [...rowTop, ...rowTop], [rowTop]);
@@ -106,7 +106,7 @@ export default function DeliveriesPage() {
                 </h2>
                 <div className="space-y-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
                   <p>
-                    En <strong className="text-slate-900 font-bold">RST Chile</strong> somos la empresa referente en la importación directa, venta de maquinaria nueva y semi nueva, comercialización y servicio postventa de <strong className="text-slate-900 font-bold">mini excavadoras compactas RIPPA</strong> y maquinaria de 0.8 a 7.5 toneladas en nuestro país.
+                    En <strong className="text-slate-900 font-bold">RST Chile</strong> somos la empresa referente en la importación directa, venta de maquinaria nueva y semi nueva, comercialización y servicio postventa de <strong className="text-slate-900 font-bold">mini excavadoras compactas RIPPA</strong> y maquinaria de 0.6 a 7.5 toneladas en nuestro país.
                   </p>
                   <p>
                     Nacimos con el objetivo de brindar a contratistas, agricultores, parceleros y empresas constructoras herramientas de máxima confiabilidad y rendimiento, eliminando intermediarios y entregando respaldo directo de fábrica con repuestos originales y soporte técnico garantizado.
@@ -148,7 +148,7 @@ export default function DeliveriesPage() {
                 title="Click para ampliar fotografía"
               >
                 <picture>
-                  <source srcSet={item.webp} type="image/webp" />
+                  {item.webp && <source srcSet={item.webp} type="image/webp" />}
                   <img
                     src={item.image}
                     alt="Entrega real RST en terreno"
@@ -181,7 +181,7 @@ export default function DeliveriesPage() {
                 title="Click para ampliar fotografía"
               >
                 <picture>
-                  <source srcSet={item.webp} type="image/webp" />
+                  {item.webp && <source srcSet={item.webp} type="image/webp" />}
                   <img
                     src={item.image}
                     alt="Entrega real RST en terreno"
@@ -203,12 +203,12 @@ export default function DeliveriesPage() {
 
       </section>
 
-      {/* 3. SECCIÓN: EQUIPOS EN FÁBRICA */}
+      {/* 3. SECCIÓN: EQUIPOS EN LLANQUIHUE */}
       <section className="py-12 sm:py-16 bg-white border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="text-left">
             <h2 className="text-2xl sm:text-3xl font-heading font-black uppercase text-slate-900 tracking-tight">
-              Equipos en fábrica
+              Equipos en Llanquihue
             </h2>
           </div>
 
@@ -221,10 +221,10 @@ export default function DeliveriesPage() {
                 className="overflow-hidden rounded border border-slate-200 bg-slate-50 hover:border-[#FE8003] shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer flex items-center justify-center"
               >
                 <picture className="w-full">
-                  <source srcSet={item.webp} type="image/webp" />
+                  {item.webp && <source srcSet={item.webp} type="image/webp" />}
                   <img
                     src={item.image}
-                    alt="Equipo en fábrica"
+                    alt="Equipo en Llanquihue"
                     loading="lazy"
                     className="w-full h-auto object-cover block"
                   />
@@ -325,7 +325,7 @@ export default function DeliveriesPage() {
           >
             <div className="relative max-h-[85vh] flex items-center justify-center overflow-hidden rounded-lg shadow-2xl bg-black">
               <picture>
-                <source srcSet={activeDeliveryItem.webp} type="image/webp" />
+                {activeDeliveryItem.webp && <source srcSet={activeDeliveryItem.webp} type="image/webp" />}
                 <img
                   src={activeDeliveryItem.image}
                   alt="Entrega RST en terreno"
@@ -353,7 +353,7 @@ export default function DeliveriesPage() {
         </div>
       )}
 
-      {/* 6. Visor en Pantalla Completa (Equipos en Fábrica) */}
+      {/* 6. Visor en Pantalla Completa (Equipos en Llanquihue) */}
       {activeFactoryItem && (
         <div 
           className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200"
@@ -402,10 +402,10 @@ export default function DeliveriesPage() {
           >
             <div className="relative max-h-[85vh] flex items-center justify-center overflow-hidden rounded-lg shadow-2xl bg-black">
               <picture>
-                <source srcSet={activeFactoryItem.webp} type="image/webp" />
+                {activeFactoryItem.webp && <source srcSet={activeFactoryItem.webp} type="image/webp" />}
                 <img
                   src={activeFactoryItem.image}
-                  alt="Equipo en fábrica"
+                  alt="Equipo en Llanquihue"
                   className="max-h-[80vh] w-auto max-w-full object-contain select-none"
                 />
               </picture>

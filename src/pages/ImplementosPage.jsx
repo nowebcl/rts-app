@@ -57,7 +57,7 @@ export default function ImplementosPage() {
               </h2>
             </div>
             <span className="text-xs font-heading font-bold uppercase text-[#888888] hidden sm:inline-block">
-              Orden 01 - 12
+              Orden 01 - {String(implementosList.length).padStart(2, '0')}
             </span>
           </div>
 

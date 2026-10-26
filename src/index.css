@@ -243,14 +243,14 @@ h1, h2, h3 {
 .animate-marquee-right {
   display: flex;
   width: max-content;
-  animation: marqueeScrollRight 120s linear infinite;
+  animation: marqueeScrollRight 280s linear infinite;
   will-change: transform;
 }
 
 .animate-marquee-left {
   display: flex;
   width: max-content;
-  animation: marqueeScrollLeft 120s linear infinite;
+  animation: marqueeScrollLeft 280s linear infinite;
   will-change: transform;
 }
 

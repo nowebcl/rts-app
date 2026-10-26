@@ -154,10 +154,10 @@ export default function HomePage() {
           {/* Grid de implementos reales con fondo blanco acorde al estilo de la página */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {[
-              { num: '01', name: 'Pinza para Madera', img: '/ACCESORIOS/01_pinza_madera.png' },
+              { num: '01', name: 'Pinza Rotativa', img: '/ACCESORIOS/01_pinza_rotativa.png' },
               { num: '04', name: 'Martillo Rompedor', img: '/ACCESORIOS/04_martillo_rompedor.png' },
-              { num: '05', name: 'Barrena Perforadora', img: '/ACCESORIOS/05_barrena_perforadora.png' },
-              { num: '06', name: 'Cucharón Basculante', img: '/ACCESORIOS/06_cucharon_basculante.png' }
+              { num: '05', name: 'Barreno Perforador de 20 y 40 cm', img: '/ACCESORIOS/05_barreno_perforador.png' },
+              { num: '06', name: 'Balde Oscilante', img: '/ACCESORIOS/06_balde_oscilante.png' }
             ].map((item) => (
               <Link
                 key={item.num}
@@ -225,8 +225,17 @@ export default function HomePage() {
                   Distribuidores Principales de RIPPA · RST Chile
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-heading font-black uppercase text-[#222222] leading-tight">
-                  Quiénes Somos: Misión y Visión
+                  Quiénes Somos
                 </h2>
+              </div>
+
+              <div className="space-y-3 text-sm text-[#555555] leading-relaxed">
+                <p>
+                  Comenzamos como pioneros en servicios con mini excavadoras y mini tractores en el sur de Chile. Nuestra experiencia en terreno nos llevó a viajar a Japón para iniciar la importación de maquinaria y posteriormente a China, buscando nuevas tecnologías y soluciones para mantenernos a la vanguardia de la industria.
+                </p>
+                <p>
+                  Hoy, nuestra pasión nos impulsa a recorrer el mundo en busca de equipos confiables, eficientes e innovadores para el sur de Chile. Conocemos y trabajamos con lo que comercializamos, lo que nos permite comprender las necesidades reales de nuestros clientes y asesorarlos para encontrar las mejores soluciones para sus proyectos.
+                </p>
               </div>
 
               {/* Misión y Visión Cards */}
@@ -296,20 +305,20 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 w-full sm:w-auto shrink-0">
               <a
                 href={`tel:${companyData.phoneRaw}`}
-                className="flex items-center gap-3 px-6 py-4 bg-[#262626] border border-[#383838] hover:border-[#FE8003] text-white font-heading font-bold uppercase text-xs tracking-wider transition-colors"
+                className="flex items-center justify-center gap-3 px-6 py-4 bg-[#262626] border border-[#383838] hover:border-[#FE8003] text-white font-heading font-bold uppercase text-xs tracking-wider transition-colors whitespace-nowrap"
               >
-                <Phone className="w-4 h-4 text-[#FE8003]" />
-                <span>{companyData.phoneDisplay}</span>
+                <Phone className="w-4 h-4 text-[#FE8003] shrink-0" />
+                <span className="whitespace-nowrap">{companyData.phoneDisplay}</span>
               </a>
 
               <a
                 href={`https://wa.me/${companyData.whatsappNumber}?text=Hola%20RST,%20solicito%20asesoría%20para%20elegir%20mi%20mini%20excavadora.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-antek btn-antek-primary"
+                className="btn-antek btn-antek-primary w-full sm:w-auto inline-flex items-center justify-center gap-2 whitespace-nowrap"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>Cotizar por WhatsApp</span>

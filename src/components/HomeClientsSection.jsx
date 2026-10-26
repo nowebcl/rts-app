@@ -34,7 +34,7 @@ export default function HomeClientsSection() {
                 Especialistas en Venta de Maquinaria Nueva y Semi Nueva con Entrega Inmediata
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                En <strong>RST Chile</strong> somos la empresa referente en la importación directa, venta de maquinaria nueva y semi nueva, comercialización y servicio postventa de <strong>mini excavadoras compactas RIPPA</strong> y maquinaria de 0.8 a 7.5 toneladas en nuestro país.
+                En <strong>RST Chile</strong> somos la empresa referente en la importación directa, venta de maquinaria nueva y semi nueva, comercialización y servicio postventa de <strong>mini excavadoras compactas RIPPA</strong> y maquinaria de 0.6 a 7.5 toneladas en nuestro país.
               </p>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 Nacimos con el objetivo de brindar a contratistas, agricultores, parceleros y empresas constructoras herramientas de máxima confiabilidad y rendimiento, eliminando intermediarios y entregando respaldo directo de fábrica con repuestos originales y soporte técnico garantizado.

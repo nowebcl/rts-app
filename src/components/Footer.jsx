@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import { InstagramIcon, FacebookIcon } from './SocialIcons';
 import { companyData } from '../data/excavators';
-import { productService } from '../services/productService';
+import { productService, sortProductsCanonical } from '../services/productService';
 
 // Modelos Reales Destacados Oficiales de RST
 const FEATURED_REAL_MODELS = [
@@ -74,7 +74,8 @@ export default function Footer() {
       try {
         const list = await productService.getAll();
         if (list && list.length > 0) {
-          const mapped = list.slice(0, 8).map(prod => ({
+          const sortedList = sortProductsCanonical(list);
+          const mapped = sortedList.slice(0, 8).map(prod => ({
             id: prod.slug || prod.id,
             name: formatModelDisplayName(prod),
             spec: formatModelSpec(prod)
@@ -115,20 +116,20 @@ export default function Footer() {
             </div>
 
             {/* Direct CTAs */}
-            <div className="flex items-center gap-3 shrink-0">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center md:justify-end gap-3 w-full sm:w-auto shrink-0">
               <a
                 href={`tel:${companyData.phoneRaw}`}
-                className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#222222] hover:bg-[#2c2c2c] text-white border border-[#383838] hover:border-[#FE8003] text-xs font-heading font-bold uppercase tracking-wider rounded-[2px] transition-colors"
+                className="inline-flex items-center justify-center gap-2.5 px-4 py-2.5 bg-[#222222] hover:bg-[#2c2c2c] text-white border border-[#383838] hover:border-[#FE8003] text-xs font-heading font-bold uppercase tracking-wider rounded-[2px] transition-colors whitespace-nowrap"
               >
-                <Phone className="w-3.5 h-3.5 text-[#FE8003]" />
-                <span>{companyData.phoneDisplay}</span>
+                <Phone className="w-3.5 h-3.5 text-[#FE8003] shrink-0" />
+                <span className="whitespace-nowrap">{companyData.phoneDisplay}</span>
               </a>
 
               <a
                 href={`https://wa.me/${companyData.whatsappNumber}?text=Hola%20RST,%20solicito%20información%20de%20mini%20excavadoras.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-antek btn-antek-primary text-xs py-2.5 px-4"
+                className="btn-antek btn-antek-primary text-xs py-2.5 px-4 inline-flex items-center justify-center gap-2 whitespace-nowrap"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>WhatsApp Oficial</span>
@@ -148,7 +149,7 @@ export default function Footer() {
                 Sobre RST Chile
               </h4>
               <p className="text-xs text-[#888888] leading-relaxed">
-                Empresa especializada exclusivamente en la importación directa, venta de maquinaria nueva y semi nueva, y postventa de <strong>mini excavadoras compactas</strong> de alta eficiencia de 0.8 a 7.5 toneladas con entrega inmediata y repuestos garantizados.
+                Empresa especializada exclusivamente en la importación directa, venta de maquinaria nueva y semi nueva, y postventa de <strong>mini excavadoras compactas</strong> de alta eficiencia de 0.6 a 7.5 toneladas con entrega inmediata y repuestos garantizados.
               </p>
 
               {/* Social icons list */}
@@ -209,6 +210,22 @@ export default function Footer() {
                     className="hover:text-[#FE8003] transition-colors flex items-center gap-1.5"
                   >
                     <span className="text-[#FE8003]">›</span> Quiénes Somos
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/alianza-rippa" 
+                    className="hover:text-[#FE8003] transition-colors flex items-center gap-1.5"
+                  >
+                    <span className="text-[#FE8003]">›</span> Alianza con RIPPA
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/servicios" 
+                    className="hover:text-[#FE8003] transition-colors flex items-center gap-1.5"
+                  >
+                    <span className="text-[#FE8003]">›</span> Servicios Realizados
                   </Link>
                 </li>
                 <li>
@@ -292,7 +309,7 @@ export default function Footer() {
 
                 <div className="flex items-center gap-2.5">
                   <Phone className="w-4 h-4 text-[#FE8003] shrink-0" />
-                  <a href={`tel:${companyData.phoneRaw}`} className="text-white hover:text-[#FE8003] font-bold">
+                  <a href={`tel:${companyData.phoneRaw}`} className="text-white hover:text-[#FE8003] font-bold whitespace-nowrap">
                     {companyData.phoneDisplay}
                   </a>
                 </div>

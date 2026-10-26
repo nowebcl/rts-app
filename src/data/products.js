@@ -1,4 +1,4 @@
-// Catálogo Oficial de Maquinarias Reales RST (7 Modelos Oficiales)
+// Catálogo Oficial de Maquinarias Reales RST (8 Modelos Oficiales)
 export const products = [
   {
     "id": "rippa-r06",
@@ -18,9 +18,9 @@ export const products = [
       "Certificación Euro 5, EPA, CE"
     ],
     "pdfUrl": "/catalogo/rippa-r06/ficha-rippa-r06.pdf",
-    "image": "/catalogo/rippa-r06/foto-3.webp",
+    "image": "/nuevas imagenes de productos/8f09b593-89b7-4ac8-b85b-e5dfa94f8b52.png",
     "gallery": [
-      "/catalogo/rippa-r06/foto-3.webp"
+      "/nuevas imagenes de productos/8f09b593-89b7-4ac8-b85b-e5dfa94f8b52.png"
     ],
     "location": "Entrega con inducción en terreno a todo Chile",
     "warranty": "1 año de garantía componentes esenciales (Motor y Bomba)"
@@ -101,83 +101,8 @@ export const products = [
     "warranty": "1 año de garantía componentes esenciales (Motor y Bomba)"
   },
   {
-    "id": "sanny-sy35u",
-    "numberId": 5,
-    "name": "MODELO SANNY SY35U（StageIII)",
-    "slug": "sanny-sy35u",
-    "category": "excavadoras",
-    "categoryName": "Excavadoras SANY",
-    "brand": "SANY",
-    "tonnage": "3.8 Ton",
-    "price": "Consultar valor",
-    "isSold": false,
-    "description": "Peso operativo: 3.680–3.855 kg, según versión.\nMotor: diésel Yanmar 3TNV88F, 3 cilindros.\nPotencia: hasta 18,2 kW (24,4 HP), según versión.\nProfundidad máxima de excavación: 3.105 mm.\nCapacidad del balde: 0,12 m³.\nFuerza de excavación del balde: 30,4 kN.\nAncho de transporte: 1.720 mm.\nAltura máxima de descarga: 3.460 mm.\nSistema hidráulico: bomba de pistones axiales de caudal variable.\nDiseño: giro de cola cero (Zero Tail Swing).",
-    "commonBenefits": [
-      "De regalo acople rápido, dedo pulgar hidráulico, kit primera mantención gratis",
-      "1 año de garantía componentes esenciales",
-      "Certificación Euro 5, EPA, CE"
-    ],
-    "pdfUrl": "/catalogo/sanny-sy35u/ficha-sanny-sy35u.pdf",
-    "image": "/catalogo/sanny-sy35u/foto-1.webp",
-    "gallery": [
-      "/catalogo/sanny-sy35u/foto-1.webp"
-    ],
-    "location": "Entrega con inducción en terreno a todo Chile",
-    "warranty": "1 año de garantía componentes esenciales (Motor y Bomba)"
-  },
-  {
-    "id": "sanny-sy60c",
-    "numberId": 6,
-    "name": "MODELO SANNY SY60C(Tier4 F & Stage Ⅴ)",
-    "slug": "sanny-sy60c",
-    "category": "excavadoras",
-    "categoryName": "Excavadoras SANY",
-    "brand": "SANY",
-    "tonnage": "6.0 Ton",
-    "price": "Consultar valor",
-    "isSold": false,
-    "description": "Peso operativo: aprox. 6.000 kg.\nMotor: Kubota V2607, diésel de 4 cilindros.\nPotencia: 36 kW (48,3 HP) a 2.000 rpm.\nCilindrada: 2,615 litros.\nProfundidad máxima de excavación: aprox. 3.830–3.815 mm.\nCapacidad del balde: hasta 0,25 m³.\nFuerza de excavación del balde: aprox. 45 kN.\nFuerza de excavación del brazo: aprox. 33 kN.\nAltura máxima de excavación: aprox. 5.610 mm.\nAncho de transporte: aprox. 2.000 mm.\nSistema hidráulico: bombas hidráulicas de alto rendimiento.\nTren de rodaje: orugas, con zapatas de 400 mm según configuración.",
-    "commonBenefits": [
-      "De regalo acople rápido, dedo pulgar hidráulico, kit primera mantención gratis",
-      "1 año de garantía componentes esenciales",
-      "Certificación Euro 5, EPA, CE"
-    ],
-    "pdfUrl": "/catalogo/sanny-sy60c/ficha-sanny-sy60c.pdf",
-    "image": "/catalogo/sanny-sy60c/foto-1.webp",
-    "gallery": [
-      "/catalogo/sanny-sy60c/foto-1.webp"
-    ],
-    "location": "Entrega con inducción en terreno a todo Chile",
-    "warranty": "1 año de garantía componentes esenciales (Motor y Bomba)"
-  },
-  {
-    "id": "sanny-sy75c",
-    "numberId": 7,
-    "name": "Modelo SANNY SY75C",
-    "slug": "sanny-sy75c",
-    "category": "excavadoras",
-    "categoryName": "Excavadoras SANY",
-    "brand": "SANY",
-    "tonnage": "7.3 Ton",
-    "price": "Consultar valor",
-    "isSold": false,
-    "description": "Especificaciones técnicas (motor Isuzu)\n\nPeso operativo: 7.280 kg.\nMotor: Isuzu 4LE2, diésel de 4 cilindros.\nPotencia: 43 kW (57,7 HP) a 2.100 rpm.\nCilindrada: 2,179 litros.\nProfundidad máxima de excavación: aprox. 3.840 mm.\nCapacidad del balde: 0,28 m³.\nFuerza de excavación del balde: hasta 53 kN, según versión.\nFuerza de excavación del brazo: 35 kN.\nAlcance máximo de excavación: 6.505 mm.\nAltura máxima de excavación: aprox. 7.390 mm.\nAltura máxima de descarga: aprox. 5.490 mm.\nAncho de transporte: aprox. 2.220 mm.",
-    "commonBenefits": [
-      "De regalo acople rápido, dedo pulgar hidráulico, kit primera mantención gratis",
-      "1 año de garantía componentes esenciales",
-      "Certificación Euro 5, EPA, CE"
-    ],
-    "pdfUrl": "/catalogo/sanny-sy75c/ficha-sanny-sy75c.pdf",
-    "image": "/catalogo/sanny-sy75c/foto-1.webp",
-    "gallery": [
-      "/catalogo/sanny-sy75c/foto-1.webp"
-    ],
-    "location": "Entrega con inducción en terreno a todo Chile",
-    "warranty": "1 año de garantía componentes esenciales (Motor y Bomba)"
-  },
-  {
     "id": "rippa-r22-pro",
-    "numberId": 8,
+    "numberId": 5,
     "name": "MODELO RIPPA R22 PRO",
     "slug": "rippa-r22-pro",
     "category": "excavadoras",
@@ -196,6 +121,78 @@ export const products = [
     "image": "/catalogo/rippa-r22-pro/foto-1.webp",
     "gallery": [
       "/catalogo/rippa-r22-pro/foto-1.webp"
+    ],
+    "location": "Entrega con inducción en terreno a todo Chile",
+    "warranty": "1 año de garantía componentes esenciales (Motor y Bomba)"
+  },
+  {
+    "id": "sanny-sy35u",
+    "numberId": 6,
+    "name": "MODELO SANY SY35U（StageIII)",
+    "slug": "sanny-sy35u",
+    "category": "excavadoras",
+    "categoryName": "Excavadoras SANY",
+    "brand": "SANY",
+    "tonnage": "3.8 Ton",
+    "price": "Consultar valor",
+    "isSold": false,
+    "description": "Peso operativo: 3.680–3.855 kg, según versión.\nMotor: diésel Yanmar 3TNV88F, 3 cilindros.\nPotencia: hasta 18,2 kW (24,4 HP), según versión.\nProfundidad máxima de excavación: 3.105 mm.\nCapacidad del balde: 0,12 m³.\nFuerza de excavación del balde: 30,4 kN.\nAncho de transporte: 1.720 mm.\nAltura máxima de descarga: 3.460 mm.\nSistema hidráulico: bomba de pistones axiales de caudal variable.\nDiseño: giro de cola cero (Zero Tail Swing).",
+    "commonBenefits": [
+            "1 año de garantía componentes esenciales",
+      "Certificación Euro 5, EPA, CE"
+    ],
+    "pdfUrl": "/catalogo/sanny-sy35u/ficha-sanny-sy35u.pdf",
+    "image": "/catalogo/sanny-sy35u/foto-1.webp",
+    "gallery": [
+      "/catalogo/sanny-sy35u/foto-1.webp"
+    ],
+    "location": "Entrega con inducción en terreno a todo Chile",
+    "warranty": "1 año de garantía componentes esenciales (Motor y Bomba)"
+  },
+  {
+    "id": "sanny-sy60c",
+    "numberId": 7,
+    "name": "MODELO SANY SY60C(Tier4 F & Stage Ⅴ)",
+    "slug": "sanny-sy60c",
+    "category": "excavadoras",
+    "categoryName": "Excavadoras SANY",
+    "brand": "SANY",
+    "tonnage": "6.0 Ton",
+    "price": "Consultar valor",
+    "isSold": false,
+    "description": "Peso operativo: aprox. 6.000 kg.\nMotor: Kubota V2607, diésel de 4 cilindros.\nPotencia: 36 kW (48,3 HP) a 2.000 rpm.\nCilindrada: 2,615 litros.\nProfundidad máxima de excavación: aprox. 3.830–3.815 mm.\nCapacidad del balde: hasta 0,25 m³.\nFuerza de excavación del balde: aprox. 45 kN.\nFuerza de excavación del brazo: aprox. 33 kN.\nAltura máxima de excavación: aprox. 5.610 mm.\nAncho de transporte: aprox. 2.000 mm.\nSistema hidráulico: bombas hidráulicas de alto rendimiento.\nTren de rodaje: orugas, con zapatas de 400 mm según configuración.",
+    "commonBenefits": [
+            "1 año de garantía componentes esenciales",
+      "Certificación Euro 5, EPA, CE"
+    ],
+    "pdfUrl": "/catalogo/sanny-sy60c/ficha-sanny-sy60c.pdf",
+    "image": "/catalogo/sanny-sy60c/foto-1.webp",
+    "gallery": [
+      "/catalogo/sanny-sy60c/foto-1.webp"
+    ],
+    "location": "Entrega con inducción en terreno a todo Chile",
+    "warranty": "1 año de garantía componentes esenciales (Motor y Bomba)"
+  },
+  {
+    "id": "sanny-sy75c",
+    "numberId": 8,
+    "name": "MODELO SANY SY75C",
+    "slug": "sanny-sy75c",
+    "category": "excavadoras",
+    "categoryName": "Excavadoras SANY",
+    "brand": "SANY",
+    "tonnage": "7.3 Ton",
+    "price": "Consultar valor",
+    "isSold": false,
+    "description": "Especificaciones técnicas (motor Isuzu)\n\nPeso operativo: 7.280 kg.\nMotor: Isuzu 4LE2, diésel de 4 cilindros.\nPotencia: 43 kW (57,7 HP) a 2.100 rpm.\nCilindrada: 2,179 litros.\nProfundidad máxima de excavación: aprox. 3.840 mm.\nCapacidad del balde: 0,28 m³.\nFuerza de excavación del balde: hasta 53 kN, según versión.\nFuerza de excavación del brazo: 35 kN.\nAlcance máximo de excavación: 6.505 mm.\nAltura máxima de excavación: aprox. 7.390 mm.\nAltura máxima de descarga: aprox. 5.490 mm.\nAncho de transporte: aprox. 2.220 mm.",
+    "commonBenefits": [
+            "1 año de garantía componentes esenciales",
+      "Certificación Euro 5, EPA, CE"
+    ],
+    "pdfUrl": "/catalogo/sanny-sy75c/ficha-sanny-sy75c.pdf",
+    "image": "/catalogo/sanny-sy75c/foto-1.webp",
+    "gallery": [
+      "/catalogo/sanny-sy75c/foto-1.webp"
     ],
     "location": "Entrega con inducción en terreno a todo Chile",
     "warranty": "1 año de garantía componentes esenciales (Motor y Bomba)"

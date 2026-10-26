@@ -203,7 +203,7 @@ def build_multipart(fields, files):
 existing_req = urllib.request.Request(f"{PB_URL}/api/collections/productos/records?perPage=100", headers={'Authorization': f'Bearer {TOKEN}'})
 with urllib.request.urlopen(existing_req, context=ctx) as resp:
     existing_records = json.loads(resp.read().decode('utf-8')).get('items', [])
-    existing_by_num = {r.get('numberId'): r['id'] for r in existing_records}
+    existing_by_slug = {r.get('slug'): r['id'] for r in existing_records}
 
 uploaded_count = 0
 updated_count = 0
@@ -239,7 +239,7 @@ for p in products:
 
     body_bytes, content_type = build_multipart(fields, files_to_send)
 
-    rec_id = existing_by_num.get(p['numberId'])
+    rec_id = existing_by_slug.get(p['slug'])
     if rec_id:
         # Actualizar existente
         url_record = f"{PB_URL}/api/collections/productos/records/{rec_id}"

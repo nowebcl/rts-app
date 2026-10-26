@@ -19,6 +19,10 @@ export default function MinimalProductCard({ product }) {
   };
 
   const isSold = product.isSold;
+  const isSany = (product.brand && product.brand.toUpperCase().includes('SANY')) ||
+                 (product.name && product.name.toUpperCase().includes('SANY')) ||
+                 (product.id && String(product.id).toLowerCase().includes('sany')) ||
+                 (product.slug && String(product.slug).toLowerCase().includes('sany'));
   const displayPrice = isSold
     ? (product.price && product.price !== 'VENDIDA' ? `${product.price} (Vendida)` : 'VENDIDA')
     : (product.price || 'Consultar valor');
@@ -95,10 +99,12 @@ export default function MinimalProductCard({ product }) {
 
           {/* Badges de Beneficios Oficiales Obligatorios (TODAS DEBEN LLEVAR ESTO) - Altura fija uniforme */}
           <div className="mt-3 pt-2.5 border-t border-slate-100 flex flex-wrap gap-1.5 min-h-[56px] content-start shrink-0">
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-orange-50 text-orange-700 text-[10px] font-bold">
-              <Gift className="w-3 h-3 text-[#FE8003]" />
-              Regalo: Acople + Dedo + Mantención
-            </span>
+            {!isSany && (
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-orange-50 text-orange-700 text-[10px] font-bold">
+                <Gift className="w-3 h-3 text-[#FE8003]" />
+                Regalo: Acople + Dedo + Mantención
+              </span>
+            )}
             <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-[10px] font-bold">
               <ShieldCheck className="w-3 h-3 text-emerald-600" />
               1 Año Garantía

@@ -1,17 +1,17 @@
 export const implementosList = [
   {
-    id: "01-pinza-madera",
+    id: "01-pinza-rotativa",
     number: "01",
-    name: "Pinza para Madera",
-    image: "/ACCESORIOS/01_pinza_madera.png",
-    alt: "Pinza para Madera"
+    name: "Pinza Rotativa",
+    image: "/ACCESORIOS/01_pinza_rotativa.png",
+    alt: "Pinza Rotativa"
   },
   {
-    id: "02-cucharon-lodo",
+    id: "02-balde-nivelador",
     number: "02",
-    name: "Cucharón para Lodo",
-    image: "/ACCESORIOS/02_cucharon_lodo.png",
-    alt: "Cucharón para Lodo"
+    name: "Balde Nivelador de 80 cm",
+    image: "/ACCESORIOS/02_balde_nivelador_80cm.png",
+    alt: "Balde Nivelador de 80 cm"
   },
   {
     id: "03-rastrillo",
@@ -28,18 +28,18 @@ export const implementosList = [
     alt: "Martillo Rompedor"
   },
   {
-    id: "05-barrena-perforadora",
+    id: "05-barreno-perforador",
     number: "05",
-    name: "Barrena Perforadora",
-    image: "/ACCESORIOS/05_barrena_perforadora.png",
-    alt: "Barrena Perforadora"
+    name: "Barreno Perforador de 20 y 40 cm",
+    image: "/ACCESORIOS/05_barreno_perforador.png",
+    alt: "Barreno Perforador de 20 y 40 cm"
   },
   {
-    id: "06-cucharon-basculante",
+    id: "06-balde-oscilante",
     number: "06",
-    name: "Cucharón Basculante",
-    image: "/ACCESORIOS/06_cucharon_basculante.png",
-    alt: "Cucharón Basculante"
+    name: "Balde Oscilante",
+    image: "/ACCESORIOS/06_balde_oscilante.png",
+    alt: "Balde Oscilante"
   },
   {
     id: "07-cortacesped",
@@ -63,11 +63,11 @@ export const implementosList = [
     alt: "Cucharón Cribador"
   },
   {
-    id: "10-cucharon-estrecho",
+    id: "10-balde-20cm",
     number: "10",
-    name: "Cucharón Estrecho",
-    image: "/ACCESORIOS/10_cucharon_estrecho.png",
-    alt: "Cucharón Estrecho"
+    name: "Balde 20 cm",
+    image: "/ACCESORIOS/10_balde_20cm.png",
+    alt: "Balde 20 cm"
   },
   {
     id: "11-ripper",
@@ -82,5 +82,19 @@ export const implementosList = [
     name: "Cucharón para Roca",
     image: "/ACCESORIOS/12_cucharon_roca.png",
     alt: "Cucharón para Roca"
+  },
+  {
+    id: "13-acople-rapido-mecanico",
+    number: "13",
+    name: "Acople Rápido Mecánico",
+    image: "/ACCESORIOS/13_acople_rapido_mecanico.png",
+    alt: "Acople Rápido Mecánico"
+  },
+  {
+    id: "14-dedo-pulgar-hidraulico",
+    number: "14",
+    name: "Dedo Pulgar Hidráulico",
+    image: "/ACCESORIOS/14_dedo_pulgar_hidraulico.png",
+    alt: "Dedo Pulgar Hidráulico"
   }
 ];

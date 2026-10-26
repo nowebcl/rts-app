@@ -521,8 +521,7 @@ export default function AdminDashboardPage() {
                   >
                     <option value="RIPPA">RIPPA</option>
                     <option value="SANY">SANY</option>
-                    <option value="SANNY">SANNY</option>
-                    <option value="OTRA">Otra Maquinaria</option>
+                                        <option value="OTRA">Otra Maquinaria</option>
                   </select>
                 </div>
 

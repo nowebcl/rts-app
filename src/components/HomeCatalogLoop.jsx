@@ -53,9 +53,12 @@ export default function HomeCatalogLoop() {
   const featuredProducts = useMemo(() => {
     if (!products || products.length === 0) return [];
 
+    // Ordenar de forma oficial (Rippa con Rippa, Sany con Sany)
+    const sorted = [...products].sort((a, b) => (Number(a.numberId) || 0) - (Number(b.numberId) || 0));
+
     // Priorizar disponibles
-    const available = products.filter(p => !p.isSold);
-    const sold = products.filter(p => p.isSold);
+    const available = sorted.filter(p => !p.isSold);
+    const sold = sorted.filter(p => p.isSold);
 
     // Combinar dando prioridad a disponibles
     const curated = [...available, ...sold].slice(0, 10);
