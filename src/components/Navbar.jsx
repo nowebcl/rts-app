@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import BrandLogo from './BrandLogo';
+import LanguageToggle from './LanguageToggle';
 import { 
   Phone, 
   MessageCircle, 
@@ -73,6 +74,11 @@ export default function Navbar() {
               >
                 <FacebookIcon className="w-3.5 h-3.5" />
               </a>
+            </div>
+
+            {/* Selector de Idioma Minimal ES / EN */}
+            <div className="flex items-center border-l border-[#3a3a3a] pl-2 sm:pl-3">
+              <LanguageToggle />
             </div>
           </div>
         </div>
@@ -174,8 +180,14 @@ export default function Navbar() {
               </div>
 
               {/* Drawer Links */}
-              <div className="px-6 py-8 flex-1 overflow-y-auto space-y-6">
-                <div className="text-[11px] font-light tracking-[0.25em] uppercase text-white/75 px-3">
+              <div className="px-6 py-6 flex-1 overflow-y-auto space-y-5">
+                {/* Selector de Idioma Minimal en Menú Móvil */}
+                <div className="flex items-center justify-between px-3.5 py-2.5 bg-white/10 rounded-[4px] border border-white/15">
+                  <span className="text-xs text-white/90 font-medium">Idioma / Language:</span>
+                  <LanguageToggle variant="drawer" />
+                </div>
+
+                <div className="text-[11px] font-light tracking-[0.25em] uppercase text-white/75 px-3 pt-1">
                   Navegación
                 </div>
 
